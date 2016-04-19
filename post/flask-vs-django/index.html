@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://memnoth.github.io/stylesheets/shiori.css">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://memnoth.github.io/favicon.ico">
+    <title>Pirates use Flask, the Navy uses Django | Memnoth</title>
+    
+    
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-toggle-wrapper visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a href="https://memnoth.github.io/" class="navbar-brand">Memnoth</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="navbar-nav nav">
+            <li><a href="https://memnoth.github.io/post">Archive</a></li>
+
+          </ul>
+          <ul class="navbar-nav nav navbar-right">
+            <li><a href="https://memnoth.github.io/about">About</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="post-header">
+      <h1 class="post-title-main">Pirates use Flask, the Navy uses Django</h1>
+      <p class="text-muted">May 3, 2015</p>
+
+    </div>
+    <div class="post-content">
+      
+
+<h2 id="introduce:26aacfd8b64ae3a431e5ac7045a2104a"><strong>Introduce</strong></h2>
+
+<p>새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 <a href="http://flask.pocoo.org">Flask</a>와 <a href="https://www.djangoproject.com">Django</a>가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, <a href="https://wakatime.com">WakaTime</a>는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.</p>
+
+<p>경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. <a href="https://wakatime.com/django-vs-flask-worksheet"><em>Django vs Flask worksheet</em></a>에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.</p>
+
+<hr />
+
+<h2 id="differences-between-django-and-flask:26aacfd8b64ae3a431e5ac7045a2104a"><strong>Differences between Django and Flask</strong></h2>
+
+<p><a href="https://github.com/django/django">Django</a>의 커뮤니티는 크고 오래되었으며 <a href="https://github.com/mitsuhiko/flask">Flask</a>의 커뮤니티는 활발해요.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Django</th>
+<th>Flask</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>탄생년도</td>
+<td>2005</td>
+<td>2010</td>
+</tr>
+
+<tr>
+<td>포럼</td>
+<td>큼</td>
+<td>새롭고 활발함</td>
+</tr>
+
+<tr>
+<td>추천수</td>
+<td>13,820</td>
+<td>13,489</td>
+</tr>
+
+<tr>
+<td>구독수</td>
+<td>607</td>
+<td>1,036</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="landscape:26aacfd8b64ae3a431e5ac7045a2104a"><strong>Landscape</strong></h2>
+
+<p>많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>Django를 사용하는 사이트</th>
+<th>Flask를 사용하는 사이트</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="http://www.eventbrite.com">Eventbrite</a></td>
+<td><a href="https://wakatime.com">WakaTime</a></td>
+</tr>
+
+<tr>
+<td><a href="https://prezi.com">Prezi</a></td>
+<td><a href="https://www.twilio.com">Twilio</a></td>
+</tr>
+
+<tr>
+<td><a href="https://bitbucket.org">Bitbucket</a></td>
+<td><a href="http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/">President Obama</a></td>
+</tr>
+
+<tr>
+<td><a href="https://instagram.com">Instagram</a></td>
+<td><a href="http://close.io">Close.io</a></td>
+</tr>
+
+<tr>
+<td><a href="https://www.pinterest.com">Pinterest</a></td>
+<td><a href="https://keen.io">Keen.io</a></td>
+</tr>
+
+<tr>
+<td><a href="https://zerocater.com">Zerocater</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="performance:26aacfd8b64ae3a431e5ac7045a2104a"><strong>Performance</strong></h2>
+
+<p>Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.</p>
+
+<p><img src="http://i.imgur.com/8gpRqmI.png" alt="Django vs Flask Performance" /></p>
+
+<p>하지만, 타 언어 프레임워크와 비교하자면 둘의 차이는 신경쓸 필요가 없습니다. <em>Django와 Flask를 사용하는 이유는 개발 속도 향상, 빠른 빌드, 충분히 빠른 프레임워크이기 때문이죠.</em></p>
+
+<p><img src="http://i.imgur.com/nxayjgx.png" alt="Django vs Flask Performance Insignificant" /></p>
+
+<p>마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 <a href="https://wakatime.com/django-vs-flask-worksheet">워크시트</a>와 당신의 결정을 고려하여 선택하세요.</p>
+
+<p>또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. <a href="https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?">여기</a>에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.</p>
+
+<p>P.S. Pirates use Flask, the Navy uses Django. <a href="https://wakatime.com">WakeTime</a>는 해적선입니다 ;)</p>
+
+<hr />
+
+<p>원문 &ndash; <a href="https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?">Pirates use Flask, the Navy uses Django</a> (Alan Hamlett)<br />
+번역 &ndash; Hyun Jun, An</p>
+
+    </div>
+    <div class="post-footer">
+      <a href="https://memnoth.github.io/post" class="btn btn-primary btn-block btn-lg">View All 7 Articles →</a>
+
+    </div>
+    
+		
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  <div class="col-sm-4">
+    
+
+<h3>
+  Author
+</h3>
+
+<p>
+  <div class="media">
+    
+    <img src="http://www.gravatar.com/avatar/fjkdsfjkdke92439249?s=100" alt="Hyun Jun, An" class="pull-left">
+    
+    
+    <div class="media-body">
+      <h4 class="media-heading">Hyun Jun, An</h4>
+    </div>
+    
+  </div>
+</p>
+
+
+
+
+  </div>
+</div>
+      <div class="row footer">
+        <div class="col-sm-12 text-center">
+          <footer>
+
+&copy; 2015.
+Built with <a href="http://gohugo.io/">Hugo</a> (0.15) and
+<a href="https://github.com/chibicode/hugo-theme-shiori">Shiori Theme</a>.
+
+</footer>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://memnoth.github.io/javascripts/shiori.js"></script>
+    
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+

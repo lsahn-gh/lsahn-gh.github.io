@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://memnoth.github.io/stylesheets/shiori.css">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://memnoth.github.io/favicon.ico">
+    <title>Python - Auto generate requirements.txt | Memnoth</title>
+    
+    
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-toggle-wrapper visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a href="https://memnoth.github.io/" class="navbar-brand">Memnoth</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="navbar-nav nav">
+            <li><a href="https://memnoth.github.io/post">Archive</a></li>
+
+          </ul>
+          <ul class="navbar-nav nav navbar-right">
+            <li><a href="https://memnoth.github.io/about">About</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="post-header">
+      <h1 class="post-title-main">Python - Auto generate requirements.txt</h1>
+      <p class="text-muted">May 18, 2015</p>
+
+    </div>
+    <div class="post-content">
+      
+
+<h2 id="why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8"><em>Why requirements.txt?</em></h2>
+
+<p>모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.<br />
+requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.</p>
+
+<h3 id="requirements-파일-형식:8dbd9dbafef37ffae3ea07baa6d37ee8">requirements 파일 형식:</h3>
+
+<p><p></p></p>
+
+<pre><code>requests==1.2.0
+Flask==0.10.1
+</code></pre>
+
+<hr />
+
+<h3 id="방법-1:8dbd9dbafef37ffae3ea07baa6d37ee8">방법 1:</h3>
+
+<p><p></p></p>
+
+<pre><code>$ pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:<br />
+위의 포맷 형식으로 requirements.txt을 생성했다면, <code>pip install -r requirements.txt</code>로 사용할 수 있습니다.</p>
+
+<hr />
+
+<h3 id="방법-2:8dbd9dbafef37ffae3ea07baa6d37ee8">방법 2:</h3>
+
+<p>pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.</p>
+
+<h4 id="왜-pip-freeze가-아닌가요:8dbd9dbafef37ffae3ea07baa6d37ee8">왜 pip freeze가 아닌가요?</h4>
+
+<ul>
+<li>virtualenv를 사용하지 않는 한 pip freeze는 프로젝트에서 사용하지 않는 패키지도 모두 포함합니다.</li>
+<li>pip freeze는 오로지 당신의 개발 환경에 설치된 패키지들만 사용하여 구성합니다.</li>
+<li>때로는 패키지를 설치하지 않고 requirements.txt를 생성할 필요가 있습니다.</li>
+</ul>
+
+<h4 id="어떻게-사용하나요:8dbd9dbafef37ffae3ea07baa6d37ee8">어떻게 사용하나요?</h4>
+
+<p><p></p></p>
+
+<pre><code>$ pip install pipreqs
+$ pipreqs /path/to/project
+</code></pre>
+
+<hr />
+
+<p>원문 &ndash; <a href="http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/">Python - Auto generate requirements.txt</a> (Suresh Kumar)<br />
+번역 &ndash; Hyun Jun, An</p>
+
+    </div>
+    <div class="post-footer">
+      <a href="https://memnoth.github.io/post" class="btn btn-primary btn-block btn-lg">View All 7 Articles →</a>
+
+    </div>
+    
+		
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  <div class="col-sm-4">
+    
+
+<h3>
+  Author
+</h3>
+
+<p>
+  <div class="media">
+    
+    <img src="http://www.gravatar.com/avatar/fjkdsfjkdke92439249?s=100" alt="Hyun Jun, An" class="pull-left">
+    
+    
+    <div class="media-body">
+      <h4 class="media-heading">Hyun Jun, An</h4>
+    </div>
+    
+  </div>
+</p>
+
+
+
+
+  </div>
+</div>
+      <div class="row footer">
+        <div class="col-sm-12 text-center">
+          <footer>
+
+&copy; 2015.
+Built with <a href="http://gohugo.io/">Hugo</a> (0.15) and
+<a href="https://github.com/chibicode/hugo-theme-shiori">Shiori Theme</a>.
+
+</footer>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://memnoth.github.io/javascripts/shiori.js"></script>
+    
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+

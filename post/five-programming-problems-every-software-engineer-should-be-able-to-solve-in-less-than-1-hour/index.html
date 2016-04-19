@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://memnoth.github.io/stylesheets/shiori.css">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://memnoth.github.io/favicon.ico">
+    <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour | Memnoth</title>
+    
+    
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-toggle-wrapper visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a href="https://memnoth.github.io/" class="navbar-brand">Memnoth</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="navbar-nav nav">
+            <li><a href="https://memnoth.github.io/post">Archive</a></li>
+
+          </ul>
+          <ul class="navbar-nav nav navbar-right">
+            <li><a href="https://memnoth.github.io/about">About</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="post-header">
+      <h1 class="post-title-main">Five programming problems every Software Engineer should be able to solve in less than 1 hour</h1>
+      <p class="text-muted">May 9, 2015</p>
+
+    </div>
+    <div class="post-content">
+      
+
+<p>제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 <em>Programming</em> 이 무슨 의미인지 모른다는 것이죠.
+<p></p>
+<img src="http://i.imgur.com/Zns27G1.jpg" alt="Image" /><br />
+물론, 그들은 다르게 생각할 겁니다.</p>
+
+<p>만약 당신이 jQuery를 안다면 <em>Front-End Web Developer</em> 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 <em>Software Engineer</em> 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
+(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어<sup class="footnote-ref" id="fnref:6d1a8d7738acbc142e782134470c593a:1"><a rel="footnote" href="#fn:6d1a8d7738acbc142e782134470c593a:1">1</a></sup>들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 <code>int</code>와 <code>float</code>의 차이를 설명하지 못 해요.)</p>
+
+<h2 id="can-you-actually-code-anything:6d1a8d7738acbc142e782134470c593a"><em>Can you actually code anything?</em></h2>
+
+<p>제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.<br />
+당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?<br />
+제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 <em>Software Engineer</em>, <em>Programmer</em>, <em>Computer Science specialist</em>, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.</p>
+
+<h2 id="the-5-problems:6d1a8d7738acbc142e782134470c593a"><em>The 5 problems</em></h2>
+
+<p><em>아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.</em></p>
+
+<h4 id="problem-1:6d1a8d7738acbc142e782134470c593a">Problem 1</h4>
+
+<ul>
+<li>하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.</li>
+</ul>
+
+<h4 id="problem-2:6d1a8d7738acbc142e782134470c593a">Problem 2</h4>
+
+<ul>
+<li>두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
+(list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)</li>
+</ul>
+
+<h4 id="problem-3:6d1a8d7738acbc142e782134470c593a">Problem 3</h4>
+
+<ul>
+<li>Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
+(처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)</li>
+</ul>
+
+<h4 id="problem-4:6d1a8d7738acbc142e782134470c593a">Problem 4</h4>
+
+<ul>
+<li>양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
+([50, 2, 1, 9] list를 받으면 형식화된 95021<sup class="footnote-ref" id="fnref:6d1a8d7738acbc142e782134470c593a:2"><a rel="footnote" href="#fn:6d1a8d7738acbc142e782134470c593a:2">2</a></sup>를 출력해야 합니다.)
+<strong>Update:</strong> Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) <a href="https://blog.svpino.com/2015/05/08/solution-to-problem-4">You can click here to read my solution.</a></li>
+</ul>
+
+<h4 id="problem-5:6d1a8d7738acbc142e782134470c593a">Problem 5</h4>
+
+<ul>
+<li>1, 2, &hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
+(예를 들어: 1 + 2 + 34 - 5 + 67 - 8 + 9 = 100.)
+<strong>Update:</strong> (<a href="https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions">Here is one solution to this problem</a> in case you are curious.)</li>
+</ul>
+
+<h2 id="unfortunately-you-aren-t-the-one-that-needs-this:6d1a8d7738acbc142e782134470c593a"><em>Unfortunately, you aren&rsquo;t the one that needs this</em></h2>
+
+<p>만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)</p>
+
+<hr />
+
+<p><a href="https://blog.svpino.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour">Five programming problems every Software Engineer should be able to solve in less than 1 hour</a> - Santiago L. Valdarrama<br />
+번역 - Hyun Jun (Cryptos) An</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:6d1a8d7738acbc142e782134470c593a:1">단어의 개념이 아닌 <strong>단어만</strong> 많이 아는 사람을 의미하는 것 같습니다.
+ <a class="footnote-return" href="#fnref:6d1a8d7738acbc142e782134470c593a:1"><sup>[return]</sup></a></li>
+<li id="fn:6d1a8d7738acbc142e782134470c593a:2">list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
+ <a class="footnote-return" href="#fnref:6d1a8d7738acbc142e782134470c593a:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </div>
+    <div class="post-footer">
+      <a href="https://memnoth.github.io/post" class="btn btn-primary btn-block btn-lg">View All 7 Articles →</a>
+
+    </div>
+    
+		
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  <div class="col-sm-4">
+    
+
+<h3>
+  Author
+</h3>
+
+<p>
+  <div class="media">
+    
+    <img src="http://www.gravatar.com/avatar/fjkdsfjkdke92439249?s=100" alt="Hyun Jun, An" class="pull-left">
+    
+    
+    <div class="media-body">
+      <h4 class="media-heading">Hyun Jun, An</h4>
+    </div>
+    
+  </div>
+</p>
+
+
+
+
+  </div>
+</div>
+      <div class="row footer">
+        <div class="col-sm-12 text-center">
+          <footer>
+
+&copy; 2015.
+Built with <a href="http://gohugo.io/">Hugo</a> (0.15) and
+<a href="https://github.com/chibicode/hugo-theme-shiori">Shiori Theme</a>.
+
+</footer>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://memnoth.github.io/javascripts/shiori.js"></script>
+    
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+

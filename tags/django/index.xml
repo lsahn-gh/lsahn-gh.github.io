@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Memnoth</title>
+    <link>https://memnoth.github.io/tags/django/</link>
+    <description>Recent content in Django on Memnoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <lastBuildDate>Sun, 03 May 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://memnoth.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Pirates use Flask, the Navy uses Django</title>
+      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
+
+&lt;p&gt;경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;&lt;em&gt;Django vs Flask worksheet&lt;/em&gt;&lt;/a&gt;에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;differences-between-django-and-flask:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Django&lt;/th&gt;
+&lt;th&gt;Flask&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;탄생년도&lt;/td&gt;
+&lt;td&gt;2005&lt;/td&gt;
+&lt;td&gt;2010&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;포럼&lt;/td&gt;
+&lt;td&gt;큼&lt;/td&gt;
+&lt;td&gt;새롭고 활발함&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;추천수&lt;/td&gt;
+&lt;td&gt;13,820&lt;/td&gt;
+&lt;td&gt;13,489&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;구독수&lt;/td&gt;
+&lt;td&gt;607&lt;/td&gt;
+&lt;td&gt;1,036&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;landscape:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Django를 사용하는 사이트&lt;/th&gt;
+&lt;th&gt;Flask를 사용하는 사이트&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.eventbrite.com&#34;&gt;Eventbrite&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://prezi.com&#34;&gt;Prezi&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.twilio.com&#34;&gt;Twilio&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://bitbucket.org&#34;&gt;Bitbucket&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/&#34;&gt;President Obama&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://instagram.com&#34;&gt;Instagram&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://close.io&#34;&gt;Close.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.pinterest.com&#34;&gt;Pinterest&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://keen.io&#34;&gt;Keen.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://zerocater.com&#34;&gt;Zerocater&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;performance:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/8gpRqmI.png&#34; alt=&#34;Django vs Flask Performance&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만, 타 언어 프레임워크와 비교하자면 둘의 차이는 신경쓸 필요가 없습니다. &lt;em&gt;Django와 Flask를 사용하는 이유는 개발 속도 향상, 빠른 빌드, 충분히 빠른 프레임워크이기 때문이죠.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/nxayjgx.png&#34; alt=&#34;Django vs Flask Performance Insignificant&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;워크시트&lt;/a&gt;와 당신의 결정을 고려하여 선택하세요.&lt;/p&gt;
+
+&lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
+
+&lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
+번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

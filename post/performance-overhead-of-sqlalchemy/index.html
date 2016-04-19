@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://memnoth.github.io/stylesheets/shiori.css">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://memnoth.github.io/favicon.ico">
+    <title>Performance overhead of sqlalchemy | Memnoth</title>
+    
+    
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-toggle-wrapper visible-xs">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".js-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a href="https://memnoth.github.io/" class="navbar-brand">Memnoth</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+          <ul class="navbar-nav nav">
+            <li><a href="https://memnoth.github.io/post">Archive</a></li>
+
+          </ul>
+          <ul class="navbar-nav nav navbar-right">
+            <li><a href="https://memnoth.github.io/about">About</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="post-header">
+      <h1 class="post-title-main">Performance overhead of sqlalchemy</h1>
+      <p class="text-muted">Feb 27, 2015</p>
+
+    </div>
+    <div class="post-content">
+      <p><script src="//pastebin.com/embed_js.php?i=ju2kAN3C"></script>
+<p></p></p>
+
+<p>위 코드와 같이, Raw SQL, SQLAlchemy&rsquo;s core, SQLAlchemy&rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.<br />
+당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.</p>
+
+<pre><code>$ python orm_performance_overhead.py
+sqlite3: Insert 100000 records in 0.226176977158 seconds
+SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
+SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
+</code></pre>
+
+<p>주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.<br />
+ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야 한다.</p>
+
+<p>웹이 하나의 Request에 하나의 Response로 호출되는 CRUD 구조상, 편리함과 유지보수를 위해 Core 대신 ORM 사용은 고려해 볼 수 있는 부분이다.</p>
+
+<hr />
+
+<p>원문 &ndash; <a href="http://www.pythoncentral.io/sqlalchemy-faqs/">Performance Overhead of SQLAlchemy</a> (Xiaonuo Gantan)<br />
+번역 &ndash; Hyun Jun, An</p>
+
+    </div>
+    <div class="post-footer">
+      <a href="https://memnoth.github.io/post" class="btn btn-primary btn-block btn-lg">View All 7 Articles →</a>
+
+    </div>
+    
+		
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  <div class="col-sm-4">
+    
+
+<h3>
+  Author
+</h3>
+
+<p>
+  <div class="media">
+    
+    <img src="http://www.gravatar.com/avatar/fjkdsfjkdke92439249?s=100" alt="Hyun Jun, An" class="pull-left">
+    
+    
+    <div class="media-body">
+      <h4 class="media-heading">Hyun Jun, An</h4>
+    </div>
+    
+  </div>
+</p>
+
+
+
+
+  </div>
+</div>
+      <div class="row footer">
+        <div class="col-sm-12 text-center">
+          <footer>
+
+&copy; 2015.
+Built with <a href="http://gohugo.io/">Hugo</a> (0.15) and
+<a href="https://github.com/chibicode/hugo-theme-shiori">Shiori Theme</a>.
+
+</footer>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://memnoth.github.io/javascripts/shiori.js"></script>
+    
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
+
