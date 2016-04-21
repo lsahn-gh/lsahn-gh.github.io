@@ -9,7 +9,7 @@
     <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico">
-    <title>Convert encoding of Documents in Linux | Memnoth</title>
+    <title>Designated Initializer in C | Memnoth</title>
     
     
 
@@ -50,28 +50,29 @@
 <div class="row">
   <div class="col-sm-8">
     <div class="post-header">
-      <h1 class="post-title-main">Convert encoding of Documents in Linux</h1>
-      <p class="text-muted">May 5, 2015</p>
+      <h1 class="post-title-main">Designated Initializer in C</h1>
+      <p class="text-muted">Oct 11, 2015</p>
 
     </div>
     <div class="post-content">
-      
+      <p>Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.</p>
 
-<h1 id="introduce:dbdb28318ae90fc9917752c77c70c0a2">Introduce</h1>
+<blockquote>
+<p>int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };</p>
+</blockquote>
 
-<p>리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 <em>따분하고</em> 귀찮다. 특히 미드/영드/일드를 볼때 ..<br />
-그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.</p>
+<p>그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!<br />
+왜 가능한지 궁금하여 검색하던 중에 GCC 문서에서 그 내용을 찾을 수 있었다.</p>
 
-<p><script src="//pastebin.com/embed_js.php?i=80450rEJ"></script>
-<p></p></p>
+<blockquote>
+<p>In ISO C99 you can give the elements in any order, specifying the array indices
+or structure field names they apply to, and GNU C allows this an extension in
+C90 mode as well.</p>
+</blockquote>
 
-<ol>
-<li>스크립트를 vi/vim으로 작성하고 <code>conv2utf8</code>로 ~/Documents에 저장한다.<br /></li>
-<li><code>.bash_aliases</code>파일을 열고 <code>alias c8='$HOME/Documents/conv2utf8'</code>로 저장한다.<br /></li>
-<li><code>source ~/.bashrc</code>로 쉘을 다시 로드한 뒤 <code>c8 /path/to/directory/</code>로 사용한다.<br /></li>
-</ol>
+<p>GCC 컴파일러에선 C90 표준까지도 지원하도록 확장되었다고 한다.</p>
 
-<p></p>
+<p>모든 컴파일러가 이러한 문법을 지원하는 것은 아니니 혼란스러워 하지 말아야 한다.!</p>
 
     </div>
     <div class="post-footer">

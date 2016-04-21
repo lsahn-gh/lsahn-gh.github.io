@@ -17,7 +17,7 @@
       <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
-&lt;h1 id=&#34;convert-encoding-of-documents-in-linux:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Convert Encoding of Documents in Linux&lt;/h1&gt;
+&lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
 
 &lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
