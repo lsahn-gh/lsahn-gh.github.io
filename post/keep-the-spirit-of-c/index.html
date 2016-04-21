@@ -9,7 +9,7 @@
     <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico">
-    <title>Performance overhead of sqlalchemy | Memnoth</title>
+    <title>Keep the spirit of C | Memnoth</title>
     
     
 
@@ -50,32 +50,25 @@
 <div class="row">
   <div class="col-sm-8">
     <div class="post-header">
-      <h1 class="post-title-main">Performance overhead of sqlalchemy</h1>
-      <p class="text-muted">Feb 27, 2015</p>
+      <h1 class="post-title-main">Keep the spirit of C</h1>
+      <p class="text-muted">Oct 9, 2015</p>
 
     </div>
     <div class="post-content">
-      <p><script src="//pastebin.com/embed_js.php?i=ju2kAN3C"></script>
-<p></p></p>
+      <ul>
+<li>Trust the programmer.<br />
+프로그래머를 믿을 것.</li>
+<li>Don&rsquo;t prevent the programmer from doing what needs to be done.<br />
+프로그래머가 사용하는 방법을 제지하지 말 것.</li>
+<li>Keep the language small and simple.<br />
+작고 간단한 언어로 유지할 것.</li>
+<li>Provide only one way to do an operation.<br />
+하나의 명령에 하나의 방법만 제시할 것.</li>
+<li>Make it fast, even if it is not guaranteed to be portable.<br />
+이식성을 포기하더라도 빠르게 만들 것.</li>
+</ul>
 
-<p>위 코드와 같이, Raw SQL, SQLAlchemy&rsquo;s core, SQLAlchemy&rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.<br />
-당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.</p>
-
-<pre><code>$ python orm_performance_overhead.py
-sqlite3: Insert 100000 records in 0.226176977158 seconds
-SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
-SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
-</code></pre>
-
-<p>주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.<br />
-ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야 한다.</p>
-
-<p>웹이 하나의 Request에 하나의 Response로 호출되는 CRUD 구조상, 편리함과 유지보수를 위해 Core 대신 ORM 사용은 고려해 볼 수 있는 부분이다.</p>
-
-<hr />
-
-<p>원문 &ndash; <a href="http://www.pythoncentral.io/sqlalchemy-faqs/">Performance Overhead of SQLAlchemy</a> (Xiaonuo Gantan)<br />
-번역 &ndash; Hyun Jun, An</p>
+<p>C가 가진 자율성과 목적에 대한 이해가 있어야 올바르게 사용할 수 있다.</p>
 
     </div>
     <div class="post-footer">

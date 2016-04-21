@@ -47,6 +47,29 @@ C90 mode as well.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Keep the spirit of C</title>
+      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Trust the programmer.&lt;br /&gt;
+프로그래머를 믿을 것.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t prevent the programmer from doing what needs to be done.&lt;br /&gt;
+프로그래머가 사용하는 방법을 제지하지 말 것.&lt;/li&gt;
+&lt;li&gt;Keep the language small and simple.&lt;br /&gt;
+작고 간단한 언어로 유지할 것.&lt;/li&gt;
+&lt;li&gt;Provide only one way to do an operation.&lt;br /&gt;
+하나의 명령에 하나의 방법만 제시할 것.&lt;/li&gt;
+&lt;li&gt;Make it fast, even if it is not guaranteed to be portable.&lt;br /&gt;
+이식성을 포기하더라도 빠르게 만들 것.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;C가 가진 자율성과 목적에 대한 이해가 있어야 올바르게 사용할 수 있다.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to Get Your Questions Answered</title>
       <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
