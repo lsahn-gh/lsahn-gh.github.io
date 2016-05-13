@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev on Memnoth</title>
+    <link>http://replace-this-with-your-website-url.com/categories/dev/</link>
+    <description>Recent content in Dev on Memnoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <lastBuildDate>Sun, 11 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-website-url.com/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Designated Initializer in C</title>
+      <link>http://replace-this-with-your-website-url.com/post/designated-initializer-in-c/</link>
+      <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/designated-initializer-in-c/</guid>
+      <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!&lt;br /&gt;
+왜 가능한지 궁금하여 검색하던 중에 GCC 문서에서 그 내용을 찾을 수 있었다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In ISO C99 you can give the elements in any order, specifying the array indices
+or structure field names they apply to, and GNU C allows this an extension in
+C90 mode as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;GCC 컴파일러에선 C90 표준까지도 지원하도록 확장되었다고 한다.&lt;/p&gt;
+
+&lt;p&gt;모든 컴파일러가 이러한 문법을 지원하는 것은 아니니 혼란스러워 하지 말아야 한다.!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Keep the spirit of C</title>
+      <link>http://replace-this-with-your-website-url.com/post/keep-the-spirit-of-c/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/keep-the-spirit-of-c/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Trust the programmer.&lt;br /&gt;
+프로그래머를 믿을 것.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t prevent the programmer from doing what needs to be done.&lt;br /&gt;
+프로그래머가 사용하는 방법을 제지하지 말 것.&lt;/li&gt;
+&lt;li&gt;Keep the language small and simple.&lt;br /&gt;
+작고 간단한 언어로 유지할 것.&lt;/li&gt;
+&lt;li&gt;Provide only one way to do an operation.&lt;br /&gt;
+하나의 명령에 하나의 방법만 제시할 것.&lt;/li&gt;
+&lt;li&gt;Make it fast, even if it is not guaranteed to be portable.&lt;br /&gt;
+이식성을 포기하더라도 빠르게 만들 것.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;C가 가진 자율성과 목적에 대한 이해가 있어야 올바르게 사용할 수 있다.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python - Auto generate requirements.txt</title>
+      <link>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</link>
+      <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
+requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.&lt;/p&gt;
+
+&lt;h3 id=&#34;requirements-파일-형식:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requests==1.2.0
+Flask==0.10.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;방법-1:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 1:&lt;/h3&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip freeze &amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:&lt;br /&gt;
+위의 포맷 형식으로 requirements.txt을 생성했다면, &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;로 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;방법-2:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 2:&lt;/h3&gt;
+
+&lt;p&gt;pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.&lt;/p&gt;
+
+&lt;h4 id=&#34;왜-pip-freeze가-아닌가요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;virtualenv를 사용하지 않는 한 pip freeze는 프로젝트에서 사용하지 않는 패키지도 모두 포함합니다.&lt;/li&gt;
+&lt;li&gt;pip freeze는 오로지 당신의 개발 환경에 설치된 패키지들만 사용하여 구성합니다.&lt;/li&gt;
+&lt;li&gt;때로는 패키지를 설치하지 않고 requirements.txt를 생성할 필요가 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;어떻게-사용하나요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install pipreqs
+$ pipreqs /path/to/project
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
+번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
+      <link>http://replace-this-with-your-website-url.com/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <description>
+
+&lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
+&lt;p&gt;&lt;/p&gt;
+&lt;img src=&#34;http://i.imgur.com/Zns27G1.jpg&#34; alt=&#34;Image&#34; /&gt;&lt;br /&gt;
+물론, 그들은 다르게 생각할 겁니다.&lt;/p&gt;
+
+&lt;p&gt;만약 당신이 jQuery를 안다면 &lt;em&gt;Front-End Web Developer&lt;/em&gt; 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 &lt;em&gt;Software Engineer&lt;/em&gt; 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
+(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 &lt;code&gt;int&lt;/code&gt;와 &lt;code&gt;float&lt;/code&gt;의 차이를 설명하지 못 해요.)&lt;/p&gt;
+
+&lt;h2 id=&#34;can-you-actually-code-anything:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;Can you actually code anything?&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.&lt;br /&gt;
+당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?&lt;br /&gt;
+제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 &lt;em&gt;Software Engineer&lt;/em&gt;, &lt;em&gt;Programmer&lt;/em&gt;, &lt;em&gt;Computer Science specialist&lt;/em&gt;, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-5-problems:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;The 5 problems&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;problem-1:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-2:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
+(list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-3:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 3&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
+(처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-4:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 4&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
+([50, 2, 1, 9] list를 받으면 형식화된 95021&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 출력해야 합니다.)
+&lt;strong&gt;Update:&lt;/strong&gt; Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) &lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-4&#34;&gt;You can click here to read my solution.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-5:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 5&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1, 2, &amp;hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
+(예를 들어: 1 + 2 + 34 - 5 + 67 - 8 + 9 = 100.)
+&lt;strong&gt;Update:&lt;/strong&gt; (&lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions&#34;&gt;Here is one solution to this problem&lt;/a&gt; in case you are curious.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;unfortunately-you-aren-t-the-one-that-needs-this:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;Unfortunately, you aren&amp;rsquo;t the one that needs this&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.svpino.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour&#34;&gt;Five programming problems every Software Engineer should be able to solve in less than 1 hour&lt;/a&gt; - Santiago L. Valdarrama&lt;br /&gt;
+번역 - Hyun Jun (Cryptos) An&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;단어의 개념이 아닌 &lt;strong&gt;단어만&lt;/strong&gt; 많이 아는 사람을 의미하는 것 같습니다.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Convert encoding of Documents in Linux</title>
+      <link>http://replace-this-with-your-website-url.com/post/convert-encoding-of-documents-in-linux/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/convert-encoding-of-documents-in-linux/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
+
+&lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
+그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=80450rEJ&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;스크립트를 vi/vim으로 작성하고 &lt;code&gt;conv2utf8&lt;/code&gt;로 ~/Documents에 저장한다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.bash_aliases&lt;/code&gt;파일을 열고 &lt;code&gt;alias c8=&#39;$HOME/Documents/conv2utf8&#39;&lt;/code&gt;로 저장한다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bashrc&lt;/code&gt;로 쉘을 다시 로드한 뒤 &lt;code&gt;c8 /path/to/directory/&lt;/code&gt;로 사용한다.&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pirates use Flask, the Navy uses Django</title>
+      <link>http://replace-this-with-your-website-url.com/post/flask-vs-django/</link>
+      <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/flask-vs-django/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
+
+&lt;p&gt;경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;&lt;em&gt;Django vs Flask worksheet&lt;/em&gt;&lt;/a&gt;에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;differences-between-django-and-flask:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Django&lt;/th&gt;
+&lt;th&gt;Flask&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;탄생년도&lt;/td&gt;
+&lt;td&gt;2005&lt;/td&gt;
+&lt;td&gt;2010&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;포럼&lt;/td&gt;
+&lt;td&gt;큼&lt;/td&gt;
+&lt;td&gt;새롭고 활발함&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;추천수&lt;/td&gt;
+&lt;td&gt;13,820&lt;/td&gt;
+&lt;td&gt;13,489&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;구독수&lt;/td&gt;
+&lt;td&gt;607&lt;/td&gt;
+&lt;td&gt;1,036&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;landscape:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Django를 사용하는 사이트&lt;/th&gt;
+&lt;th&gt;Flask를 사용하는 사이트&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.eventbrite.com&#34;&gt;Eventbrite&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://prezi.com&#34;&gt;Prezi&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.twilio.com&#34;&gt;Twilio&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://bitbucket.org&#34;&gt;Bitbucket&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/&#34;&gt;President Obama&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://instagram.com&#34;&gt;Instagram&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://close.io&#34;&gt;Close.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.pinterest.com&#34;&gt;Pinterest&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://keen.io&#34;&gt;Keen.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://zerocater.com&#34;&gt;Zerocater&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;performance:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/8gpRqmI.png&#34; alt=&#34;Django vs Flask Performance&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만, 타 언어 프레임워크와 비교하자면 둘의 차이는 신경쓸 필요가 없습니다. &lt;em&gt;Django와 Flask를 사용하는 이유는 개발 속도 향상, 빠른 빌드, 충분히 빠른 프레임워크이기 때문이죠.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/nxayjgx.png&#34; alt=&#34;Django vs Flask Performance Insignificant&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;워크시트&lt;/a&gt;와 당신의 결정을 고려하여 선택하세요.&lt;/p&gt;
+
+&lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
+
+&lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
+번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Performance overhead of sqlalchemy</title>
+      <link>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</guid>
+      <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드와 같이, Raw SQL, SQLAlchemy&amp;rsquo;s core, SQLAlchemy&amp;rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.&lt;br /&gt;
+당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python orm_performance_overhead.py
+sqlite3: Insert 100000 records in 0.226176977158 seconds
+SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
+SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.&lt;br /&gt;
+ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야 한다.&lt;/p&gt;
+
+&lt;p&gt;웹이 하나의 Request에 하나의 Response로 호출되는 CRUD 구조상, 편리함과 유지보수를 위해 Core 대신 ORM 사용은 고려해 볼 수 있는 부분이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
+번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

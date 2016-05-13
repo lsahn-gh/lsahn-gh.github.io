@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on Memnoth</title>
-    <link>https://memnoth.github.io/tags/django/</link>
+    <link>http://replace-this-with-your-website-url.com/tags/django/</link>
     <description>Recent content in Django on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Sun, 03 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://replace-this-with-your-website-url.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>http://replace-this-with-your-website-url.com/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;

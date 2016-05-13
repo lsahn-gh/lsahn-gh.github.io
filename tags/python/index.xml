@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Memnoth</title>
-    <link>https://memnoth.github.io/tags/python/</link>
+    <link>http://replace-this-with-your-website-url.com/tags/python/</link>
     <description>Recent content in Python on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://replace-this-with-your-website-url.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -73,10 +74,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>http://replace-this-with-your-website-url.com/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -201,10 +202,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <link>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 

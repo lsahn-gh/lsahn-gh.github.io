@@ -2,83 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memnoth</title>
-    <link>https://memnoth.github.io/</link>
+    <link>http://replace-this-with-your-website-url.com/</link>
     <description>Recent content on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-EN</language>
-    <lastBuildDate>Sat, 16 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <lastBuildDate>Thu, 05 May 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-website-url.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Who Am I</title>
-      <link>https://memnoth.github.io/about/</link>
+      <title>비글본 블랙에서 레지스터 직접 제어하기 #1</title>
+      <link>http://replace-this-with-your-website-url.com/post/directly-access-register-of-beaglebone-black-via-mmap/</link>
+      <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-website-url.com/post/directly-access-register-of-beaglebone-black-via-mmap/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduce:730513dbfb2dd88038a97841faf619b1&#34;&gt;Introduce&lt;/h2&gt;
+
+&lt;p&gt;비글본 블랙이나 기타 여러 임베디드 리눅스 보드(배포판이 존재하는)들은 기본적으로 GPIO에 쉽게 접근할 수 있도록 파일 추상화가 되어 있다.&lt;br /&gt;
+/dev/mem 파일을 이용하여 접근하고자 하였는데, 관련 정보가 생각보다 없어서 이렇게 정리를 해본다.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to:730513dbfb2dd88038a97841faf619b1&#34;&gt;How to&lt;/h2&gt;
+
+&lt;p&gt;데이터 시트나 회로도는 각자 알아서 보셔야 겠지만 GPIO 레지스터에 값을 쓰고 클리어할 수 있는 GPIO_SETDATAOUT와 GPIO_CLEARDATAOUT이 존재한다.&lt;br /&gt;
+그리고 해당 핀을 In/Out 설정할 수 있는 GPIO_OE 또한 있다.&lt;br /&gt;
+베이스 주소에 오프셋 지정하고 값을 써도 반응이 없다.&lt;/p&gt;
+
+&lt;p&gt;이는 GPIO에 대한 CLK을 설정하지 않았기 때문이다.&lt;br /&gt;
+(데이터 시트를 참조하여 CM_PER 레지스터를 확인하라.)&lt;br /&gt;
+&lt;a href=&#34;https://e2e.ti.com/support/arm/sitara_arm/f/791/t/218308&#34;&gt;관련 글타래&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.&lt;br /&gt;
+GPIO_OE = BASE_ADDR + 0x4D&lt;br /&gt;
+GPIO_IN = BASE_ADDR + 0x4E&lt;br /&gt;
+GPIO_OUT = BASE_ADDR + 0x4F&lt;/p&gt;
+
+&lt;p&gt;베이스 주소와 각 레지스터의 주소 값을 계산해주고 각 핀에 따라 사용한다.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://replace-this-with-your-website-url.com/home/about/</link>
       <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/about/</guid>
-      <description>&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Hyun Jun, An&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
+      <guid>http://replace-this-with-your-website-url.com/home/about/</guid>
+      <description>
 
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Born in&lt;/td&gt;
-&lt;td&gt;Jun, 1991&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Location&lt;/td&gt;
-&lt;td&gt;South Korea&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Job&lt;/td&gt;
-&lt;td&gt;Student, 3rd year&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;School&lt;/td&gt;
-&lt;td&gt;Hanbat National University&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Majority&lt;/td&gt;
-&lt;td&gt;Computer Science&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Interested in&lt;/td&gt;
-&lt;td&gt;Microprocessor, Embedded System&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;2nd Language&lt;/td&gt;
-&lt;td&gt;English (Intermediate)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
 </description>
     </item>
     
     <item>
       <title>블로그 변경!</title>
-      <link>https://memnoth.github.io/post/blog-migration/</link>
+      <link>http://replace-this-with-your-website-url.com/post/blog-migration/</link>
       <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/blog-migration/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/blog-migration/</guid>
       <description>&lt;p&gt;Medium에서 사용하다가 몇가지 제약으로 인해 정적 블로그로 이동하였다.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>http://replace-this-with-your-website-url.com/post/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -102,10 +93,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>http://replace-this-with-your-website-url.com/post/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -125,10 +116,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
+      <link>http://replace-this-with-your-website-url.com/post/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/how-to-get-your-questions-answered/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;Introduce&lt;/h2&gt;
@@ -197,10 +188,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -259,10 +250,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>http://replace-this-with-your-website-url.com/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>
 
 &lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
@@ -343,10 +334,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
+      <link>http://replace-this-with-your-website-url.com/post/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
@@ -369,10 +360,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>http://replace-this-with-your-website-url.com/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -497,10 +488,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <link>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>http://replace-this-with-your-website-url.com/post/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme" content="hugo-academic" />
+    <meta name="generator" content="Hugo 0.15" />
+    <meta name="author" content="Hyun Jun, An" />
+    <meta name="description" content="Student of Computer Engineering" />
+
+    <link rel="stylesheet" href="http://replace-this-with-your-website-url.com/css/highlight.min.css" />
+    <link rel="stylesheet" href="http://replace-this-with-your-website-url.com/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://replace-this-with-your-website-url.com/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://replace-this-with-your-website-url.com/css/academicons.min.css" />
+    <link rel="stylesheet" href="http://replace-this-with-your-website-url.com/css/hugo-academic.css" />
+    
+
+
+    <link rel="shortcut icon" href="http://replace-this-with-your-website-url.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://replace-this-with-your-website-url.com/post/directly-access-register-of-beaglebone-black-via-mmap/" />
+
+    <title>비글본 블랙에서 레지스터 직접 제어하기 #1 | Memnoth</title>
+
+</head>
+<body id="top">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://replace-this-with-your-website-url.com/">Memnoth</a>
+        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="http://replace-this-with-your-website-url.com/#top">Home</a></li>
+                
+                <li class="nav-item"><a href="http://replace-this-with-your-website-url.com/#publications">Publications</a></li>
+                
+                <li class="nav-item"><a href="http://replace-this-with-your-website-url.com/#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="http://replace-this-with-your-website-url.com/#projects">Projects</a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">비글본 블랙에서 레지스터 직접 제어하기 #1</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-05-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">Thu, May 5, 2016</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="http://replace-this-with-your-website-url.com/tags/beaglebone">beaglebone</a>
+        
+    </span>
+    
+    
+
+    
+    <div class="pull-right">
+        
+<div class="share">
+
+    <a class="facebook" href="https://www.facebook.com/sharer.php?u=" target="_blank">
+        <i class="fa fa-facebook-square"></i>
+        <span class="hidden">Facebook</span>
+    </a>
+
+    <a class="twitter" href="https://twitter.com/intent/tweet?text=&amp;url=" target="_blank">
+        <i class="fa fa-twitter-square"></i>
+        <span class="hidden">Twitter</span>
+    </a>
+
+    <a class="email" href="mailto:?subject=&amp;body=">
+        <i class="fa fa-envelope-square"></i>
+        <span class="hidden">Email</span>
+    </a>
+
+</div>
+
+
+    </div>
+    
+
+</div>
+
+
+        <div class="post" itemprop="articleBody">
+            
+
+<h2 id="introduce:730513dbfb2dd88038a97841faf619b1">Introduce</h2>
+
+<p>비글본 블랙이나 기타 여러 임베디드 리눅스 보드(배포판이 존재하는)들은 기본적으로 GPIO에 쉽게 접근할 수 있도록 파일 추상화가 되어 있다.<br />
+/dev/mem 파일을 이용하여 접근하고자 하였는데, 관련 정보가 생각보다 없어서 이렇게 정리를 해본다.</p>
+
+<h2 id="how-to:730513dbfb2dd88038a97841faf619b1">How to</h2>
+
+<p>데이터 시트나 회로도는 각자 알아서 보셔야 겠지만 GPIO 레지스터에 값을 쓰고 클리어할 수 있는 GPIO_SETDATAOUT와 GPIO_CLEARDATAOUT이 존재한다.<br />
+그리고 해당 핀을 In/Out 설정할 수 있는 GPIO_OE 또한 있다.<br />
+베이스 주소에 오프셋 지정하고 값을 써도 반응이 없다.</p>
+
+<p>이는 GPIO에 대한 CLK을 설정하지 않았기 때문이다.<br />
+(데이터 시트를 참조하여 CM_PER 레지스터를 확인하라.)<br />
+<a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/218308">관련 글타래</a></p>
+
+<p>또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.<br />
+GPIO_OE = BASE_ADDR + 0x4D<br />
+GPIO_IN = BASE_ADDR + 0x4E<br />
+GPIO_OUT = BASE_ADDR + 0x4F</p>
+
+<p>베이스 주소와 각 레지스터의 주소 값을 계산해주고 각 핀에 따라 사용한다.</p>
+
+        </div>
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="http://replace-this-with-your-website-url.com/post/blog-migration/"><span aria-hidden="true">&larr;</span> 블로그 변경!</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        
+    </div>
+</section>
+
+
+
+    <footer class="site-footer">
+    <div class="inner">
+        <p class="powered-by">
+
+            &copy; 2016 Your Name &middot; 
+
+            Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+            <span class="pull-right"><a href="#" id="back_to_top"><span class="button_icon"><i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i></span></a></span>
+
+        </p>
+    </div>
+</footer>
+
+ </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+        <script src="http://replace-this-with-your-website-url.com/js/jquery-1.12.3.min.js"></script>
+        <script src="http://replace-this-with-your-website-url.com/js/bootstrap.min.js"></script>
+        <script src="http://replace-this-with-your-website-url.com/js/hugo-academic.js"></script>
+        
+
+        
+
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        
+        
+
+    </body>
+</html>
+
