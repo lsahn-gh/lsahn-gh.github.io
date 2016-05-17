@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Beaglebone on Memnoth</title>
-    <link>/categories/beaglebone/</link>
-    <description>Recent content in Beaglebone on Memnoth</description>
+    <title>Beagleboard on Memnoth</title>
+    <link>/tags/beagleboard/</link>
+    <description>Recent content in Beagleboard on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Thu, 05 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/beaglebone/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/beagleboard/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>비글본 블랙에서 레지스터 직접 제어하기 #1</title>
@@ -33,10 +33,12 @@
 (데이터 시트를 참조하여 CM_PER 레지스터를 확인하라.)&lt;br /&gt;
 &lt;a href=&#34;https://e2e.ti.com/support/arm/sitara_arm/f/791/t/218308&#34;&gt;관련 글타래&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.&lt;br /&gt;
-GPIO_OE = BASE_ADDR + 0x4D&lt;br /&gt;
-GPIO_IN = BASE_ADDR + 0x4E&lt;br /&gt;
-GPIO_OUT = BASE_ADDR + 0x4F&lt;/p&gt;
+&lt;p&gt;또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;GPIO_OE = BASE_ADDR + 0x4D  
+GPIO_IN = BASE_ADDR + 0x4E  
+GPIO_OUT = BASE_ADDR + 0x4F  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;베이스 주소와 각 레지스터의 주소 값을 계산해주고 각 핀에 따라 사용한다.&lt;/p&gt;
 </description>

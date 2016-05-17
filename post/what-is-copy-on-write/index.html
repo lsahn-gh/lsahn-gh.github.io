@@ -19,9 +19,9 @@
 
 
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="/categories/tips/" />
+    <link rel="canonical" href="/post/what-is-copy-on-write/" />
 
-    <title>Tips | Memnoth</title>
+    <title>What is Copy-On-Write? | Memnoth</title>
 
 </head>
 <body id="top">
@@ -63,15 +63,110 @@
 
 <div class="container">
 
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+        <h1 itemprop="name">What is Copy-On-Write?</h1>
+
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2016-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">Tue, May 17, 2016</time>
+    </span>
+
     
     
-    <div>
-        <h2><a href="/post/how-to-get-your-questions-answered/">How to Get Your Questions Answered</a></h2>
-        <p>Introduce 사람들은 왜 당신의 질문에 답변하지 않는 걸까? 이 글은 당신의 시간을 절약하며, 빠른 답변을 얻을 수 있도록 도와줄지도 모른다. 당신은 왜 답변 받지 못하는 걸까? 상대방의 입장에서 당신의 질문을 객관적으로 살펴볼 필요가 있다. 아마 다음과 같은 공통된 문제점을 가지고 있을 것이다. 질문이 너무 광범위하다. 당신의 질문이 광범위하고 추상적이라 디테일하게 다시 물어봐야 한다. 그냥 안 물어보고 신경 끈다. 불필요한 내용이 많고 길다. 긴 글 읽다가 지친다, 대충 읽고 대충 답변하거나 그냥 무시한다.</p>
-    </div>
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="/tags/os">os</a>
+        
+    </span>
+    
     
 
     
+    <div class="pull-right">
+        
+<div class="share">
+
+    <a class="facebook" href="https://www.facebook.com/sharer.php?u=" target="_blank">
+        <i class="fa fa-facebook-square"></i>
+        <span class="hidden">Facebook</span>
+    </a>
+
+    <a class="twitter" href="https://twitter.com/intent/tweet?text=&amp;url=" target="_blank">
+        <i class="fa fa-twitter-square"></i>
+        <span class="hidden">Twitter</span>
+    </a>
+
+    <a class="email" href="mailto:?subject=&amp;body=">
+        <i class="fa fa-envelope-square"></i>
+        <span class="hidden">Email</span>
+    </a>
+
+</div>
+
+
+    </div>
+    
+
+</div>
+
+
+        <div class="post" itemprop="articleBody">
+            <p><em>Copy-On-Write</em> 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.</p>
+
+<p>아래의 코드가 있다.</p>
+
+<pre><code class="language-c">int pid, temp = 1;
+pid = folk();
+
+if (pid == 0)
+{
+    printf(&quot;I'm a child!\n&quot;);
+    temp = 2;
+}
+else if (pid &gt; 0)
+{
+    printf(&quot;I'm a parent!\n&quot;);
+}
+</code></pre>
+
+<p>folk()가 실행되고 나서 메모리는 아래의 그림과 같다.</p>
+
+<p><img src="/imgs/cow01.png" alt="cow1" /></p>
+
+<p>프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.<br />
+Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Data가 모두 똑같으므로 같은 메모리를 참조하다가 <code>temp = 2</code>를 만나는 순간 Child Process의 Instance는 변경되므로 아래처럼 변경된다.</p>
+
+<p><img src="/imgs/cow02.png" alt="cow2" /></p>
+
+<p><code>temp = 2</code>가 Space 3의 Context라 가정하면 Child Process를 위한 Space 3가 생성되고 Copy된다.</p>
+
+<p>디테일한 메커니즘은 더 복잡하겠지만 학부 수준에서는 이 정도만 알아도 된다.</p>
+
+        </div>
+    </article>
+
+    <nav>
+    <ul class="pager">
+        
+        <li class="previous"><a href="/post/directly-access-register-of-beaglebone-black-via-mmap/"><span aria-hidden="true">&larr;</span> 비글본 블랙에서 레지스터 직접 제어하기 #1</a></li>
+        
+
+        
+    </ul>
+</nav>
+
+    
+<section id="comments">
+    <div id="disqus_thread">
+        
+    </div>
+</section>
+
 
 
     <footer class="site-footer">
@@ -88,7 +183,7 @@
     </div>
 </footer>
 
-</div>
+ </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
         <script src="/js/jquery-1.12.3.min.js"></script>

@@ -49,9 +49,9 @@
                 
                 <li class="nav-item"><a href="/#top">Home</a></li>
                 
-                <li class="nav-item"><a href="/#publications">Publications</a></li>
-                
                 <li class="nav-item"><a href="/#posts">Posts</a></li>
+                
+                <li class="nav-item"><a href="/tags/beagleboard">Beagleboard</a></li>
                 
                 <li class="nav-item"><a href="/#projects">Projects</a></li>
                 
@@ -80,7 +80,7 @@
     <span class="article-tags">
         <i class="fa fa-tags"></i>
         
-        <a class="article-tag-link" href="/tags/beaglebone">beaglebone</a>
+        <a class="article-tag-link" href="/tags/beagleboard">beagleboard</a>
         
     </span>
     
@@ -133,10 +133,12 @@
 (데이터 시트를 참조하여 CM_PER 레지스터를 확인하라.)<br />
 <a href="https://e2e.ti.com/support/arm/sitara_arm/f/791/t/218308">관련 글타래</a></p>
 
-<p>또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.<br />
-GPIO_OE = BASE_ADDR + 0x4D<br />
-GPIO_IN = BASE_ADDR + 0x4E<br />
-GPIO_OUT = BASE_ADDR + 0x4F</p>
+<p>또는 CLK 설정 없이 아래의 주소에 직접 써도 가능하다.</p>
+
+<pre><code class="language-c">GPIO_OE = BASE_ADDR + 0x4D  
+GPIO_IN = BASE_ADDR + 0x4E  
+GPIO_OUT = BASE_ADDR + 0x4F  
+</code></pre>
 
 <p>베이스 주소와 각 레지스터의 주소 값을 계산해주고 각 핀에 따라 사용한다.</p>
 
@@ -149,6 +151,8 @@ GPIO_OUT = BASE_ADDR + 0x4F</p>
         <li class="previous"><a href="/post/blog-migration/"><span aria-hidden="true">&larr;</span> 블로그 변경!</a></li>
         
 
+        
+        <li class="next"><a href="/post/what-is-copy-on-write/">What is Copy-On-Write? <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>
