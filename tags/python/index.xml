@@ -7,8 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
-    <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Babelian</title>
+      <link>/project/babelian/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/project/babelian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask-Register</title>
+      <link>/project/flask-register/</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/project/flask-register/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
@@ -198,6 +216,15 @@ $ pipreqs /path/to/project
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>micropython-frostapi</title>
+      <link>/project/micropython-frostapi/</link>
+      <pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/project/micropython-frostapi/</guid>
+      <description></description>
     </item>
     
     <item>
