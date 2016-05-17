@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memnoth</title>
-    <link>/</link>
+    <link>https://memnoth.github.io/</link>
     <description>Recent content on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Tue, 17 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;
@@ -36,12 +36,12 @@ else if (pid &amp;gt; 0)
 
 &lt;p&gt;folk()가 실행되고 나서 메모리는 아래의 그림과 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/imgs/cow01.png&#34; alt=&#34;cow1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://memnoth.github.io/imgs/cow01.png&#34; alt=&#34;cow1&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.&lt;br /&gt;
 Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Data가 모두 똑같으므로 같은 메모리를 참조하다가 &lt;code&gt;temp = 2&lt;/code&gt;를 만나는 순간 Child Process의 Instance는 변경되므로 아래처럼 변경된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/imgs/cow02.png&#34; alt=&#34;cow2&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://memnoth.github.io/imgs/cow02.png&#34; alt=&#34;cow2&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;temp = 2&lt;/code&gt;가 Space 3의 Context라 가정하면 Child Process를 위한 Space 3가 생성되고 Copy된다.&lt;/p&gt;
 
@@ -51,10 +51,10 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     
     <item>
       <title>비글본 블랙에서 레지스터 직접 제어하기 #1</title>
-      <link>/post/directly-access-register-of-beaglebone-black-via-mmap/</link>
+      <link>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</link>
       <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/directly-access-register-of-beaglebone-black-via-mmap/</guid>
+      <guid>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:730513dbfb2dd88038a97841faf619b1&#34;&gt;Introduce&lt;/h2&gt;
@@ -85,10 +85,10 @@ GPIO_OUT = BASE_ADDR + 0x4F
     
     <item>
       <title>about</title>
-      <link>/home/about/</link>
+      <link>https://memnoth.github.io/home/about/</link>
       <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/about/</guid>
+      <guid>https://memnoth.github.io/home/about/</guid>
       <description>
 
 &lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
@@ -97,20 +97,20 @@ GPIO_OUT = BASE_ADDR + 0x4F
     
     <item>
       <title>블로그 변경!</title>
-      <link>/post/blog-migration/</link>
+      <link>https://memnoth.github.io/post/blog-migration/</link>
       <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/blog-migration/</guid>
+      <guid>https://memnoth.github.io/post/blog-migration/</guid>
       <description>&lt;p&gt;Medium에서 사용하다가 몇가지 제약으로 인해 정적 블로그로 이동하였다.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -134,10 +134,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -157,10 +157,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>/post/how-to-get-your-questions-answered/</link>
+      <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/how-to-get-your-questions-answered/</guid>
+      <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;Introduce&lt;/h2&gt;
@@ -229,10 +229,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -291,10 +291,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>
 
 &lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
@@ -375,10 +375,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>/post/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
@@ -401,10 +401,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>/post/flask-vs-django/</link>
+      <link>https://memnoth.github.io/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -529,10 +529,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>/post/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 

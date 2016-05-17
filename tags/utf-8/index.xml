@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Utf 8 on Memnoth</title>
-    <link>/tags/utf-8/</link>
+    <link>https://memnoth.github.io/tags/utf-8/</link>
     <description>Recent content in Utf 8 on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/utf-8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/tags/utf-8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>/post/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
