@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dev on Memnoth</title>
-    <link>https://memnoth.github.io/categories/dev/</link>
+    <link>/categories/dev/</link>
     <description>Recent content in Dev on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Sun, 11 Oct 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>/post/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>/post/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -39,10 +39,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>/post/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>/post/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -62,10 +62,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -124,10 +124,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>
 
 &lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
@@ -208,10 +208,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
+      <link>/post/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
+      <guid>/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
@@ -234,10 +234,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -362,10 +362,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <link>/post/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>/post/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 

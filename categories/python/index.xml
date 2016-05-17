@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Memnoth</title>
-    <link>https://memnoth.github.io/categories/python/</link>
+    <link>/categories/python/</link>
     <description>Recent content in Python on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -74,10 +74,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;

@@ -2,68 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://memnoth.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2016-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/what-is-copy-on-write/</loc>
+    <loc>/post/what-is-copy-on-write/</loc>
     <lastmod>2016-05-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</loc>
+    <loc>/post/directly-access-register-of-beaglebone-black-via-mmap/</loc>
     <lastmod>2016-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/home/about/</loc>
+    <loc>/home/about/</loc>
     <lastmod>2016-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/blog-migration/</loc>
+    <loc>/post/blog-migration/</loc>
     <lastmod>2016-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/designated-initializer-in-c/</loc>
+    <loc>/post/designated-initializer-in-c/</loc>
     <lastmod>2015-10-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/keep-the-spirit-of-c/</loc>
+    <loc>/post/keep-the-spirit-of-c/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/how-to-get-your-questions-answered/</loc>
+    <loc>/post/how-to-get-your-questions-answered/</loc>
     <lastmod>2015-05-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/python-auto-generate-requirements/</loc>
+    <loc>/post/python-auto-generate-requirements/</loc>
     <lastmod>2015-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</loc>
+    <loc>/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</loc>
     <lastmod>2015-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</loc>
+    <loc>/post/convert-encoding-of-documents-in-linux/</loc>
     <lastmod>2015-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/flask-vs-django/</loc>
+    <loc>/post/flask-vs-django/</loc>
     <lastmod>2015-05-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</loc>
+    <loc>/post/performance-overhead-of-sqlalchemy/</loc>
     <lastmod>2015-02-27T00:00:00+00:00</lastmod>
   </url>
   

@@ -10,16 +10,16 @@
     <meta name="author" content="Hyun Jun, An" />
     <meta name="description" content="Student of Computer Engineering" />
 
-    <link rel="stylesheet" href="https://memnoth.github.io/css/highlight.min.css" />
-    <link rel="stylesheet" href="https://memnoth.github.io/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://memnoth.github.io/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://memnoth.github.io/css/academicons.min.css" />
-    <link rel="stylesheet" href="https://memnoth.github.io/css/hugo-academic.css" />
+    <link rel="stylesheet" href="css/highlight.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/academicons.min.css" />
+    <link rel="stylesheet" href="css/hugo-academic.css" />
     
 
 
-    <link rel="shortcut icon" href="https://memnoth.github.io/img/favicon.ico" type="image/x-icon" />
-    <link rel="canonical" href="https://memnoth.github.io/tags/os/" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="/tags/os/" />
 
     <title>Os | Memnoth</title>
 
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://memnoth.github.io/">Memnoth</a>
+            <a class="navbar-brand" href="">Memnoth</a>
         </div>
 
         
@@ -47,13 +47,13 @@
             
             <ul class="nav navbar-nav navbar-right">
                 
-                <li class="nav-item"><a href="https://memnoth.github.io/#top">Home</a></li>
+                <li class="nav-item"><a href="#top">Home</a></li>
                 
-                <li class="nav-item"><a href="https://memnoth.github.io/#posts">Posts</a></li>
+                <li class="nav-item"><a href="#posts">Posts</a></li>
                 
-                <li class="nav-item"><a href="https://memnoth.github.io/tags/beagleboard">Beagleboard</a></li>
+                <li class="nav-item"><a href="tags/beagleboard">Beagleboard</a></li>
                 
-                <li class="nav-item"><a href="https://memnoth.github.io/#projects">Projects</a></li>
+                <li class="nav-item"><a href="#projects">Projects</a></li>
                 
             </ul>
 
@@ -66,7 +66,7 @@
     
     
     <div>
-        <h2><a href="https://memnoth.github.io/post/what-is-copy-on-write/">What is Copy-On-Write?</a></h2>
+        <h2><a href="/post/what-is-copy-on-write/">What is Copy-On-Write?</a></h2>
         <p>Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다. 아래의 코드가 있다. int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&quot;I'm a child!\n&quot;); temp = 2; } else if (pid &gt; 0) { printf(&quot;I'm a parent!\n&quot;); } folk()가 실행되고 나서 메모리는 아래의 그림과 같다. 프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.</p>
     </div>
     
@@ -91,9 +91,9 @@
 </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-        <script src="https://memnoth.github.io/js/jquery-1.12.3.min.js"></script>
-        <script src="https://memnoth.github.io/js/bootstrap.min.js"></script>
-        <script src="https://memnoth.github.io/js/hugo-academic.js"></script>
+        <script src="js/jquery-1.12.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/hugo-academic.js"></script>
         
 
         

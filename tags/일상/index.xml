@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>일상 on Memnoth</title>
-    <link>https://memnoth.github.io/tags/%EC%9D%BC%EC%83%81/</link>
+    <link>/tags/%EC%9D%BC%EC%83%81/</link>
     <description>Recent content in 일상 on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Your Name</copyright>
     <lastBuildDate>Sat, 16 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/tags/%EC%9D%BC%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/%EC%9D%BC%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>블로그 변경!</title>
-      <link>https://memnoth.github.io/post/blog-migration/</link>
+      <link>/post/blog-migration/</link>
       <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/blog-migration/</guid>
+      <guid>/post/blog-migration/</guid>
       <description>&lt;p&gt;Medium에서 사용하다가 몇가지 제약으로 인해 정적 블로그로 이동하였다.&lt;/p&gt;
 </description>
     </item>
