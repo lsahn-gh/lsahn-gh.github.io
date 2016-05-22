@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sqlalchemy on Memnoth</title>
-    <link>/tags/sqlalchemy/</link>
+    <link>https://memnoth.github.io/tags/sqlalchemy/</link>
     <description>Recent content in Sqlalchemy on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Fri, 27 Feb 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>/post/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 

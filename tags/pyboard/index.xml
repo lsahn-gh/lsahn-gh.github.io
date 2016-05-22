@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pyboard on Memnoth</title>
-    <link>/tags/pyboard/</link>
+    <link>https://memnoth.github.io/tags/pyboard/</link>
     <description>Recent content in Pyboard on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Sat, 14 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/pyboard/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/tags/pyboard/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>micropython-frostapi</title>
-      <link>/project/micropython-frostapi/</link>
+      <link>https://memnoth.github.io/project/micropython-frostapi/</link>
       <pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/project/micropython-frostapi/</guid>
+      <guid>https://memnoth.github.io/project/micropython-frostapi/</guid>
       <description></description>
     </item>
     

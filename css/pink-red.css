@@ -1,0 +1,20 @@
+a, a:visited, h3.post-title a:hover, .navbar-default .navbar-nav li a:hover, .btn-primary, .btn-primary.btn-outline {
+    color: #F2385A;
+}
+
+a:hover {
+    color: #3B7355;
+    text-decoration: none;
+}
+
+a:hover, .btn-primary.btn-outline:hover {
+    border-color: #005181;
+}
+
+.btn-primary {
+    border-color: #F2385A;
+}
+
+.btn-priamry, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:visited, .btn-primary.btn-outline:active {
+    background-color: #F2385A;
+}

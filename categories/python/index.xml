@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Memnoth</title>
-    <link>/categories/python/</link>
+    <link>https://memnoth.github.io/categories/python/</link>
     <description>Recent content in Python on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -74,10 +74,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>/post/flask-vs-django/</link>
+      <link>https://memnoth.github.io/post/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -196,6 +196,36 @@ $ pipreqs /path/to/project
 &lt;hr /&gt;
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
+번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Performance overhead of sqlalchemy</title>
+      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <description>&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=ju2kAN3C&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;위 코드와 같이, Raw SQL, SQLAlchemy&amp;rsquo;s core, SQLAlchemy&amp;rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.&lt;br /&gt;
+당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python orm_performance_overhead.py
+sqlite3: Insert 100000 records in 0.226176977158 seconds
+SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
+SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.&lt;br /&gt;
+ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야 한다.&lt;/p&gt;
+
+&lt;p&gt;웹이 하나의 Request에 하나의 Response로 호출되는 CRUD 구조상, 편리함과 유지보수를 위해 Core 대신 ORM 사용은 고려해 볼 수 있는 부분이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>

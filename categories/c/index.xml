@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on Memnoth</title>
-    <link>/categories/c/</link>
+    <link>https://memnoth.github.io/categories/c/</link>
     <description>Recent content in C on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Sun, 11 Oct 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/categories/c/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -39,10 +39,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;

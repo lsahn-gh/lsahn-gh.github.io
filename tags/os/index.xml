@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Os on Memnoth</title>
-    <link>/tags/os/</link>
+    <link>https://memnoth.github.io/tags/os/</link>
     <description>Recent content in Os on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Tue, 17 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;
@@ -36,12 +36,12 @@ else if (pid &amp;gt; 0)
 
 &lt;p&gt;folk()가 실행되고 나서 메모리는 아래의 그림과 같다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/imgs/cow01.png&#34; alt=&#34;cow1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://memnoth.github.io/imgs/cow01.png&#34; alt=&#34;cow1&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.&lt;br /&gt;
 Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Data가 모두 똑같으므로 같은 메모리를 참조하다가 &lt;code&gt;temp = 2&lt;/code&gt;를 만나는 순간 Child Process의 Instance는 변경되므로 아래처럼 변경된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/imgs/cow02.png&#34; alt=&#34;cow2&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://memnoth.github.io/imgs/cow02.png&#34; alt=&#34;cow2&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;temp = 2&lt;/code&gt;가 Space 3의 Context라 가정하면 Child Process를 위한 Space 3가 생성되고 Copy된다.&lt;/p&gt;
 

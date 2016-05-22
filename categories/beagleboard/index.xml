@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beagleboard on Memnoth</title>
-    <link>/categories/beagleboard/</link>
+    <link>https://memnoth.github.io/categories/beagleboard/</link>
     <description>Recent content in Beagleboard on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Thu, 05 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/beagleboard/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/categories/beagleboard/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>비글본 블랙에서 레지스터 직접 제어하기 #1</title>
-      <link>/post/directly-access-register-of-beaglebone-black-via-mmap/</link>
+      <link>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</link>
       <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/directly-access-register-of-beaglebone-black-via-mmap/</guid>
+      <guid>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce:730513dbfb2dd88038a97841faf619b1&#34;&gt;Introduce&lt;/h2&gt;
