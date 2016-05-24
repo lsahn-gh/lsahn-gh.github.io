@@ -3,18 +3,18 @@
   
   <url>
     <loc>https://memnoth.github.io/</loc>
-    <lastmod>2016-05-17T00:00:00+00:00</lastmod>
+    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</loc>
+    <lastmod>2016-05-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://memnoth.github.io/post/what-is-copy-on-write/</loc>
     <lastmod>2016-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/post/directly-access-register-of-beaglebone-black-via-mmap/</loc>
-    <lastmod>2016-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
