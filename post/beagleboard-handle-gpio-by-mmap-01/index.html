@@ -211,7 +211,7 @@ gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADD
 <p>&mdash; Patricia N.<sup class="footnote-ref" id="fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2"><a rel="footnote" href="#fn:15a0af3e48ae0f0cd39b3d9e364aac23:2">2</a></sup></p>
 </blockquote>
 
-<p>따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL<sup class="footnote-ref" id="fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3"><a rel="footnote" href="#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3">3</a></sup>의 <code>MODULEMODE</code>입니다.<br />
+<p>따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL<sup class="footnote-ref" id="fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3"><a rel="footnote" href="#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3">3</a></sup>의 <code>MODULEMODE</code>을 확인해야 합니다.<br />
 해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.</p>
 
 <p>아래 소스코드를 분석하여 확실하게 이해하세요.<br />

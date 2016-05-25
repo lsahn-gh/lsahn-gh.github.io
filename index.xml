@@ -98,7 +98,7 @@ gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADD
 &lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;입니다.&lt;br /&gt;
+&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
 해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.&lt;/p&gt;
 
 &lt;p&gt;아래 소스코드를 분석하여 확실하게 이해하세요.&lt;br /&gt;
