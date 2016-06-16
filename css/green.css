@@ -1,21 +1,19 @@
 a, a:visited, h3.article-title a:hover, .navbar-default .navbar-nav li a:hover, .btn-primary, .btn-primary.btn-outline, .article-metadata a {
-    color: #F2385A;
+    color: rgb(76,175,80);
 }
 
 .article-metadata a:hover, a:hover {
-    color: #3B7355;
-    text-decoration: none;
+    color: rgb(0,230,118);
 }
 
 a:hover, .btn-primary.btn-outline:hover {
-    border-color: #005181;
-    text-decoration: none;
+    border-color: rgb(0,230,118);
 }
 
 .btn-primary, .btn-primary.btn-outline {
-    border-color: #F2385A;
+    border-color: rgb(76,175,80);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:visited, .btn-primary.btn-outline:active {
-    background-color: #F2385A;
+    background-color: rgb(76,175,80);
 }

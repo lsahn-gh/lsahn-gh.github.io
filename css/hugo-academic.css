@@ -3,11 +3,6 @@
  *  https://github.com/gcushen/hugo-academic
  **************************************************/
 
-/*************************************************
- *  Fonts
- **************************************************/
-
-@import url(//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono);
 
 /*************************************************
  *  Core
@@ -17,16 +12,21 @@ html {
     box-sizing: border-box;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: inherit;
 }
 
-.row:after, .row:before {
+.row:after,
+.row:before {
     content: " ";
     display: table;
 }
 
-html, body, p {
+html,
+body,
+p {
     font-family: 'Merriweather', serif;
     font-size: 16px;
     line-height: 1.65;
@@ -46,7 +46,13 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-default {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-default {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     line-height: 1.25;
@@ -63,30 +69,53 @@ h3 {
     font-weight: 700;
 }
 
-a, a:visited, h3.post-title a:hover {
+h4 {
+    font-weight: 700;
+}
+
+a, a:visited,
+h3.article-title a:hover {
     color: #0095eb;
     text-decoration:none;
     transition:color 0.6s ease;
-    -webkit-transition:color 0.6s ease;
 }
 
 a:hover {
     color: #005181;
 }
 
-h3.post-title a {
-    color: #151515;
-    transition: color 0.6s ease;
-    -webkit-transition: color 0.6s ease;
-}
-
-img, video {
+img,
+video {
     height: auto;
     max-width: 100%;
     display: block;
 }
 
-pre, code {
+figcaption:before {
+    font-weight: 700;
+    text-transform: uppercase;
+    content: "Figure " counter(captions) ": ";
+}
+
+figcaption {
+    display: block;
+    margin-top: 0.75em;
+    line-height: 1.25;
+    font-size: 1rem;
+    margin-bottom: 1.65rem;
+    font-family: 'Lato', sans-serif;
+    counter-increment: captions;
+}
+
+figcaption h4 {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+pre,
+code {
     font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
 }
 
@@ -102,25 +131,6 @@ pre {
     .space-below {
         margin-bottom: 10px;
     }
-}
-
-/*************************************************
- *  Footer
- **************************************************/
-
-footer {
-    margin: 4rem 0 0;
-    padding: 2rem 0;
-    width: 100%;
-}
-
-footer p {
-    font-size: 0.75rem;
-    text-align: center;
-}
-
-.site-footer, footer a#back_to_top i {
-    color: #899596;
 }
 
 /*************************************************
@@ -145,6 +155,99 @@ footer p {
     background-color: rgb(247, 247, 247);
 }
 
+.section-heading h1 {
+    margin: 0 0 10px 0;
+}
+
+.section-heading p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #b2b2b2;
+}
+
+/*************************************************
+ *  Biography
+ **************************************************/
+
+#profile {
+    text-align: center;
+    padding: 30px 10px;
+    position: relative;
+}
+
+#profile .portrait {
+    background-image: url('../img/portrait.jpg');
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+
+#profile .portrait-title h2 {
+    font-size: 1.75em;
+    font-weight: 300;
+    color: #000000;
+    margin: 20px 0 10px 0;
+}
+
+#profile .portrait-title h3 {
+    font-size: 1.13em;
+    font-weight: 300;
+    color: #AAAAAA;
+    margin: 0px 0 10px 0;
+}
+
+#profile ul.social-icon {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+#profile .social-icon li {
+    margin-right: 10px;
+}
+
+#profile .social-icon li:last-of-type {
+    margin-right: 0;
+}
+
+#profile .social-icon li:hover {
+    transform: scale(1.2)
+}
+
+.big-icon {
+    font-size: 40px;
+}
+
+ul.ul-edu {
+    list-style: none;
+}
+
+ul.ul-edu li {
+    position: relative;
+    padding: 0px 15px 4px 3px;
+    color: #333333;
+}
+
+ul.ul-edu li .description p {
+    margin: 0;
+}
+
+ul.ul-edu li .description p.course {
+    font-size: 1em;
+}
+
+ul.ul-edu li .description p.institution {
+    font-size: 0.88em;
+}
+
 /*************************************************
  *  Sharing
  **************************************************/
@@ -154,22 +257,29 @@ footer p {
 }
 
 ul.share {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
-    text-align: right;
     margin: 0;
     padding: 0;
 }
 
 ul.share li {
-    display: inline-block;
+    display: inline-flex;
+    margin-right: 5px;
+}
+
+ul.share li:last-of-type {
+    margin-right: 0;
 }
 
 ul.share li .fa {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    line-height: 37px;
-    font-size: 18px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
     text-align: center;
     transition: all 150ms ease-in-out;
     color: #fff;
@@ -177,14 +287,13 @@ ul.share li .fa {
 
 ul.share li a {
     background-color: #b5c6ce;
-    display: inline-block;
+    display: block;
     border-radius: 50%;
     text-decoration: none !important;
+    margin: 0;
 }
 
 ul.share li:hover .fa {
-    -moz-transform: scale(1.4);
-    -webkit-transform: scale(1.4);
     transform: scale(1.4)
 }
 
@@ -192,10 +301,28 @@ ul.share li:hover .fa {
  *  Blog Articles
  **************************************************/
 
+.article-title {
+    font-size: 1.75rem;
+}
+
+h3.article-title a {
+    color: #151515;
+    transition: color 0.6s ease;
+}
+
 .article-metadata {
     margin-bottom: 20px;
-    line-height: 37px; /* Match share bar line height. */
+    line-height: 30px; /* Match share bar line height. */
     font-size: 14px;
+    letter-spacing: 0.03em;
+}
+
+.article-metadata a:hover {
+    color: #0095eb;
+}
+
+.article-metadata a {
+    color: #888;
 }
 
 .article-list-item {
@@ -210,18 +337,20 @@ ul.share li:hover .fa {
     margin-bottom: 5px;
 }
 
-.article-metadata .article-date, .article-metadata .article-tags {
+.article-metadata .article-date,
+.article-metadata .article-tags {
     margin-right: 10px;
     color: #888;
 }
 
-.article-style img, .article-style video {
-    box-shadow: 0 0 1px #edefed;
-    -moz-box-shadow: 0 0 1px #edefed;
-    -webkit-box-shadow: 0 0 1px #edefed;
-    box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed; */
-    -moz-box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed;
-    -webkit-box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed;
+.article-banner {
+    width: 100%;
+    height: auto;
+}
+
+.article-style img,
+.article-style video {
+    box-shadow: 1px 1px 0px #edefed,-1px -1px 0px #edefed,1px -1px 0px #edefed,-1px 1px 0px #edefed;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
@@ -248,18 +377,54 @@ ul.share li:hover .fa {
  *  Publications
  **************************************************/
 
-#pub_list h3 {
-    margin-top: 0;
-}
-
 .pub-icon {
     color: #03396c;
     font-size: 0.81em;
     padding-top: 6px;
 }
 
-.citation_authors {
+.pub-banner {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pub .pub-title {
+    margin-bottom: 5px;
+}
+
+.pub .pub-authors {
     font-style: italic;
+    line-height: 30px; /* Match share bar line height. */
+}
+
+.pub .pub-row-heading {
+    font-weight: bold;
+}
+
+.pub-list-item {
+    margin-bottom: 40px;
+}
+
+.pub-list-item .pub-abstract {
+    font-size: 1.13em;
+}
+
+.pub-list-item .pub-authors {
+    line-height: normal;
+    font-style: normal;
+    font-size: 1.13em;
+    color: #3170A5;
+}
+
+.pub-list-item .pub-publication {
+    color: #090;
+    font-size: 1em;
+}
+
+.pub-list-item .pub-links {
+    padding-top: 10px;
 }
 
 /*************************************************
@@ -298,72 +463,23 @@ section#projects.home-section .project-tags {
 }
 
 /*************************************************
- *  Profile
+ *  Footer
  **************************************************/
 
-#profile {
+footer {
+    margin: 4rem 0 0;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.75rem;
     text-align: center;
-    padding: 30px 10px;
-    position: relative;
 }
 
-#profile .portrait {
-    background-image: url('../img/portrait.jpg');
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-}
-
-#profile .portrait-title h2 {
-    font-size: 1.75em;
-    font-weight: 300;
-    color: #000000;
-    margin: 20px 0 10px 0;
-}
-
-#profile .portrait-title h3 {
-    font-size: 1.13em;
-    font-weight: 300;
-    color: #AAAAAA;
-    margin: 0px 0 10px 0;
-}
-
-#profile .social-icon li {
-    margin: 30px 5px 5px 5px;
-}
-
-.big-icon {
-    font-size: 40px;
-}
-
-/*************************************************
- *  Education
- **************************************************/
-
-ul.ul-edu {
-    list-style: none;
-}
-
-ul.ul-edu li {
-    position: relative;
-    padding: 0px 15px 4px 3px;
-    color: #333333;
-}
-
-ul.ul-edu li .description p {
-    margin: 0;
-}
-
-ul.ul-edu li .description p.course {
-    font-size: 1em;
-}
-
-ul.ul-edu li .description p.institution {
-    font-size: 0.88em;
+.site-footer,
+footer a#back_to_top i {
+    color: #899596;
 }
 
 /*************************************************
@@ -373,7 +489,12 @@ ul.ul-edu li .description p.institution {
 .btn-primary {
     border-color: #0095eb;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
     background: #0095eb;
 }
 
@@ -388,8 +509,8 @@ ul.ul-edu li .description p.institution {
 }
 
 .btn-primary.btn-outline {
-    /*color: #428bca;*/
     color: #0095eb;
+    border-color: #0095eb;
 }
 
 .btn-success.btn-outline {
@@ -434,7 +555,8 @@ nav#navbar-main li {
     font-size: 16px;
 }
 
-.navbar-default .navbar-nav li a, .navbar-default .navbar-nav li a:visited {
+.navbar-default .navbar-nav li a,
+.navbar-default .navbar-nav li a:visited {
     white-space: nowrap;
     -webkit-transition: 0.2s ease;
     transition: 0.2s ease;
@@ -445,7 +567,8 @@ nav#navbar-main li {
     color: #0095eb;
 }
 
-.navbar-brand, .navbar-nav li a {
+.navbar-brand,
+.navbar-nav li a {
     line-height: 60px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -466,7 +589,8 @@ nav#navbar-main li {
         float: none;
         min-height: inherit;
     }
-    .navbar-left,.navbar-right {
+    .navbar-left,
+    .navbar-right {
         float: none !important;
     }
     .navbar-toggle {
