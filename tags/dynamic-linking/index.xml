@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Memnoth</title>
-    <link>https://memnoth.github.io/tags/linux/</link>
-    <description>Recent content in Linux on Memnoth</description>
+    <title>Dynamic Linking on Memnoth</title>
+    <link>https://memnoth.github.io/tags/dynamic-linking/</link>
+    <description>Recent content in Dynamic Linking on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
     <lastBuildDate>Fri, 24 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://memnoth.github.io/tags/dynamic-linking/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
@@ -37,32 +37,6 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
 
 &lt;p&gt;비글본 블랙에서 위의 명령어로 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt; 심볼릭 링크를 생성하고 &lt;code&gt;./test&lt;/code&gt;로 다시 실행해보자.&lt;br /&gt;
 이젠 제대로 실행한다.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
-      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
-      <description>
-
-&lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
-
-&lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
-그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=80450rEJ&#34;&gt;&lt;/script&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;스크립트를 vi/vim으로 작성하고 &lt;code&gt;conv2utf8&lt;/code&gt;로 ~/Documents에 저장한다.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.bash_aliases&lt;/code&gt;파일을 열고 &lt;code&gt;alias c8=&#39;$HOME/Documents/conv2utf8&#39;&lt;/code&gt;로 저장한다.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;source ~/.bashrc&lt;/code&gt;로 쉘을 다시 로드한 뒤 &lt;code&gt;c8 /path/to/directory/&lt;/code&gt;로 사용한다.&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
 </description>
     </item>
     
