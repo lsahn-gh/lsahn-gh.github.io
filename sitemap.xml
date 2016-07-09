@@ -3,8 +3,13 @@
   
   <url>
     <loc>https://memnoth.github.io/</loc>
-    <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+    <lastmod>2016-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</loc>
+    <lastmod>2016-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>

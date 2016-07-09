@@ -24,9 +24,9 @@
 
 
     <link rel="shortcut icon" href="https://memnoth.github.io/img/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://memnoth.github.io/post/">
+    <link rel="canonical" href="https://memnoth.github.io/tags/msp430f5529/">
 
-    <title>Posts | Memnoth</title>
+    <title>Msp430f5529 | Memnoth</title>
 
 </head>
 <body id="top">
@@ -68,87 +68,15 @@
 
 <div class="container">
 
-    <h1>Posts</h1>
-
     
     
     <div>
-        
-        <h2><a href="https://memnoth.github.io/post/flask-vs-django/">Pirates use Flask, the Navy uses Django</a></h2>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2015-05-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">Sun, May 3, 2015</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://memnoth.github.io/tags/flask">flask</a>, 
-        
-        <a class="article-tag-link" href="https://memnoth.github.io/tags/django">django</a>, 
-        
-        <a class="article-tag-link" href="https://memnoth.github.io/tags/python">python</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style"><p>Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 Flask와 Django가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, WakaTime는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다. 경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다.</p></div>
-    </div>
-    
-    <div>
-        
-        <h2><a href="https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/">Performance overhead of sqlalchemy</a></h2>
-        
-
-<div class="article-metadata">
-
-    <span class="article-date">
-        <time datetime="2015-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">Fri, Feb 27, 2015</time>
-    </span>
-
-    
-    
-    
-    <span class="article-tags">
-        <i class="fa fa-tags"></i>
-        
-        <a class="article-tag-link" href="https://memnoth.github.io/tags/python">python</a>, 
-        
-        <a class="article-tag-link" href="https://memnoth.github.io/tags/sqlalchemy">sqlalchemy</a>
-        
-    </span>
-    
-    
-
-    
-
-</div>
-
-        <div class="article-style"><p>위 코드와 같이, Raw SQL, SQLAlchemy&rsquo;s core, SQLAlchemy&rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다. 당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다. $ python orm_performance_overhead.py sqlite3: Insert 100000 records in 0.226176977158 seconds SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds 주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다. ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야 한다.</p></div>
+        <h2><a href="https://memnoth.github.io/post/learning-msp430f5529-interrupt/">Learning MSP430F5529 - # Interrupt</a></h2>
+        <div class="article-style"><p>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&hellip; 아래 코드는 ti.com에서 제공하는 인터럽트 예제코드1이다. ... #define RED_LED P1OUT // On-board RED led. int main(void) { P1DIR |= 0x01; // Set direction OUT the led. TA0CCTL0 = CCIE; TA0CCR0 = 50000; TA0CTL = TASSEL_2 + MC_1 + TACLR; __bis_SR_register(LPM0_bits + GIE); } ... #pragma vector=TIMER0_A0_VECTOR __interrupt void TIMER0_A0_ISR(void) { RED_LED ^= 0x01; } GIE - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.</p></div>
     </div>
     
 
     
-<nav>
-    <ul class="pager">
-        
-        <li><a href="https://memnoth.github.io//post/">« Previous</a></li>
-        
-        
-    </ul>
-</nav>
-
 
 
 </div>
