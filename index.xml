@@ -7,8 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <lastBuildDate>Sun, 10 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Jul 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://memnoth.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>YouCompleteMe - libtinfo.so.5 not found</title>
+      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <description>&lt;p&gt;Laptop에 Fedora 24를 설치하고 YouCompleteMe&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;를 인스톨했으나 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류를 출력하며 정상적으로 실행되지 않았다.&lt;br /&gt;
+&lt;strong&gt;:YcmToggleLogs stderr&lt;/strong&gt;를 통하여 디버깅을 해보니 시스템에서 &lt;code&gt;libtinfo.so.5&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 찾지 못해 발생한 예외였다.&lt;/p&gt;
+
+&lt;p&gt;설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ dnf list installed | grep ncurses
+ncurses.x86_64                         6.0-5.20160116.fc24      @koji-override-0
+ncurses-base.noarch                    6.0-5.20160116.fc24      @koji-override-0
+ncurses-libs.x86_64                    6.0-5.20160116.fc24      @koji-override-0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lib64 디렉터리에서도 &lt;code&gt;libtinfo.so.6&lt;/code&gt;을 찾을 수 있다, 나는 libtinfo.so.5를 원하는데&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ls -l /lib64/libtinfo*
+lrwxrwxrwx. 1 root root     15  4월  8 19:33 /lib64/libtinfo.so.6 -&amp;gt; libtinfo.so.6.0
+-rwxr-xr-x. 1 root root 180192  4월  8 19:33 /lib64/libtinfo.so.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;물론 5까지 지원하는 &lt;code&gt;ncurses-compat-libs&lt;/code&gt;를 설치해도 되지만 심볼릭 링크를 이용해서 처리했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo ln -s /lib64/libtinfo.so.6.0 /lib64/libtinfo.so.5
+
+$ ls -l /lib64/libtinfo*
+lrwxrwxrwx. 1 root root     15  7월 24 02:06 libtinfo.so.5 -&amp;gt; libtinfo.so.6.0
+lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.so.6.0
+-rwxr-xr-x. 1 root root 180192  4월  8 19:33 libtinfo.so.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이제 vim을 실행해보면 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류는 출력되지 않는다.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;vim에서 사용할 수 있는 우수한 code completion engine이다. &lt;a href=&#34;https://github.com/Valloric/YouCompleteMe&#34;&gt;link&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;libtinfo는 ncurses 라이브러리 파일이다.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
@@ -18,11 +67,11 @@
       <guid>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</guid>
       <description>
 
-&lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길:60ea9493d8f5545f123e1ac0e190ebcf&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;아래 코드는 &lt;a href=&#34;https://ti.com&#34;&gt;ti.com&lt;/a&gt;에서 제공하는 인터럽트 예제코드&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:60ea9493d8f5545f123e1ac0e190ebcf:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:60ea9493d8f5545f123e1ac0e190ebcf:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;이다.&lt;/p&gt;
+&lt;p&gt;아래 코드는 &lt;a href=&#34;https://ti.com&#34;&gt;ti.com&lt;/a&gt;에서 제공하는 인터럽트 예제코드&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;이다.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;...
 
@@ -51,11 +100,11 @@ __interrupt void TIMER0_A0_ISR(void)
 
 &lt;p&gt;&lt;code&gt;LPM0_bits&lt;/code&gt; - CPUOFF 값에 매핑되어 있다, 해당 비트가 1로 설정되면 CPU는 off 상태로 변경된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;__bis_SR_register()&lt;/code&gt; - CPU의 SR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:60ea9493d8f5545f123e1ac0e190ebcf:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:60ea9493d8f5545f123e1ac0e190ebcf:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__bis_SR_register()&lt;/code&gt; - CPU의 SR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
-컴파일하고 MSP430F5529의 메모리를 디버깅해보면 &lt;code&gt;__bis_SR_register&lt;/code&gt; 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:60ea9493d8f5545f123e1ac0e190ebcf:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:60ea9493d8f5545f123e1ac0e190ebcf:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 레지스터가 TA0CCR0&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:60ea9493d8f5545f123e1ac0e190ebcf:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:60ea9493d8f5545f123e1ac0e190ebcf:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 레지스터의 값과 비교하며 50000까지 증가한다.&lt;br /&gt;
-상태 레지스터를 디버깅해보면 &lt;strong&gt;CPUOFF&lt;/strong&gt; bit가 1로 세팅되어 있으므로 ISR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:60ea9493d8f5545f123e1ac0e190ebcf:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:60ea9493d8f5545f123e1ac0e190ebcf:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;만 계속 처리하고 있음을 알게된다.&lt;br /&gt;
+컴파일하고 MSP430F5529의 메모리를 디버깅해보면 &lt;code&gt;__bis_SR_register&lt;/code&gt; 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 레지스터가 TA0CCR0&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 레지스터의 값과 비교하며 50000까지 증가한다.&lt;br /&gt;
+상태 레지스터를 디버깅해보면 &lt;strong&gt;CPUOFF&lt;/strong&gt; bit가 1로 세팅되어 있으므로 ISR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;만 계속 처리하고 있음을 알게된다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;코드를 아래와 같이 변경하고 다시 실행하면 while 루틴과 번갈아가며 처리함을 알 수 있다.&lt;/p&gt;
@@ -100,16 +149,16 @@ __interrupt void TIMER0_A0_ISR(void)
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:60ea9493d8f5545f123e1ac0e190ebcf:1&#34;&gt;MSP430F55xx_ta0_02.c
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:60ea9493d8f5545f123e1ac0e190ebcf:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:60ea9493d8f5545f123e1ac0e190ebcf:2&#34;&gt;Status Register
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:60ea9493d8f5545f123e1ac0e190ebcf:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:60ea9493d8f5545f123e1ac0e190ebcf:3&#34;&gt;Timer_A0 Counter Register
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:60ea9493d8f5545f123e1ac0e190ebcf:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:60ea9493d8f5545f123e1ac0e190ebcf:4&#34;&gt;Timer_A0 Capture/Compare Control 0 Register
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:60ea9493d8f5545f123e1ac0e190ebcf:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:60ea9493d8f5545f123e1ac0e190ebcf:5&#34;&gt;Interrupt Service Routine
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:60ea9493d8f5545f123e1ac0e190ebcf:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;MSP430F55xx_ta0_02.c
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Status Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Timer_A0 Counter Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;Timer_A0 Capture/Compare Control 0 Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Interrupt Service Routine
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -153,11 +202,11 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
       <guid>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
-&lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;왜-mmap을-이용하여-direct로-접근하나요:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;왜 mmap을 이용하여 direct로 접근하나요?&lt;/h3&gt;
+&lt;h3 id=&#34;왜-mmap을-이용하여-direct로-접근하나요&#34;&gt;왜 mmap을 이용하여 direct로 접근하나요?&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The memory-mapping method allows you to directly access the registors that control the&lt;br /&gt;
@@ -165,7 +214,7 @@ GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but
 processes with root permissions can use it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;책&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 &lt;code&gt;file I/O&lt;/code&gt; 방식보다 1000배는 빠르다고 합니다.&lt;/p&gt;
+&lt;p&gt;책&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 &lt;code&gt;file I/O&lt;/code&gt; 방식보다 1000배는 빠르다고 합니다.&lt;/p&gt;
 
 &lt;p&gt;BeagleBone Black의 GPIO는 기본적으로 disable 되어 있는데, 이를 활성화는 방법에는 2가지가 있습니다.&lt;/p&gt;
 
@@ -189,7 +238,7 @@ processes with root permissions can use it.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;register를-이용하여-clock을-enable-하기:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;Register를 이용하여 clock을 enable 하기&lt;/h3&gt;
+&lt;h3 id=&#34;register를-이용하여-clock을-enable-하기&#34;&gt;Register를 이용하여 clock을 enable 하기&lt;/h3&gt;
 
 &lt;p&gt;리눅스는 대부분의 device를 파일로 추상화하여 제공합니다, 모듈화가 아주 잘 되어 있죠.&lt;br /&gt;
 Device를 파일로 접근한다면 모든 처리 루틴을 아래와 같이 쉽게 생각할 수 있습니다.&lt;/p&gt;
@@ -230,10 +279,10 @@ gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADD
 
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
+&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
 해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.&lt;/p&gt;
 
 &lt;p&gt;아래 소스코드를 분석하여 확실하게 이해하세요.&lt;br /&gt;
@@ -281,12 +330,12 @@ void init_GPIO_enable(int fd)
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34;&gt;구글 그룹스&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;1196 page
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34;&gt;구글 그룹스&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;1196 page
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -339,7 +388,7 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
       <guid>https://memnoth.github.io/home/about/</guid>
       <description>
 
-&lt;h2 id=&#34;biography:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Biography&lt;/h2&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
 </description>
     </item>
     
@@ -419,12 +468,12 @@ C90 mode as well.&lt;/p&gt;
       <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
       <description>
 
-&lt;h2 id=&#34;introduce:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;Introduce&lt;/h2&gt;
+&lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;
 
 &lt;p&gt;사람들은 왜 당신의 질문에 답변하지 않는 걸까?&lt;br /&gt;
 이 글은 당신의 시간을 절약하며, 빠른 답변을 얻을 수 있도록 도와줄지도 모른다.&lt;/p&gt;
 
-&lt;h2 id=&#34;당신은-왜-답변-받지-못하는-걸까:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;당신은 왜 답변 받지 못하는 걸까?&lt;/h2&gt;
+&lt;h2 id=&#34;당신은-왜-답변-받지-못하는-걸까&#34;&gt;당신은 왜 답변 받지 못하는 걸까?&lt;/h2&gt;
 
 &lt;p&gt;상대방의 입장에서 당신의 질문을 객관적으로 살펴볼 필요가 있다.&lt;br /&gt;
 아마 다음과 같은 공통된 문제점을 가지고 있을 것이다.&lt;/p&gt;
@@ -440,7 +489,7 @@ C90 mode as well.&lt;/p&gt;
 
 &lt;p&gt;대부분 &lt;code&gt;1&lt;/code&gt;번 문제를 가지고 있다.&lt;/p&gt;
 
-&lt;h3 id=&#34;1-질문의-내용을-최대한-나누고-디테일하게-서술하기:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;1. 질문의 내용을 최대한 나누고 디테일하게 서술하기&lt;/h3&gt;
+&lt;h3 id=&#34;1-질문의-내용을-최대한-나누고-디테일하게-서술하기&#34;&gt;1. 질문의 내용을 최대한 나누고 디테일하게 서술하기&lt;/h3&gt;
 
 &lt;p&gt;요점만 정리하여 하나의 요구 사항만 전달해야 한다.&lt;/p&gt;
 
@@ -452,7 +501,7 @@ C90 mode as well.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;1&lt;/code&gt;은 상대방이 당신의 커리큘럼을 확인하는 시간과 비슷한 과목을 걸러내는 시간, 정리하는 시간이 필요하다. 아주 운 좋은 경우 친절한 어느 분이 커리큘럼을 분석하고 과목을 정리한 후 알려준다.&lt;/p&gt;
 
-&lt;h3 id=&#34;2-질문의-요점을-상단-제목에-작성하기:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;2. 질문의 요점을 상단/제목에 작성하기&lt;/h3&gt;
+&lt;h3 id=&#34;2-질문의-요점을-상단-제목에-작성하기&#34;&gt;2. 질문의 요점을 상단/제목에 작성하기&lt;/h3&gt;
 
 &lt;p&gt;요점을 확인하고 당신에게 충고할 수 있는 사람만 클릭하도록 유도를 하는 것이다.&lt;/p&gt;
 
@@ -463,15 +512,15 @@ C90 mode as well.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;2&lt;/code&gt;는 파일 처리 경험이 많은 사람이 당신을 돕는다.&lt;/p&gt;
 
-&lt;h3 id=&#34;3-정보와-방법-제공하기:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;3. 정보와 방법 제공하기&lt;/h3&gt;
+&lt;h3 id=&#34;3-정보와-방법-제공하기&#34;&gt;3. 정보와 방법 제공하기&lt;/h3&gt;
 
 &lt;p&gt;당신이 연구/공부하는 분야의 환경과 관련된 정보를 제공해야 한다. 또한 상대방이 문제를 쉽게 읽고 분석할 수 있도록 가능한 관련된 링크와 문서 폼을 링크&amp;mdash;Gist/Pastebin나 자신의 개발 환경 정보.&amp;mdash;로 첨부하고 시도했던 방법에 대해 제공해야 한다.&lt;/p&gt;
 
-&lt;h3 id=&#34;4-관련-키워드로-검색하기:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;4. 관련 키워드로 검색하기&lt;/h3&gt;
+&lt;h3 id=&#34;4-관련-키워드로-검색하기&#34;&gt;4. 관련 키워드로 검색하기&lt;/h3&gt;
 
 &lt;p&gt;당신이 질문하는 내용 80-90%는 이미 누군가 질문을 한 내용이다. 최대한 검색하고 이해를 한 상태에서 자신의 질문을 작게 나누어 디테일하게 설명해야 한다. 상대방은 당신의 질문만 보고 당신이 관련 키워드로 검색을 했는지 안 했는지 알 수 있다.&lt;/p&gt;
 
-&lt;h3 id=&#34;5-올바른-커뮤니티에서-질문하기:3fd162eed97f00d1267f6a171b6f1de8&#34;&gt;5. 올바른 커뮤니티에서 질문하기&lt;/h3&gt;
+&lt;h3 id=&#34;5-올바른-커뮤니티에서-질문하기&#34;&gt;5. 올바른 커뮤니티에서 질문하기&lt;/h3&gt;
 
 &lt;p&gt;해당 커뮤니티는 그 분야에서 매일 활동하는 분들의 모임이다. 그 외의 주제에 대해 알 수는 있으나 완벽하지 않다. 답변을 받지 못하였다면 자신이 관련 커뮤니티에서 질문했는지 생각해야 한다.&lt;/p&gt;
 
@@ -491,12 +540,12 @@ C90 mode as well.&lt;/p&gt;
       <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
       <description>
 
-&lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
 requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.&lt;/p&gt;
 
-&lt;h3 id=&#34;requirements-파일-형식:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
+&lt;h3 id=&#34;requirements-파일-형식&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -506,7 +555,7 @@ Flask==0.10.1
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;방법-1:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 1:&lt;/h3&gt;
+&lt;h3 id=&#34;방법-1&#34;&gt;방법 1:&lt;/h3&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -518,11 +567,11 @@ Flask==0.10.1
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;방법-2:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 2:&lt;/h3&gt;
+&lt;h3 id=&#34;방법-2&#34;&gt;방법 2:&lt;/h3&gt;
 
 &lt;p&gt;pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.&lt;/p&gt;
 
-&lt;h4 id=&#34;왜-pip-freeze가-아닌가요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
+&lt;h4 id=&#34;왜-pip-freeze가-아닌가요&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;virtualenv를 사용하지 않는 한 pip freeze는 프로젝트에서 사용하지 않는 패키지도 모두 포함합니다.&lt;/li&gt;
@@ -530,7 +579,7 @@ Flask==0.10.1
 &lt;li&gt;때로는 패키지를 설치하지 않고 requirements.txt를 생성할 필요가 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;어떻게-사용하나요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
+&lt;h4 id=&#34;어떻게-사용하나요&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -559,47 +608,47 @@ $ pipreqs /path/to/project
 물론, 그들은 다르게 생각할 겁니다.&lt;/p&gt;
 
 &lt;p&gt;만약 당신이 jQuery를 안다면 &lt;em&gt;Front-End Web Developer&lt;/em&gt; 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 &lt;em&gt;Software Engineer&lt;/em&gt; 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
-(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 &lt;code&gt;int&lt;/code&gt;와 &lt;code&gt;float&lt;/code&gt;의 차이를 설명하지 못 해요.)&lt;/p&gt;
+(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 &lt;code&gt;int&lt;/code&gt;와 &lt;code&gt;float&lt;/code&gt;의 차이를 설명하지 못 해요.)&lt;/p&gt;
 
-&lt;h2 id=&#34;can-you-actually-code-anything:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;Can you actually code anything?&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;can-you-actually-code-anything&#34;&gt;&lt;em&gt;Can you actually code anything?&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.&lt;br /&gt;
 당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?&lt;br /&gt;
 제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 &lt;em&gt;Software Engineer&lt;/em&gt;, &lt;em&gt;Programmer&lt;/em&gt;, &lt;em&gt;Computer Science specialist&lt;/em&gt;, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-5-problems:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;The 5 problems&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;the-5-problems&#34;&gt;&lt;em&gt;The 5 problems&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;problem-1:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 1&lt;/h4&gt;
+&lt;h4 id=&#34;problem-1&#34;&gt;Problem 1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;problem-2:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 2&lt;/h4&gt;
+&lt;h4 id=&#34;problem-2&#34;&gt;Problem 2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
 (list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;problem-3:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 3&lt;/h4&gt;
+&lt;h4 id=&#34;problem-3&#34;&gt;Problem 3&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
 (처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;problem-4:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 4&lt;/h4&gt;
+&lt;h4 id=&#34;problem-4&#34;&gt;Problem 4&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
-([50, 2, 1, 9] list를 받으면 형식화된 95021&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 출력해야 합니다.)
+([50, 2, 1, 9] list를 받으면 형식화된 95021&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 출력해야 합니다.)
 &lt;strong&gt;Update:&lt;/strong&gt; Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) &lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-4&#34;&gt;You can click here to read my solution.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;problem-5:6d1a8d7738acbc142e782134470c593a&#34;&gt;Problem 5&lt;/h4&gt;
+&lt;h4 id=&#34;problem-5&#34;&gt;Problem 5&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1, 2, &amp;hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
@@ -607,7 +656,7 @@ $ pipreqs /path/to/project
 &lt;strong&gt;Update:&lt;/strong&gt; (&lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions&#34;&gt;Here is one solution to this problem&lt;/a&gt; in case you are curious.)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;unfortunately-you-aren-t-the-one-that-needs-this:6d1a8d7738acbc142e782134470c593a&#34;&gt;&lt;em&gt;Unfortunately, you aren&amp;rsquo;t the one that needs this&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;unfortunately-you-aren-t-the-one-that-needs-this&#34;&gt;&lt;em&gt;Unfortunately, you aren&amp;rsquo;t the one that needs this&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)&lt;/p&gt;
 
@@ -620,10 +669,10 @@ $ pipreqs /path/to/project
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;단어의 개념이 아닌 &lt;strong&gt;단어만&lt;/strong&gt; 많이 아는 사람을 의미하는 것 같습니다.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6d1a8d7738acbc142e782134470c593a:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6d1a8d7738acbc142e782134470c593a:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;단어의 개념이 아닌 &lt;strong&gt;단어만&lt;/strong&gt; 많이 아는 사람을 의미하는 것 같습니다.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -637,7 +686,7 @@ $ pipreqs /path/to/project
       <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
-&lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
+&lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
 
 &lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
@@ -663,7 +712,7 @@ $ pipreqs /path/to/project
       <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
       <description>
 
-&lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
 
@@ -671,7 +720,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;differences-between-django-and-flask:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;differences-between-django-and-flask&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
 
@@ -713,7 +762,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;landscape:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;landscape&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.&lt;/p&gt;
 
@@ -760,7 +809,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;performance:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;performance&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.&lt;/p&gt;
 
@@ -781,15 +830,6 @@ $ pipreqs /path/to/project
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>micropython-frostapi</title>
-      <link>https://memnoth.github.io/project/micropython-frostapi/</link>
-      <pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/project/micropython-frostapi/</guid>
-      <description></description>
     </item>
     
   </channel>

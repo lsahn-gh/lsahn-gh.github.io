@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.17-DEV" />
     <meta name="author" content="Hyun Jun, An">
     <meta name="description" content="Student of Computer Engineering">
 
@@ -143,11 +143,11 @@
         <div class="article-style" itemprop="articleBody">
             
 
-<h4 id="이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길:60ea9493d8f5545f123e1ac0e190ebcf"><em>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&hellip;</em></h4>
+<h4 id="이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길"><em>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&hellip;</em></h4>
 
 <hr />
 
-<p>아래 코드는 <a href="https://ti.com">ti.com</a>에서 제공하는 인터럽트 예제코드<sup class="footnote-ref" id="fnref:60ea9493d8f5545f123e1ac0e190ebcf:1"><a rel="footnote" href="#fn:60ea9493d8f5545f123e1ac0e190ebcf:1">1</a></sup>이다.</p>
+<p>아래 코드는 <a href="https://ti.com">ti.com</a>에서 제공하는 인터럽트 예제코드<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>이다.</p>
 
 <pre><code class="language-c">...
 
@@ -176,11 +176,11 @@ __interrupt void TIMER0_A0_ISR(void)
 
 <p><code>LPM0_bits</code> - CPUOFF 값에 매핑되어 있다, 해당 비트가 1로 설정되면 CPU는 off 상태로 변경된다.</p>
 
-<p><code>__bis_SR_register()</code> - CPU의 SR<sup class="footnote-ref" id="fnref:60ea9493d8f5545f123e1ac0e190ebcf:2"><a rel="footnote" href="#fn:60ea9493d8f5545f123e1ac0e190ebcf:2">2</a></sup>를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.</p>
+<p><code>__bis_SR_register()</code> - CPU의 SR<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.</p>
 
 <p><br />
-컴파일하고 MSP430F5529의 메모리를 디버깅해보면 <code>__bis_SR_register</code> 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R<sup class="footnote-ref" id="fnref:60ea9493d8f5545f123e1ac0e190ebcf:3"><a rel="footnote" href="#fn:60ea9493d8f5545f123e1ac0e190ebcf:3">3</a></sup> 레지스터가 TA0CCR0<sup class="footnote-ref" id="fnref:60ea9493d8f5545f123e1ac0e190ebcf:4"><a rel="footnote" href="#fn:60ea9493d8f5545f123e1ac0e190ebcf:4">4</a></sup> 레지스터의 값과 비교하며 50000까지 증가한다.<br />
-상태 레지스터를 디버깅해보면 <strong>CPUOFF</strong> bit가 1로 세팅되어 있으므로 ISR<sup class="footnote-ref" id="fnref:60ea9493d8f5545f123e1ac0e190ebcf:5"><a rel="footnote" href="#fn:60ea9493d8f5545f123e1ac0e190ebcf:5">5</a></sup>만 계속 처리하고 있음을 알게된다.<br />
+컴파일하고 MSP430F5529의 메모리를 디버깅해보면 <code>__bis_SR_register</code> 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup> 레지스터가 TA0CCR0<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup> 레지스터의 값과 비교하며 50000까지 증가한다.<br />
+상태 레지스터를 디버깅해보면 <strong>CPUOFF</strong> bit가 1로 세팅되어 있으므로 ISR<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">5</a></sup>만 계속 처리하고 있음을 알게된다.<br />
 <br /></p>
 
 <p>코드를 아래와 같이 변경하고 다시 실행하면 while 루틴과 번갈아가며 처리함을 알 수 있다.</p>
@@ -225,16 +225,16 @@ __interrupt void TIMER0_A0_ISR(void)
 <hr />
 
 <ol>
-<li id="fn:60ea9493d8f5545f123e1ac0e190ebcf:1">MSP430F55xx_ta0_02.c
- <a class="footnote-return" href="#fnref:60ea9493d8f5545f123e1ac0e190ebcf:1"><sup>[return]</sup></a></li>
-<li id="fn:60ea9493d8f5545f123e1ac0e190ebcf:2">Status Register
- <a class="footnote-return" href="#fnref:60ea9493d8f5545f123e1ac0e190ebcf:2"><sup>[return]</sup></a></li>
-<li id="fn:60ea9493d8f5545f123e1ac0e190ebcf:3">Timer_A0 Counter Register
- <a class="footnote-return" href="#fnref:60ea9493d8f5545f123e1ac0e190ebcf:3"><sup>[return]</sup></a></li>
-<li id="fn:60ea9493d8f5545f123e1ac0e190ebcf:4">Timer_A0 Capture/Compare Control 0 Register
- <a class="footnote-return" href="#fnref:60ea9493d8f5545f123e1ac0e190ebcf:4"><sup>[return]</sup></a></li>
-<li id="fn:60ea9493d8f5545f123e1ac0e190ebcf:5">Interrupt Service Routine
- <a class="footnote-return" href="#fnref:60ea9493d8f5545f123e1ac0e190ebcf:5"><sup>[return]</sup></a></li>
+<li id="fn:1">MSP430F55xx_ta0_02.c
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Status Register
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Timer_A0 Counter Register
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Timer_A0 Capture/Compare Control 0 Register
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">Interrupt Service Routine
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
 </ol>
 </div>
 
@@ -248,6 +248,8 @@ __interrupt void TIMER0_A0_ISR(void)
         <li class="previous"><a href="https://memnoth.github.io/post/dynamic-linking-error-on-bbb/"><span aria-hidden="true">&larr;</span> 비글본 블랙에서의 Dynamic Linking 오류</a></li>
         
 
+        
+        <li class="next"><a href="https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/">YouCompleteMe - libtinfo.so.5 not found <span aria-hidden="true">&rarr;</span></a></li>
         
     </ul>
 </nav>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.17-DEV" />
     <meta name="author" content="Hyun Jun, An">
     <meta name="description" content="Student of Computer Engineering">
 
@@ -73,6 +73,42 @@
     <h1>Posts</h1>
 
     
+    
+    <div>
+        
+        <h2><a href="https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/">Convert encoding of Documents in Linux</a></h2>
+        
+
+<div class="article-metadata">
+
+    <span class="article-date">
+        <time datetime="2015-05-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">Tue, May 5, 2015</time>
+    </span>
+
+    
+    
+    
+    <span class="article-tags">
+        <i class="fa fa-tags"></i>
+        
+        <a class="article-tag-link" href="https://memnoth.github.io/tags/linux">linux</a>, 
+        
+        <a class="article-tag-link" href="https://memnoth.github.io/tags/encoding">encoding</a>, 
+        
+        <a class="article-tag-link" href="https://memnoth.github.io/tags/euc-kr">euc-kr</a>, 
+        
+        <a class="article-tag-link" href="https://memnoth.github.io/tags/utf-8">utf-8</a>
+        
+    </span>
+    
+    
+
+    
+
+</div>
+
+        <div class="article-style"><p>Introduce 리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 따분하고 귀찮다. 특히 미드/영드/일드를 볼때 .. 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다. 스크립트를 vi/vim으로 작성하고 conv2utf8로 ~/Documents에 저장한다. .bash_aliases파일을 열고 alias c8='$HOME/Documents/conv2utf8'로 저장한다. source ~/.bashrc로 쉘을 다시 로드한 뒤 c8 /path/to/directory/로 사용한다.</p></div>
+    </div>
     
     <div>
         

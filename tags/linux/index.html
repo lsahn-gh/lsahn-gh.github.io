@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.15" />
+    <meta name="generator" content="Hugo 0.17-DEV" />
     <meta name="author" content="Hyun Jun, An">
     <meta name="description" content="Student of Computer Engineering">
 
@@ -71,6 +71,11 @@
 <div class="container">
 
     
+    
+    <div>
+        <h2><a href="https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/">YouCompleteMe - libtinfo.so.5 not found</a></h2>
+        <div class="article-style"><p>Laptop에 Fedora 24를 설치하고 YouCompleteMe1를 인스톨했으나 SHUTTING DOWN 오류를 출력하며 정상적으로 실행되지 않았다. :YcmToggleLogs stderr를 통하여 디버깅을 해보니 시스템에서 libtinfo.so.52를 찾지 못해 발생한 예외였다. 설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다. $ dnf list installed | grep ncurses ncurses.x86_64 6.0-5.20160116.fc24 @koji-override-0 ncurses-base.noarch 6.0-5.20160116.fc24 @koji-override-0 ncurses-libs.x86_64 6.0-5.20160116.fc24 @koji-override-0 lib64 디렉터리에서도 libtinfo.so.6을 찾을 수 있다, 나는 libtinfo.so.5를 원하는데&hellip; $ ls -l /lib64/libtinfo* lrwxrwxrwx. 1 root root 15 4월 8 19:33 /lib64/libtinfo.so.6 -&gt; libtinfo.so.6.0 -rwxr-xr-x.</p></div>
+    </div>
     
     <div>
         <h2><a href="https://memnoth.github.io/post/dynamic-linking-error-on-bbb/">비글본 블랙에서의 Dynamic Linking 오류</a></h2>

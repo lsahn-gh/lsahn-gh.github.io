@@ -7,8 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <lastBuildDate>Fri, 24 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Jul 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://memnoth.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>YouCompleteMe - libtinfo.so.5 not found</title>
+      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <description>&lt;p&gt;Laptop에 Fedora 24를 설치하고 YouCompleteMe&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;를 인스톨했으나 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류를 출력하며 정상적으로 실행되지 않았다.&lt;br /&gt;
+&lt;strong&gt;:YcmToggleLogs stderr&lt;/strong&gt;를 통하여 디버깅을 해보니 시스템에서 &lt;code&gt;libtinfo.so.5&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 찾지 못해 발생한 예외였다.&lt;/p&gt;
+
+&lt;p&gt;설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ dnf list installed | grep ncurses
+ncurses.x86_64                         6.0-5.20160116.fc24      @koji-override-0
+ncurses-base.noarch                    6.0-5.20160116.fc24      @koji-override-0
+ncurses-libs.x86_64                    6.0-5.20160116.fc24      @koji-override-0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lib64 디렉터리에서도 &lt;code&gt;libtinfo.so.6&lt;/code&gt;을 찾을 수 있다, 나는 libtinfo.so.5를 원하는데&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ ls -l /lib64/libtinfo*
+lrwxrwxrwx. 1 root root     15  4월  8 19:33 /lib64/libtinfo.so.6 -&amp;gt; libtinfo.so.6.0
+-rwxr-xr-x. 1 root root 180192  4월  8 19:33 /lib64/libtinfo.so.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;물론 5까지 지원하는 &lt;code&gt;ncurses-compat-libs&lt;/code&gt;를 설치해도 되지만 심볼릭 링크를 이용해서 처리했다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo ln -s /lib64/libtinfo.so.6.0 /lib64/libtinfo.so.5
+
+$ ls -l /lib64/libtinfo*
+lrwxrwxrwx. 1 root root     15  7월 24 02:06 libtinfo.so.5 -&amp;gt; libtinfo.so.6.0
+lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.so.6.0
+-rwxr-xr-x. 1 root root 180192  4월  8 19:33 libtinfo.so.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이제 vim을 실행해보면 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류는 출력되지 않는다.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;vim에서 사용할 수 있는 우수한 code completion engine이다. &lt;a href=&#34;https://github.com/Valloric/YouCompleteMe&#34;&gt;link&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;libtinfo는 ncurses 라이브러리 파일이다.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
@@ -48,7 +97,7 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
       <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
-&lt;h1 id=&#34;introduce:dbdb28318ae90fc9917752c77c70c0a2&#34;&gt;Introduce&lt;/h1&gt;
+&lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
 
 &lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;

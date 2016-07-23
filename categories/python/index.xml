@@ -18,12 +18,12 @@
       <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
       <description>
 
-&lt;h2 id=&#34;why-requirements-txt:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
 requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.&lt;/p&gt;
 
-&lt;h3 id=&#34;requirements-파일-형식:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
+&lt;h3 id=&#34;requirements-파일-형식&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -33,7 +33,7 @@ Flask==0.10.1
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;방법-1:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 1:&lt;/h3&gt;
+&lt;h3 id=&#34;방법-1&#34;&gt;방법 1:&lt;/h3&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -45,11 +45,11 @@ Flask==0.10.1
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;방법-2:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;방법 2:&lt;/h3&gt;
+&lt;h3 id=&#34;방법-2&#34;&gt;방법 2:&lt;/h3&gt;
 
 &lt;p&gt;pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.&lt;/p&gt;
 
-&lt;h4 id=&#34;왜-pip-freeze가-아닌가요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
+&lt;h4 id=&#34;왜-pip-freeze가-아닌가요&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;virtualenv를 사용하지 않는 한 pip freeze는 프로젝트에서 사용하지 않는 패키지도 모두 포함합니다.&lt;/li&gt;
@@ -57,7 +57,7 @@ Flask==0.10.1
 &lt;li&gt;때로는 패키지를 설치하지 않고 requirements.txt를 생성할 필요가 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;어떻게-사용하나요:8dbd9dbafef37ffae3ea07baa6d37ee8&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
+&lt;h4 id=&#34;어떻게-사용하나요&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
 
 &lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
 
@@ -80,7 +80,7 @@ $ pipreqs /path/to/project
       <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
       <description>
 
-&lt;h2 id=&#34;introduce:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
 
@@ -88,7 +88,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;differences-between-django-and-flask:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;differences-between-django-and-flask&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
 
@@ -130,7 +130,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;landscape:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;landscape&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.&lt;/p&gt;
 
@@ -177,7 +177,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;performance:26aacfd8b64ae3a431e5ac7045a2104a&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;performance&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.&lt;/p&gt;
 

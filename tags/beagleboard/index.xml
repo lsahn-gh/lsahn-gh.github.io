@@ -48,11 +48,11 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
       <guid>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
-&lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;왜-mmap을-이용하여-direct로-접근하나요:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;왜 mmap을 이용하여 direct로 접근하나요?&lt;/h3&gt;
+&lt;h3 id=&#34;왜-mmap을-이용하여-direct로-접근하나요&#34;&gt;왜 mmap을 이용하여 direct로 접근하나요?&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The memory-mapping method allows you to directly access the registors that control the&lt;br /&gt;
@@ -60,7 +60,7 @@ GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but
 processes with root permissions can use it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;책&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 &lt;code&gt;file I/O&lt;/code&gt; 방식보다 1000배는 빠르다고 합니다.&lt;/p&gt;
+&lt;p&gt;책&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 &lt;code&gt;file I/O&lt;/code&gt; 방식보다 1000배는 빠르다고 합니다.&lt;/p&gt;
 
 &lt;p&gt;BeagleBone Black의 GPIO는 기본적으로 disable 되어 있는데, 이를 활성화는 방법에는 2가지가 있습니다.&lt;/p&gt;
 
@@ -84,7 +84,7 @@ processes with root permissions can use it.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;register를-이용하여-clock을-enable-하기:15a0af3e48ae0f0cd39b3d9e364aac23&#34;&gt;Register를 이용하여 clock을 enable 하기&lt;/h3&gt;
+&lt;h3 id=&#34;register를-이용하여-clock을-enable-하기&#34;&gt;Register를 이용하여 clock을 enable 하기&lt;/h3&gt;
 
 &lt;p&gt;리눅스는 대부분의 device를 파일로 추상화하여 제공합니다, 모듈화가 아주 잘 되어 있죠.&lt;br /&gt;
 Device를 파일로 접근한다면 모든 처리 루틴을 아래와 같이 쉽게 생각할 수 있습니다.&lt;/p&gt;
@@ -125,10 +125,10 @@ gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADD
 
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
+&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
 해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.&lt;/p&gt;
 
 &lt;p&gt;아래 소스코드를 분석하여 확실하게 이해하세요.&lt;br /&gt;
@@ -176,12 +176,12 @@ void init_GPIO_enable(int fd)
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34;&gt;구글 그룹스&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;1196 page
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:15a0af3e48ae0f0cd39b3d9e364aac23:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34;&gt;구글 그룹스&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;1196 page
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
