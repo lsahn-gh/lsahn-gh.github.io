@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on Memnoth</title>
-    <link>https://memnoth.github.io/categories/algorithm/</link>
-    <description>Recent content in Algorithm on Memnoth</description>
+    <title>Memnoth</title>
+    <link>https://memnoth.github.io/categories/algorithm/index.xml</link>
+    <description>Recent content on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <lastBuildDate>Sat, 09 May 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://memnoth.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

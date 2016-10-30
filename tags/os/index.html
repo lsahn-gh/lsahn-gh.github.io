@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.17-DEV" />
+    <meta name="generator" content="Hugo 0.17" />
     <meta name="author" content="Hyun Jun, An">
     <meta name="description" content="Student of Computer Engineering">
 
@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="https://memnoth.github.io/css/academicons.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
     <link rel="stylesheet" href="https://memnoth.github.io/css/hugo-academic.css">
-    
-    <link rel="stylesheet" href="https://memnoth.github.io/css/pink-red.css">
     
     <link rel="stylesheet" href="https://memnoth.github.io/css/h4_weight.css">
     
@@ -56,11 +54,9 @@
                 
                 <li class="nav-item"><a href="https://memnoth.github.io/#posts">Posts</a></li>
                 
-                <li class="nav-item"><a href="https://memnoth.github.io/categories/beagleboard/">Beagleboard</a></li>
-                
-                <li class="nav-item"><a href="https://memnoth.github.io/categories/msp430/">TI-MSP430</a></li>
-                
                 <li class="nav-item"><a href="https://memnoth.github.io/#projects">Projects</a></li>
+                
+                <li class="nav-item"><a href="https://memnoth.github.io/books">Books</a></li>
                 
             </ul>
 
@@ -74,7 +70,10 @@
     
     <div>
         <h2><a href="https://memnoth.github.io/post/what-is-copy-on-write/">What is Copy-On-Write?</a></h2>
-        <div class="article-style"><p>Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다. 아래의 코드가 있다. int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&quot;I'm a child!\n&quot;); temp = 2; } else if (pid &gt; 0) { printf(&quot;I'm a parent!\n&quot;); } folk()가 실행되고 나서 메모리는 아래의 그림과 같다. 프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.</p></div>
+        <div class="article-style"><p>Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.
+아래의 코드가 있다.
+int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&quot;I'm a child!\n&quot;); temp = 2; } else if (pid &gt; 0) { printf(&quot;I'm a parent!\n&quot;); }  folk()가 실행되고 나서 메모리는 아래의 그림과 같다.
+프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.</p></div>
     </div>
     
 

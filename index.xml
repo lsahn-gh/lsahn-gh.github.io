@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memnoth</title>
-    <link>https://memnoth.github.io/</link>
+    <link>https://memnoth.github.io/index.xml</link>
     <description>Recent content on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -389,6 +389,8 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
       <description>
 
 &lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
+
+&lt;p&gt;2016 KossLab Hackathon - linux-perf&lt;/p&gt;
 </description>
     </item>
     

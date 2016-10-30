@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Memnoth</title>
-    <link>https://memnoth.github.io/home/</link>
-    <description>Recent content in Homes on Memnoth</description>
+    <title>Home-rsses on Memnoth</title>
+    <link>https://memnoth.github.io/home/index.xml</link>
+    <description>Recent content in Home-rsses on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
@@ -19,6 +19,8 @@
       <description>
 
 &lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
+
+&lt;p&gt;2016 KossLab Hackathon - linux-perf&lt;/p&gt;
 </description>
     </item>
     
