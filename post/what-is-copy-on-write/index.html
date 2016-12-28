@@ -183,12 +183,12 @@ else if (pid &gt; 0)
 
 <p>folk()가 실행되고 나서 메모리는 아래의 그림과 같다.</p>
 
-<p><img src="/imgs/cow01.png" alt="cow1" /></p>
+<p><img src="/img/cow/cow01.png" alt="cow1" /></p>
 
 <p>프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.<br />
 Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Data가 모두 똑같으므로 같은 메모리를 참조하다가 <code>temp = 2</code>를 만나는 순간 Child Process의 Instance는 변경되므로 아래처럼 변경된다.</p>
 
-<p><img src="/imgs/cow02.png" alt="cow2" /></p>
+<p><img src="/img/cow/cow02.png" alt="cow2" /></p>
 
 <p><code>temp = 2</code>가 Space 3의 Context라 가정하면 Child Process를 위한 Space 3가 생성되고 Copy된다.</p>
 
@@ -201,8 +201,8 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://memnoth.github.io/post/getting-started/"><span
-      aria-hidden="true">&larr;</span> Getting started with the Academic theme for Hugo</a></li>
+    <li class="previous"><a href="https://memnoth.github.io/post/designated-initializer-in-c/"><span
+      aria-hidden="true">&larr;</span> Designated Initializer in C</a></li>
     
 
     

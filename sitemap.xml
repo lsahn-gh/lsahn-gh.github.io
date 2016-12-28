@@ -57,26 +57,6 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/getting-started/</loc>
-    <lastmod>2016-04-20T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/post/widgets/</loc>
-    <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/post/managing-content/</loc>
-    <lastmod>2016-04-20T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/post/writing-markdown-latex/</loc>
-    <lastmod>2016-04-20T10:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://memnoth.github.io/post/designated-initializer-in-c/</loc>
     <lastmod>2015-10-11T00:00:00+00:00</lastmod>
   </url>
@@ -122,19 +102,8 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://memnoth.github.io/tags/5%EA%B0%80%EC%A7%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C/</loc>
     <lastmod>2015-05-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/tags/academic/</loc>
-    <lastmod>2016-04-20T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -228,20 +197,8 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/hugo/</loc>
-    <lastmod>2016-04-20T12:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://memnoth.github.io/tags/interrupt/</loc>
     <lastmod>2016-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://memnoth.github.io/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
