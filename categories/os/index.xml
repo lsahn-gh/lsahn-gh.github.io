@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memnoth</title>
+    <title>Os on Memnoth</title>
     <link>https://memnoth.github.io/categories/os/index.xml</link>
-    <description>Recent content on Memnoth</description>
+    <description>Recent content in Os on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <atom:link href="https://memnoth.github.io/categories/os/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <atom:link href="/categories/os/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>What is Copy-On-Write?</title>

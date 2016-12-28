@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memnoth</title>
+    <title>Python on Memnoth</title>
     <link>https://memnoth.github.io/tags/python/index.xml</link>
-    <description>Recent content on Memnoth</description>
+    <description>Recent content in Python on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <atom:link href="https://memnoth.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Babelian</title>
-      <link>https://memnoth.github.io/project/babelian/</link>
-      <pubDate>Sat, 11 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/project/babelian/</guid>
-      <description></description>
-    </item>
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>
       <link>https://memnoth.github.io/project/flask-register/</link>
-      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Dec 2016 00:13:07 +0900</pubDate>
       
       <guid>https://memnoth.github.io/project/flask-register/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Babelian</title>
+      <link>https://memnoth.github.io/project/babelian/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
+      
+      <guid>https://memnoth.github.io/project/babelian/</guid>
       <description></description>
     </item>
     
@@ -84,7 +84,7 @@ $ pipreqs /path/to/project
 
 &lt;hr /&gt;
 
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
@@ -99,15 +99,15 @@ $ pipreqs /path/to/project
 
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
+&lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
 
-&lt;p&gt;경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;&lt;em&gt;Django vs Flask worksheet&lt;/em&gt;&lt;/a&gt;에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.&lt;/p&gt;
+&lt;p&gt;경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Django vs Flask worksheet&lt;/em&gt;&lt;/a&gt;에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;differences-between-django-and-flask&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -161,32 +161,32 @@ $ pipreqs /path/to/project
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;http://www.eventbrite.com&#34;&gt;Eventbrite&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://wakatime.com&#34;&gt;WakaTime&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.eventbrite.com&#34; target=&#34;_blank&#34;&gt;Eventbrite&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://prezi.com&#34;&gt;Prezi&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.twilio.com&#34;&gt;Twilio&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://prezi.com&#34; target=&#34;_blank&#34;&gt;Prezi&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.twilio.com&#34; target=&#34;_blank&#34;&gt;Twilio&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://bitbucket.org&#34;&gt;Bitbucket&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/&#34;&gt;President Obama&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://bitbucket.org&#34; target=&#34;_blank&#34;&gt;Bitbucket&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/&#34; target=&#34;_blank&#34;&gt;President Obama&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://instagram.com&#34;&gt;Instagram&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://close.io&#34;&gt;Close.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://instagram.com&#34; target=&#34;_blank&#34;&gt;Instagram&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://close.io&#34; target=&#34;_blank&#34;&gt;Close.io&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.pinterest.com&#34;&gt;Pinterest&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://keen.io&#34;&gt;Keen.io&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.pinterest.com&#34; target=&#34;_blank&#34;&gt;Pinterest&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://keen.io&#34; target=&#34;_blank&#34;&gt;Keen.io&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://zerocater.com&#34;&gt;Zerocater&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://zerocater.com&#34; target=&#34;_blank&#34;&gt;Zerocater&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -204,26 +204,17 @@ $ pipreqs /path/to/project
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/nxayjgx.png&#34; alt=&#34;Django vs Flask Performance Insignificant&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34;&gt;워크시트&lt;/a&gt;와 당신의 결정을 고려하여 선택하세요.&lt;/p&gt;
+&lt;p&gt;마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34; target=&#34;_blank&#34;&gt;워크시트&lt;/a&gt;와 당신의 결정을 고려하여 선택하세요.&lt;/p&gt;
 
-&lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
+&lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
 
-&lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
+&lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>micropython-frostapi</title>
-      <link>https://memnoth.github.io/project/micropython-frostapi/</link>
-      <pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/project/micropython-frostapi/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -251,7 +242,7 @@ ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많�
 
 &lt;hr /&gt;
 
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>

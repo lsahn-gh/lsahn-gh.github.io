@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memnoth</title>
+    <title>Vim on Memnoth</title>
     <link>https://memnoth.github.io/tags/vim/index.xml</link>
-    <description>Recent content on Memnoth</description>
+    <description>Recent content in Vim on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <atom:link href="https://memnoth.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
@@ -49,10 +49,10 @@ lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.s
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;vim에서 사용할 수 있는 우수한 code completion engine이다. &lt;a href=&#34;https://github.com/Valloric/YouCompleteMe&#34;&gt;link&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;vim에서 사용할 수 있는 우수한 code completion engine이다. &lt;a href=&#34;https://github.com/Valloric/YouCompleteMe&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:2&#34;&gt;libtinfo는 ncurses 라이브러리 파일이다.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

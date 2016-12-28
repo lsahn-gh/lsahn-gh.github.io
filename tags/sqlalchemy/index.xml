@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memnoth</title>
+    <title>Sqlalchemy on Memnoth</title>
     <link>https://memnoth.github.io/tags/sqlalchemy/index.xml</link>
-    <description>Recent content on Memnoth</description>
+    <description>Recent content in Sqlalchemy on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <atom:link href="https://memnoth.github.io/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <atom:link href="/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
@@ -34,7 +34,7 @@ ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많�
 
 &lt;hr /&gt;
 
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>

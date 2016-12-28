@@ -1,39 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Project-rsses on Memnoth</title>
+    <title>Projects on Memnoth</title>
     <link>https://memnoth.github.io/project/index.xml</link>
-    <description>Recent content in Project-rsses on Memnoth</description>
+    <description>Recent content in Projects on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <lastBuildDate>Sat, 11 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Babelian</title>
-      <link>https://memnoth.github.io/project/babelian/</link>
-      <pubDate>Sat, 11 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/project/babelian/</guid>
-      <description></description>
-    </item>
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
+    <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>
       <link>https://memnoth.github.io/project/flask-register/</link>
-      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Dec 2016 00:13:07 +0900</pubDate>
       
       <guid>https://memnoth.github.io/project/flask-register/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>micropython-frostapi</title>
-      <link>https://memnoth.github.io/project/micropython-frostapi/</link>
-      <pubDate>Sat, 14 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Babelian</title>
+      <link>https://memnoth.github.io/project/babelian/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/project/micropython-frostapi/</guid>
+      <guid>https://memnoth.github.io/project/babelian/</guid>
       <description></description>
     </item>
     

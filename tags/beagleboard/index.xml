@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memnoth</title>
+    <title>Beagleboard on Memnoth</title>
     <link>https://memnoth.github.io/tags/beagleboard/index.xml</link>
-    <description>Recent content on Memnoth</description>
+    <description>Recent content in Beagleboard on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <atom:link href="https://memnoth.github.io/tags/beagleboard/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <atom:link href="/tags/beagleboard/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
@@ -74,9 +74,9 @@ processes with root permissions can use it.&lt;/p&gt;
 &lt;p&gt;들어가기에 앞서 아래의 준비물이 필요합니다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0ahUKEwiZjbzk3ObMAhXC3KYKHeorDmYQFggcMAA&amp;amp;url=http%3A%2F%2Fwww.ti.com%2Flit%2Fug%2Fspruh73m%2Fspruh73m.pdf&amp;amp;usg=AFQjCNGGBH3-5NJnlA7Plnk3BhbVi_u77g&amp;amp;sig2=IK-nMfK0scQli5VemGRPPA&amp;amp;bvm=bv.122448493,d.dGY&#34;&gt;AM335x Sitara Processors, Technical Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/CircuitCo/BeagleBone-Black/blob/master/BBB_SRM.pdf&#34;&gt;BeagleBone Black System Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/derekmolloy/boneDeviceTree/tree/master/docs&#34;&gt;Derek Molloy&amp;rsquo;s Header Table Reference&lt;/a&gt; - both P8, and P9&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0ahUKEwiZjbzk3ObMAhXC3KYKHeorDmYQFggcMAA&amp;amp;url=http%3A%2F%2Fwww.ti.com%2Flit%2Fug%2Fspruh73m%2Fspruh73m.pdf&amp;amp;usg=AFQjCNGGBH3-5NJnlA7Plnk3BhbVi_u77g&amp;amp;sig2=IK-nMfK0scQli5VemGRPPA&amp;amp;bvm=bv.122448493,d.dGY&#34; target=&#34;_blank&#34;&gt;AM335x Sitara Processors, Technical Reference Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/CircuitCo/BeagleBone-Black/blob/master/BBB_SRM.pdf&#34; target=&#34;_blank&#34;&gt;BeagleBone Black System Reference Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/derekmolloy/boneDeviceTree/tree/master/docs&#34; target=&#34;_blank&#34;&gt;Derek Molloy&amp;rsquo;s Header Table Reference&lt;/a&gt; - both P8, and P9&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;주로 Technical Reference Manual(이하 TRM)과 Header Table 문서를 참조하니 GPIO PIN 개념을 이해하고 TRM에서 register 정보를 찾을 수 있어야 합니다.&lt;/p&gt;
@@ -175,12 +175,12 @@ void init_GPIO_enable(int fd)
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34;&gt;구글 그룹스&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34; target=&#34;_blank&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34; target=&#34;_blank&#34;&gt;구글 그룹스&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;1196 page
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

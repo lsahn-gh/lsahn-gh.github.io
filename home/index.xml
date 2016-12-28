@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home-rsses on Memnoth</title>
+    <title>Homes on Memnoth</title>
     <link>https://memnoth.github.io/home/index.xml</link>
-    <description>Recent content in Home-rsses on Memnoth</description>
+    <description>Recent content in Homes on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 Hyun Jun, An</copyright>
-    <lastBuildDate>Sat, 16 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://memnoth.github.io/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>about</title>
-      <link>https://memnoth.github.io/home/about/</link>
-      <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/home/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
-
-&lt;p&gt;2016 KossLab Hackathon - linux-perf&lt;/p&gt;
-</description>
-    </item>
+    <copyright>&amp;copy; 2016 Yi Soo, (Jeff) An</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
