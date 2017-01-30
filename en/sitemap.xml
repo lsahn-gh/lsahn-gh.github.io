@@ -17,6 +17,11 @@
   </url>
   
   <url>
+    <loc>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</loc>
+    <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://memnoth.github.io/project/flask-register/</loc>
     <lastmod>2016-12-29T00:13:07+09:00</lastmod>
   </url>
@@ -109,8 +114,8 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/beagleboard/</loc>
-    <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+    <loc>https://memnoth.github.io/tags/apue/</loc>
+    <lastmod>2017-01-30T20:44:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,13 +126,19 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/c/</loc>
-    <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+    <loc>https://memnoth.github.io/tags/beagleboard/</loc>
+    <lastmod>2016-06-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://memnoth.github.io/categories/c/</loc>
+    <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://memnoth.github.io/tags/c/</loc>
     <lastmod>2015-10-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -162,13 +173,13 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/fedora-24/</loc>
+    <loc>https://memnoth.github.io/categories/fedora-24/</loc>
     <lastmod>2016-07-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/categories/fedora-24/</loc>
+    <loc>https://memnoth.github.io/tags/fedora-24/</loc>
     <lastmod>2016-07-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -198,13 +209,13 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/linux/</loc>
+    <loc>https://memnoth.github.io/categories/linux/</loc>
     <lastmod>2016-07-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/categories/linux/</loc>
+    <loc>https://memnoth.github.io/tags/linux/</loc>
     <lastmod>2016-07-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -234,20 +245,20 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/os/</loc>
-    <lastmod>2016-05-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://memnoth.github.io/categories/os/</loc>
     <lastmod>2016-05-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://memnoth.github.io/tags/os/</loc>
+    <lastmod>2016-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://memnoth.github.io/post/</loc>
-    <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-30T20:44:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -258,14 +269,14 @@
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/tags/python/</loc>
-    <lastmod>2016-12-29T00:13:07+09:00</lastmod>
+    <loc>https://memnoth.github.io/categories/python/</loc>
+    <lastmod>2015-05-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://memnoth.github.io/categories/python/</loc>
-    <lastmod>2015-05-18T00:00:00+00:00</lastmod>
+    <loc>https://memnoth.github.io/tags/python/</loc>
+    <lastmod>2016-12-29T00:13:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,6 +289,12 @@
   <url>
     <loc>https://memnoth.github.io/tags/sqlalchemy/</loc>
     <lastmod>2015-02-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://memnoth.github.io/tags/system-call/</loc>
+    <lastmod>2017-01-30T20:44:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -307,6 +324,12 @@
   <url>
     <loc>https://memnoth.github.io/categories/tutorials/</loc>
     <lastmod>2015-05-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://memnoth.github.io/tags/unix/</loc>
+    <lastmod>2017-01-30T20:44:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   

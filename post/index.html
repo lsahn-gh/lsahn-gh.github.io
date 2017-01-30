@@ -92,6 +92,53 @@
   
   <div>
     
+    <h2><a href="https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/">read system call overhead and file hole</a></h2>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-01-30 20:44:40 &#43;0900 KST" itemprop="datePublished">
+      Mon, Jan 30, 2017
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a class="article-tag-link" href="https://memnoth.github.io/tags/unix">unix</a
+    >, 
+    
+    <a class="article-tag-link" href="https://memnoth.github.io/tags/system-call">system call</a
+    >, 
+    
+    <a class="article-tag-link" href="https://memnoth.github.io/tags/apue">apue</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+    <div class="article-style"><p>
+      
+      이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다. 4.6 연습문제의 내용은 다음과 같다.
+ cp(1)처럼 파일을 복사하되, 구멍1이 있는 파일을 복사하느 경우 출력 파일에 0 바이트들을 기록하지 않는 유틸리티를 작성하라.
+ 위 연습문제의 키 포인트는 파일의 구멍이 \0로 채워져있다는 것이다.
+복사될 파일의 데이터는 다음과 같으며 크기는 16394 byte 이다.
+0000000 a b c d e f g h i j \0 \0 \0 \0 \0 \0 0000020 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 * 0040000 A B C D E F G H I J 0040012  해당 유틸리티를 간단하게 작성하면 아래와 같다.
+      
+    </p></div>
+  </div>
+  
+  <div>
+    
     <h2><a href="https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/">YouCompleteMe - libtinfo.so.5 not found</a></h2>
     
 
@@ -483,51 +530,6 @@ requests==1.2.0 Flask==0.10.1  방법 1:
 $ pip freeze &gt; requirements.txt  requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:
 위의 포맷 형식으로 requirements.txt을 생성했다면, pip install -r requirements.txt로 사용할 수 있습니다.
 방법 2: pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.
-      
-    </p></div>
-  </div>
-  
-  <div>
-    
-    <h2><a href="https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/">Five programming problems every Software Engineer should be able to solve in less than 1 hour</a></h2>
-    
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    <time datetime="2015-05-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Sat, May 9, 2015
-    </time>
-  </span>
-
-  
-  
-  
-  <span class="article-tags">
-    <i class="fa fa-tags"></i>
-    
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/%ec%86%8c%ed%94%84%ed%8a%b8%ec%9b%a8%ec%96%b4">소프트웨어</a
-    >, 
-    
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98">알고리즘</a
-    >, 
-    
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/5%ea%b0%80%ec%a7%80-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d-%eb%ac%b8%ec%a0%9c">5가지 프로그래밍 문제</a
-    >
-    
-  </span>
-  
-  
-
-  
-
-</div>
-
-    <div class="article-style"><p>
-      
-      제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 Programming 이 무슨 의미인지 모른다는 것이죠.
-물론, 그들은 다르게 생각할 겁니다.
-만약 당신이 jQuery를 안다면 Front-End Web Developer 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 Software Engineer 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요? (저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어1들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 int와 float의 차이를 설명하지 못 해요.
       
     </p></div>
   </div>
