@@ -7,14 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.18" />
-  <meta name="author" content="Yi Soo, (Jeff) An">
-  <meta name="description" content="Student of Computer Engineering">
+  <meta name="author" content="Yi Soo, (Thomas) An">
+  <meta name="description" content="Senior student of Computer Engineering">
 
-  <link rel="stylesheet" href="/css/highlight.min.css">
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
@@ -54,29 +64,67 @@
       
       <ul class="nav navbar-nav navbar-right">
         
+
+        
+
         <li class="nav-item">
           <a href="/#about">
-            Home
+            
+            <span>Home</span>
           </a>
         </li>
+
         
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
         <li class="nav-item">
           <a href="/post/">
-            Blog
+            
+            <span>Posts</span>
           </a>
         </li>
+
         
+        
+
+        
+
         <li class="nav-item">
           <a href="/#projects">
-            Projects
+            
+            <span>Projects</span>
           </a>
         </li>
+
         
+        
+
+        
+
         <li class="nav-item">
           <a href="/#contact">
-            Contact
+            
+            <span>Contact</span>
           </a>
         </li>
+
+        
+        
+
         
       </ul>
 
@@ -84,14 +132,13 @@
   </div>
 </nav>
 
-<div class="container">
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
-    
+  
 
+  <div class="article-container">
     <h1 itemprop="name">What is Copy-On-Write?</h1>
-
     
 
 <div class="article-metadata">
@@ -105,10 +152,23 @@
   
   
   
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/os">OS</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
   <span class="article-tags">
     <i class="fa fa-tags"></i>
     
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/os">os</a
+    <a href="/tags/os">os</a
     >
     
   </span>
@@ -161,7 +221,6 @@
 
 </div>
 
-
     <div class="article-style" itemprop="articleBody">
       <p><em>Copy-On-Write</em> 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.</p>
 
@@ -195,9 +254,11 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
 <p>디테일한 메커니즘은 더 복잡하다.</p>
 
     </div>
+  </div>
 
-  </article>
+</article>
 
+<div class="container">
   <nav>
   <ul class="pager">
     
@@ -212,6 +273,9 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
   </ul>
 </nav>
 
+</div>
+
+<div class="article-container">
   
 <section id="comments">
   <div id="disqus_thread">
@@ -234,13 +298,13 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
 </section>
 
 
-
 </div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
 
-      &copy; 2016 Yi Soo, (Jeff) An &middot; 
+      &copy; 2016 &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
@@ -262,6 +326,7 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     <script src="/js/jquery-1.12.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
     <script src="/js/hugo-academic.js"></script>
     
 
@@ -288,8 +353,16 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     
 
     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
 
     
     

@@ -7,14 +7,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.18" />
-  <meta name="author" content="Yi Soo, (Jeff) An">
-  <meta name="description" content="Student of Computer Engineering">
+  <meta name="author" content="Yi Soo, (Thomas) An">
+  <meta name="description" content="Senior student of Computer Engineering">
 
-  <link rel="stylesheet" href="/css/highlight.min.css">
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/academicons.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
@@ -54,29 +64,67 @@
       
       <ul class="nav navbar-nav navbar-right">
         
+
+        
+
         <li class="nav-item">
           <a href="/#about">
-            Home
+            
+            <span>Home</span>
           </a>
         </li>
+
         
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
         <li class="nav-item">
           <a href="/post/">
-            Blog
+            
+            <span>Posts</span>
           </a>
         </li>
+
         
+        
+
+        
+
         <li class="nav-item">
           <a href="/#projects">
-            Projects
+            
+            <span>Projects</span>
           </a>
         </li>
+
         
+        
+
+        
+
         <li class="nav-item">
           <a href="/#contact">
-            Contact
+            
+            <span>Contact</span>
           </a>
         </li>
+
+        
+        
+
         
       </ul>
 
@@ -84,14 +132,13 @@
   </div>
 </nav>
 
-<div class="container">
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
-    
+  
 
+  <div class="article-container">
     <h1 itemprop="name">비글본 블랙에서의 Dynamic Linking 오류</h1>
-
     
 
 <div class="article-metadata">
@@ -105,16 +152,29 @@
   
   
   
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/beagleboard">Beagleboard</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
   <span class="article-tags">
     <i class="fa fa-tags"></i>
     
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/beagleboard">beagleboard</a
+    <a href="/tags/beagleboard">beagleboard</a
     >, 
     
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/dynamic-linking">dynamic linking</a
+    <a href="/tags/dynamic-linking">dynamic linking</a
     >, 
     
-    <a class="article-tag-link" href="https://memnoth.github.io/tags/linux">linux</a
+    <a href="/tags/linux">linux</a
     >
     
   </span>
@@ -167,7 +227,6 @@
 
 </div>
 
-
     <div class="article-style" itemprop="articleBody">
       <p>임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.</p>
 
@@ -192,9 +251,11 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
 이젠 제대로 실행한다.</p>
 
     </div>
+  </div>
 
-  </article>
+</article>
 
+<div class="container">
   <nav>
   <ul class="pager">
     
@@ -209,6 +270,9 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
   </ul>
 </nav>
 
+</div>
+
+<div class="article-container">
   
 <section id="comments">
   <div id="disqus_thread">
@@ -231,13 +295,13 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
 </section>
 
 
-
 </div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
 
-      &copy; 2016 Yi Soo, (Jeff) An &middot; 
+      &copy; 2016 &middot; 
 
       Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
       theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
@@ -259,6 +323,7 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
     <script src="/js/jquery-1.12.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
     <script src="/js/hugo-academic.js"></script>
     
 
@@ -285,8 +350,16 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
     
 
     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
 
     
     

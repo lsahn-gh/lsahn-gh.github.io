@@ -1,16 +1,598 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://memnoth.github.io/ko/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://memnoth.github.io/en/sitemap.xml</loc>
-		
-	   	<lastmod>2016-04-20T00:00:00+00:00</lastmod>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</loc>
+      <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/project/flask-register/</loc>
+      <lastmod>2016-12-29T00:13:07+09:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/talk/example-talk/</loc>
+      <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/dynamic-linking-error-on-bbb/</loc>
+      <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</loc>
+      <lastmod>2016-05-19T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/what-is-copy-on-write/</loc>
+      <lastmod>2016-05-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/designated-initializer-in-c/</loc>
+      <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/keep-the-spirit-of-c/</loc>
+      <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/project/babelian/</loc>
+      <lastmod>2015-07-11T00:08:45+09:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/how-to-get-your-questions-answered/</loc>
+      <lastmod>2015-05-24T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/python-auto-generate-requirements/</loc>
+      <lastmod>2015-05-18T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</loc>
+      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</loc>
+      <lastmod>2015-05-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/flask-vs-django/</loc>
+      <lastmod>2015-05-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</loc>
+      <lastmod>2015-02-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/5%EA%B0%80%EC%A7%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%AC%B8%EC%A0%9C/</loc>
+      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/algorithm/</loc>
+      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/apue/</loc>
+      <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/beagleboard/</loc>
+      <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/beagleboard/</loc>
+      <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/c/</loc>
+      <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/c/</loc>
+      <lastmod>2015-10-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/django/</loc>
+      <lastmod>2015-05-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/dynamic-linking/</loc>
+      <lastmod>2016-06-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/encoding/</loc>
+      <lastmod>2015-05-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/euc-kr/</loc>
+      <lastmod>2015-05-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/fedora-24/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/fedora-24/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/flask/</loc>
+      <lastmod>2016-12-29T00:13:07+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/gpio/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/interrupt/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/linux/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/linux/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/</loc>
+      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/mmap/</loc>
+      <lastmod>2016-05-19T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/msp430/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/msp430f5529/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/os/</loc>
+      <lastmod>2016-05-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/os/</loc>
+      <lastmod>2016-05-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/post/</loc>
+      <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/project/</loc>
+      <lastmod>2016-12-29T00:13:07+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/python/</loc>
+      <lastmod>2016-12-29T00:13:07+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/python/</loc>
+      <lastmod>2015-05-18T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/requirements/index.txt/</loc>
+      <lastmod>2015-05-18T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/sqlalchemy/</loc>
+      <lastmod>2015-02-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/system-call/</loc>
+      <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/talk/</loc>
+      <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/terminal/</loc>
+      <lastmod>2015-07-11T00:08:45+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/timer/</loc>
+      <lastmod>2016-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/categories/tutorials/</loc>
+      <lastmod>2015-05-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/unix/</loc>
+      <lastmod>2017-01-30T20:44:40+09:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/utf-8/</loc>
+      <lastmod>2015-05-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/vim/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/youcompleteme/</loc>
+      <lastmod>2016-07-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/</loc>
+      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
+      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://memnoth.github.io/tags/%EC%A7%88%EB%AC%B8-%EB%B0%A9%EB%B2%95/</loc>
+      <lastmod>2015-05-24T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+</urlset>
