@@ -170,17 +170,6 @@ $ pip freeze &gt; requirements.txt  requirements.txt 파일을 생성하기 위�
     </div>
   </div>
   
-  <div>
-    <h2><a href="https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/">Performance overhead of sqlalchemy</a></h2>
-    <div class="article-style">
-      
-      위 코드와 같이, Raw SQL, SQLAlchemy&rsquo;s core, SQLAlchemy&rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.
-당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.
-$ python orm_performance_overhead.py sqlite3: Insert 100000 records in 0.226176977158 seconds SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds  주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.
-      
-    </div>
-  </div>
-  
 
   
 

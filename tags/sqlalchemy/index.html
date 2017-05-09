@@ -149,9 +149,7 @@
     <h2><a href="https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/">Performance overhead of sqlalchemy</a></h2>
     <div class="article-style">
       
-      위 코드와 같이, Raw SQL, SQLAlchemy&rsquo;s core, SQLAlchemy&rsquo;s ORM을 이용하고 10만개의 dummy 자료를 삽입하여 성능을 비교하고자 한다.
-당신이 테스트하더라도 비슷한 결과를 얻을 것이라 예상한다.
-$ python orm_performance_overhead.py sqlite3: Insert 100000 records in 0.226176977158 seconds SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds  주목해야 할 점은 Core와 Raw SQL은 고민 해 볼만한 성능을 뽑아주지만 그에 비해 ORM은 너무 느리다는 것이다.
+      import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): <strong>tablename</strong> = &quot;user&quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&lsquo;sqlite:///example.db&rsquo;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.time() for i in range(number_of_records): user = User() user.name = &lsquo;NAME &rsquo; + str(i) session.
       
     </div>
   </div>
