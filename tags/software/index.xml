@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Memnoth</title>
+    <link>https://memnoth.github.io/tags/software/</link>
+    <description>Recent content in Software on Memnoth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 </copyright>
+    <lastBuildDate>Sat, 09 May 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/software/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
+      <link>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <description>
+
+&lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
+&lt;p&gt;&lt;/p&gt;
+&lt;img src=&#34;http://i.imgur.com/Zns27G1.jpg&#34; alt=&#34;Image&#34; /&gt;&lt;br /&gt;
+물론, 그들은 다르게 생각할 겁니다.&lt;/p&gt;
+
+&lt;p&gt;만약 당신이 jQuery를 안다면 &lt;em&gt;Front-End Web Developer&lt;/em&gt; 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 &lt;em&gt;Software Engineer&lt;/em&gt; 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
+(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 &lt;code&gt;int&lt;/code&gt;와 &lt;code&gt;float&lt;/code&gt;의 차이를 설명하지 못 해요.)&lt;/p&gt;
+
+&lt;h2 id=&#34;can-you-actually-code-anything&#34;&gt;&lt;em&gt;Can you actually code anything?&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.&lt;br /&gt;
+당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?&lt;br /&gt;
+제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 &lt;em&gt;Software Engineer&lt;/em&gt;, &lt;em&gt;Programmer&lt;/em&gt;, &lt;em&gt;Computer Science specialist&lt;/em&gt;, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-5-problems&#34;&gt;&lt;em&gt;The 5 problems&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;problem-1&#34;&gt;Problem 1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-2&#34;&gt;Problem 2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
+(list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-3&#34;&gt;Problem 3&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
+(처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-4&#34;&gt;Problem 4&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
+([50, 2, 1, 9] list를 받으면 형식화된 95021&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 출력해야 합니다.)
+&lt;strong&gt;Update:&lt;/strong&gt; Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) &lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-4&#34; target=&#34;_blank&#34;&gt;You can click here to read my solution.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;problem-5&#34;&gt;Problem 5&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1, 2, &amp;hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
+(예를 들어: 1 + 2 + 34 - 5 + 67 - 8 + 9 = 100.)
+&lt;strong&gt;Update:&lt;/strong&gt; (&lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions&#34; target=&#34;_blank&#34;&gt;Here is one solution to this problem&lt;/a&gt; in case you are curious.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;unfortunately-you-aren-t-the-one-that-needs-this&#34;&gt;&lt;em&gt;Unfortunately, you aren&amp;rsquo;t the one that needs this&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.svpino.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour&#34; target=&#34;_blank&#34;&gt;Five programming problems every Software Engineer should be able to solve in less than 1 hour&lt;/a&gt; - Santiago L. Valdarrama&lt;br /&gt;
+번역 - Hyun Jun (Cryptos) An&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;단어의 개념이 아닌 &lt;strong&gt;단어만&lt;/strong&gt; 많이 아는 사람을 의미하는 것 같습니다.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Memnoth</title>
-    <link>https://memnoth.github.io/project/index.xml</link>
+    <link>https://memnoth.github.io/project/</link>
     <description>Recent content in Projects on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
-    <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/project/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>

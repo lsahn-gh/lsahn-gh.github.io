@@ -2,20 +2,185 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Memnoth</title>
-    <link>https://memnoth.github.io/post/index.xml</link>
+    <link>https://memnoth.github.io/post/</link>
     <description>Recent content in Posts on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
-    <lastBuildDate>Mon, 30 Jan 2017 20:44:40 +0900</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jun 2017 13:27:00 +0900</lastBuildDate>
+    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>An Easy Explaination Of First And Follow Sets</title>
+      <link>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</link>
+      <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
+      
+      <guid>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</guid>
+      <description>
+
+&lt;p&gt;이 글은 James Brunskill씨가 작성한 First and Follow Sets에 대한 글입니다.&lt;br /&gt;
+이 자릴 빌어 그에게 감사를 전합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;first-and-follw-sets&#34;&gt;First and Follw Sets&lt;/h1&gt;
+
+&lt;p&gt;대학교에서 First and Follow sets을 처음 배울때 follow는 이해하기가 어려웠습니다. 따라서 제가 배운 규칙들을 다시 작성하였으며 도움이 되길 바랍니다. 이 규칙들이 올바른지 궁금할 것 입니다. 그래서 저는 한 강사님에게 수업에서 이 방법을 시도해 볼 것을 요청하였고 효과가 있다고 생각합니다. 궁금한 점이 있거나 무엇인가 제안하고 싶다면 자유롭게 메일&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;로 연락주시기 바랍니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;rules-for-first-sets&#34;&gt;Rules for First Sets&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;X가 terminal 이라면 First(X)는 X입니다.&lt;/li&gt;
+&lt;li&gt;Production X → ε이 존재하면 ε을 first(X)에 추가하세요.&lt;/li&gt;
+&lt;li&gt;Production X → Y1Y2..Yk가 존재하면 first(Y1Y2..Yk)를 first(X)에 추가하세요.&lt;/li&gt;
+&lt;li&gt;First(Y1Y2..Yk)가 다음과 같다면..
+
+&lt;ol&gt;
+&lt;li&gt;First(Y1) (First(Y1)에 ε이 포함되지 않은 경우)&lt;/li&gt;
+&lt;li&gt;또는 (First(Y1)에 ε이 포함)이 된다면 ε을 제외한 모든 First(Y1Y2..Yk)는 First(Y1)에 포함됩니다. 이는 First(Y2..Yk)에도 적용됩니다.&lt;/li&gt;
+&lt;li&gt;ε이 First(Y1) First(Y2) .. First(Yk)에 포함이 되면 ε을 First(Y1Y2..Yk)에 추가하세요.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;rules-for-follow-sets&#34;&gt;Rules for Follow Sets&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Follow(S)에 $을 추가하세요. (S는 시작 심볼입니다.)&lt;/li&gt;
+&lt;li&gt;Production A → aBb가 존재하면 ε을 제외한 모든 FIRST(b)를 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;li&gt;Production A → aB가 존재하면 FOLLOW(A)에 존재하는 모든 것을 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;li&gt;production A → aBb가 존재하고 FIRST(b)에 ε이 포함되면 FOLLOW(A)의 모든 것을 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;here-an-example-for-you-to-follow-through&#34;&gt;Here an example for you to follow through&lt;/h1&gt;
+
+&lt;p&gt;Grammar는 다음과 같습니다.&lt;br /&gt;
+이때 left-recursion을 없애는 것에 주의해야 합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;E → E + T | T  
+T → T + F | F  
+F → (E) | id  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;에서 left-recursion을 없애면 아래와 같습니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;E → TE&#39;  
+E&#39; → +TE&#39;  
+E&#39; → ε  
+T → FT&#39;  
+T&#39; → *FT&#39;  
+T&#39; → ε  
+F → (E)  
+F → id  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table style=&#34;font-size:15px&#34;&gt;
+&lt;tr&gt;
+&lt;td width=25%&gt;First Sets&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td width=25%&gt;Follow Sets&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;First sets을 만들어야 하니 Set을 초기화합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;Follow sets을 만들어야 하니 Set을 초기화합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T&#39; → ε와 E&#39; → ε에 규칙 2번을 적용합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;시작 심볼 E에 $를 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;이는 First(+TE&#39;)에 속한 모든 것을 First(E&#39;)에 추가함을 의미합니다.&lt;br&gt;규칙 1번에 의해 +을 First(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 2번을 적용합니다.&lt;br&gt;이는 First(E&#39;)의 원소 중 ε을 제외한 모든 것이 Follow(T)에 있어야 함을 뜻합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T&#39; → *FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;이는 First(*FT&#39;)에 속한 모든 것을 First(T&#39;)에 추가함을 의미합니다.&lt;br&gt;규칙 1번에 의해 *을 First(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(E)의 모든 원소를 Follow(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Terminal로 시작하는 Production F → (E)와 F → id에 규칙 3번을 적용합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(T)의 모든 원소를 Follow(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;First(FT&#39;)를 First(T)에 추가합니다.&lt;br&gt;First(F)는 ε을 포함하지 않으므로 First(FT&#39;)는 First(F)와 같습니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {&#39;(&#39;,id}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;T&#39; →*FT&#39;에 규칙 2번을 적용합니다.&lt;br&gt;ε을 제외한 First(T&#39;)를 Follow(F)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;First(TE&#39;)를 First(E)에 추가합니다.&lt;br&gt;First(T)는 ε을 포함하지 않으므로 First(TE&#39;)는 First(T)와 같습니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {&#39;(&#39;,id}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {&#39;(&#39;,id}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;F → (E)에 규칙 2번을 적용합니다.&lt;br&gt;First(&#39;)&#39;)의 모든 것을 Follow(E)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(E)의 모든 원소를 Follow(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 4번을 적용합니다.&lt;br&gt;Follow(E&#39;)의 모든 원소를 Follow(T)에 추가합니다. (First(E&#39;)는 ε포함)&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(T)의 모든 원소를 Follow(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;T&#39; → *FT&#39;에 규칙 4번을 적용합니다.&lt;br&gt;Follow(T&#39;)의 모든 원소를 Follow(F)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*,+,$,)}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;보안상 James Brunskill씨의 사이트로 대체합니다; &lt;a href=&#34;https://jmb.nz/&#34; target=&#34;_blank&#34;&gt;https://jmb.nz/&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</link>
+      <link>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</guid>
+      <guid>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-advanced-programming-in-the-unix-environment의-4-6-연습문제에-관한-내용입니다&#34;&gt;&lt;em&gt;이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다.&lt;/em&gt;&lt;/h4&gt;
@@ -169,10 +334,10 @@ main(int argc, char *argv[])
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</guid>
       <description>&lt;p&gt;Laptop에 Fedora 24를 설치하고 YouCompleteMe&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;를 인스톨했으나 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류를 출력하며 정상적으로 실행되지 않았다.&lt;br /&gt;
 &lt;strong&gt;:YcmToggleLogs stderr&lt;/strong&gt;를 통하여 디버깅을 해보니 시스템에서 &lt;code&gt;libtinfo.so.5&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 찾지 못해 발생한 예외였다.&lt;/p&gt;
 
@@ -218,10 +383,10 @@ lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.s
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</guid>
+      <guid>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
@@ -323,10 +488,10 @@ __interrupt void TIMER0_A0_ISR(void)
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-      <link>https://memnoth.github.io/post/dynamic-linking-error-on-bbb/</link>
+      <link>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/dynamic-linking-error-on-bbb/</guid>
+      <guid>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</guid>
       <description>&lt;p&gt;임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.&lt;/p&gt;
 
 &lt;p&gt;NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 &lt;code&gt;No such file or directory&lt;/code&gt; 오류가 발생하였다.&lt;br /&gt;
@@ -353,10 +518,10 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <guid>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
 &lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
@@ -500,10 +665,10 @@ void init_GPIO_enable(int fd)
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;
@@ -539,10 +704,10 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -566,10 +731,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -589,10 +754,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
+      <link>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
+      <guid>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;
@@ -661,10 +826,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -723,10 +888,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>
 
 &lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
@@ -807,10 +972,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/2015/05/05/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/2015/05/05/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
@@ -833,10 +998,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>https://memnoth.github.io/2015/05/03/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -961,10 +1126,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
 import sqlite3
  

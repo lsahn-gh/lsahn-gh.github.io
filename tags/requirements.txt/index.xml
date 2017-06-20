@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Requirements.Txt on Memnoth</title>
-    <link>https://memnoth.github.io/tags/requirements.txt/index.xml</link>
+    <link>https://memnoth.github.io/tags/requirements.txt/</link>
     <description>Recent content in Requirements.Txt on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
-    <atom:link href="/tags/requirements.txt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/requirements.txt/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;

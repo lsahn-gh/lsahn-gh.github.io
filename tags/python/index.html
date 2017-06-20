@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.18" />
+  <meta name="generator" content="Hugo 0.23" />
   <meta name="author" content="Yi Soo, (Thomas) An">
   <meta name="description" content="Senior student of Computer Engineering">
 
@@ -183,7 +183,7 @@
   </div>
   
   <div>
-    <h2><a href="https://memnoth.github.io/post/python-auto-generate-requirements/">Python - Auto generate requirements.txt</a></h2>
+    <h2><a href="https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/">Python - Auto generate requirements.txt</a></h2>
     <div class="article-style">
       
       Why requirements.txt? 모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.
@@ -198,7 +198,7 @@ $ pip freeze &gt; requirements.txt  requirements.txt 파일을 생성하기 위�
   </div>
   
   <div>
-    <h2><a href="https://memnoth.github.io/post/flask-vs-django/">Pirates use Flask, the Navy uses Django</a></h2>
+    <h2><a href="https://memnoth.github.io/2015/05/03/flask-vs-django/">Pirates use Flask, the Navy uses Django</a></h2>
     <div class="article-style">
       
       Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 Flask와 Django가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, WakaTime는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.
@@ -208,7 +208,7 @@ $ pip freeze &gt; requirements.txt  requirements.txt 파일을 생성하기 위�
   </div>
   
   <div>
-    <h2><a href="https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/">Performance overhead of sqlalchemy</a></h2>
+    <h2><a href="https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/">Performance overhead of sqlalchemy</a></h2>
     <div class="article-style">
       
       import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): <strong>tablename</strong> = &quot;user&quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&lsquo;sqlite:///example.db&rsquo;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.time() for i in range(number_of_records): user = User() user.name = &lsquo;NAME &rsquo; + str(i) session.
