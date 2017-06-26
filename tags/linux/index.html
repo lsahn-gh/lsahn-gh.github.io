@@ -204,6 +204,18 @@ test: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked
   </div>
   
   <div>
+    <h2><a href="https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/">mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</a></h2>
+    <div class="article-style">
+      
+      아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.! 왜 mmap을 이용하여 direct로 접근하나요?  The memory-mapping method allows you to directly access the registors that control the
+GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only
+processes with root permissions can use it.
+ 책1에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 file I/O 방식보다 1000배는 빠르다고 합니다.
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="https://memnoth.github.io/2015/05/05/convert-encoding-of-documents-in-linux/">Convert encoding of Documents in Linux</a></h2>
     <div class="article-style">
       
