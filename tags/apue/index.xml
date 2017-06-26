@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apue on Memnoth</title>
-    <link>https://memnoth.github.io/tags/apue/index.xml</link>
+    <link>https://memnoth.github.io/tags/apue/</link>
     <description>Recent content in Apue on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
-    <atom:link href="/tags/apue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2017 20:44:40 +0900</lastBuildDate>
+    <atom:link href="/tags/apue/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</link>
+      <link>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</guid>
+      <guid>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-advanced-programming-in-the-unix-environment의-4-6-연습문제에-관한-내용입니다&#34;&gt;&lt;em&gt;이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다.&lt;/em&gt;&lt;/h4&gt;

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.23" />
+  <meta name="author" content="Yi Soo, (Thomas) An">
+  <meta name="description" content="Senior student of Computer Engineering">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-78144803-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="https://memnoth.github.io/index.xml" type="application/rss+xml" title="Memnoth">
+  <link rel="feed" href="https://memnoth.github.io/index.xml" type="application/rss+xml" title="Memnoth">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111/rtl8168-working/">
+
+  
+
+  <title>How to get your Realtek RTL8111/RTL8168 working | Memnoth</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Memnoth</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">How to get your Realtek RTL8111/RTL8168 working</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-06-26 11:53:39 &#43;0900 KST" itemprop="datePublished">
+      Mon, Jun 26, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/linux">linux</a
+    >, 
+    
+    <a href="/tags/realtek">realtek</a
+    >, 
+    
+    <a href="/tags/driver">driver</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmemnoth.github.io%2f2017%2f06%2f26%2fhow-to-get-your-realtek-rtl8111%2frtl8168-working%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20to%20get%20your%20Realtek%20RTL8111%2fRTL8168%20working&amp;url=https%3a%2f%2fmemnoth.github.io%2f2017%2f06%2f26%2fhow-to-get-your-realtek-rtl8111%2frtl8168-working%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmemnoth.github.io%2f2017%2f06%2f26%2fhow-to-get-your-realtek-rtl8111%2frtl8168-working%2f&amp;title=How%20to%20get%20your%20Realtek%20RTL8111%2fRTL8168%20working"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fmemnoth.github.io%2f2017%2f06%2f26%2fhow-to-get-your-realtek-rtl8111%2frtl8168-working%2f&amp;title=How%20to%20get%20your%20Realtek%20RTL8111%2fRTL8168%20working"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20to%20get%20your%20Realtek%20RTL8111%2fRTL8168%20working&amp;body=https%3a%2f%2fmemnoth.github.io%2f2017%2f06%2f26%2fhow-to-get-your-realtek-rtl8111%2frtl8168-working%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="why-do-i-need-this-driver-anyway">Why do I need this driver anyway?</h1>
+
+<p>많은 분들이 제게 &ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&hellip;&rdquo; 라고 물어봅니다. 하지만 <code>RTL8111/RTL8168</code>은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?<br />
+그래서 우리가 직접 빌드해야 된답니다.</p>
+
+<h1 id="the-installation-methods">The installation methods</h1>
+
+<p>Ubuntu/Debian에서 디바이스 드라이버를 컴파일하는 방법에 대해 글을 쓴 이후로 많은 것이 변했습니다. 그래서 오늘은 드라이버를 설치하기 위한 방법 2개를 소개하고자 합니다.</p>
+
+<h1 id="the-automatic-way">The automatic way</h1>
+
+<p><em>NOTE: 힌트를 준 <code>Liyu</code>에게 고마움을 전합니다.</em><br />
+<em>NOTE2: 인터넷 연결이 필요합니다. WLAN이나 USB 이더넷 카드를 이용해서 인터넷에 연결해주세요.</em></p>
+
+<p>Ubuntu와 Debian의 저장소에는 우리가 설치할 드라이버가 포함되어 있습니다. Debian 유저라면 <code>non-free</code> 패키지 소스를 활성화(Enable) 해야하고 Ubuntu 유저라면 <code>universe</code> 패키지 소스를 활성화해야 합니다. <em>/etc/apt/sources.list</em> 를 root 권한과 함께 텍스트 에디터로 열어서 수정해야 합니다.</p>
+
+<h2 id="debian-이용자">Debian 이용자</h2>
+
+<blockquote>
+<pre><code>deb http://ftp.de.debian.org/debian/ jessie main contrib
+</code></pre>
+
+<p>위 라인을 다음과 같이 변경하고 저장합니다.</p>
+
+<pre><code>deb http://ftp.de.debian.org/debian/ jessie main contrib non-free
+</code></pre>
+
+<p>저장소를 업데이트합니다.</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+</blockquote>
+
+<h2 id="ubuntu-이용자">Ubuntu 이용자</h2>
+
+<blockquote>
+<pre><code>deb http://de.archive.ubuntu.com/ubuntu/ xenial main restricted
+</code></pre>
+
+<p>위 라인을 다음과 같이 변경하고 저장합니다.</p>
+
+<pre><code>deb http://de.archive.ubuntu.com/ubuntu/ xenial main restricted universe
+</code></pre>
+
+<p>저장소를 업데이트합니다.</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+</blockquote>
+
+<p>이제 준비가 되었으니 아래 명령어를 이용하여 디바이스 드라이버를 설치합니다.</p>
+
+<pre><code>sudo apt-get install r8168-dkms
+</code></pre>
+
+<p>CPU 종류에 따라 디바이스 드라이버를 빌드하는데 소요되는 시간이 있습니다.<br />
+자동화 방법의 장점은 Kernel 업데이트가 생기면 <em>dkms</em> 에 의해 <code>r8168</code> 드라이버도 업데이트됩니다. 빌드가 끝나고 이더넷 카드를 사용할 수 있어야 하는데 그렇지 않다면 재부팅합니다.</p>
+
+<h1 id="the-manual-way">The manual way</h1>
+
+<p><em>NOTE: Manual 방식은 4.0 이상의 커널에서 테스트되었습니다.</em></p>
+
+<h3 id="1-의존성-설치">1. 의존성 설치</h3>
+
+<p>우선 인터넷에 연결되어 있어야 합니다. 물론 필요한 패키지를  Debian/Ubuntu DVD에서 찾을 수도 있습니다.<br />
+의존성 패키지를 설치하기 위해 아래의 명령어를 입력합니다.</p>
+
+<pre><code>sudo apt-get install build-essential linux-headers-$(uname -r)
+</code></pre>
+
+<h3 id="2-드라이버-코드-다운로드">2. 드라이버 코드 다운로드</h3>
+
+<p><a href="http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&amp;PNid=13&amp;PFid=5&amp;Level=5&amp;Conn=4&amp;DownTypeID=3&amp;GetDown=false#2" target="_blank">링크</a>를 통하여 Realtek 홈페이지에서 공식 드라이버를 받을 수 있습니다. 커널 버전이 4.7 이상이면 <code>LINUX driver for kernel up to 4.7</code>를 선택하고 아니면 <code>Linux driver for kernel 2.4.x (Support x86 and x64)</code>를 선택합니다.</p>
+
+<h3 id="3-블랙리스트에-r8169-드라이버-추가">3. 블랙리스트에 r8169 드라이버 추가</h3>
+
+<p>시스템에 <code>r8168</code> 드라이버가 없으면 r8169를 사용하게 됩니다. 하지만 RTL8168 이더넷 카드에서 r8169 드라이버는 불안정합니다.<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> r8169가 로드되는 것을 막기 위하여 블랙리스트를 이용합니다.</p>
+
+<pre><code>user@linux:~$ sudo sh -c 'echo blacklist r8169 &gt;&gt; /etc/modprobe.d/blacklist.conf'
+</code></pre>
+
+<h3 id="4-소스코드-압축해제">4. 소스코드 압축해제</h3>
+
+<p>드라이버를 다운로드하고 나서 압축을 풉니다.</p>
+
+<pre><code>user@linux:~@ tar xfvj path/to/file.tar.bz2
+</code></pre>
+
+<p><em>NOTE: 소스코드 파일 이름은 다를 수 있으니 주의하세요.</em></p>
+
+<h3 id="5-컴파일-및-설치">5. 컴파일 및 설치</h3>
+
+<p>압축해제된 폴더로 이동합니다.</p>
+
+<pre><code>user@linux:~$ cd path/to/file
+</code></pre>
+
+<p>이제 스크립트를 이용하여 컴파일 및 설치 과정을 진행합니다.</p>
+
+<pre><code>user@linux:~/path/to/file$ sudo ./autorun.sh
+</code></pre>
+
+<p>드라이버 빌드가 끝나고 올바르게 설치되었다면 아래와 같이 출력되어야 합니다.</p>
+
+<pre><code>Check old driver and unload it.
+rmmod r8169
+Build the module and install
+At main.c:222:
+- SSL error:02001002:system library:fopen:No such file or directory: bss_file.c:175
+- SSL error:2006D080:BIO routines:BIO_new_file:no such file: bss_file.c:178
+sign-file: certs/signing_key.pem: No such file or directory
+Backup r8169.ko
+rename r8169.ko to r8169.bak
+DEPMOD 4.4.0-31-generic
+load module r8168
+Updating initramfs. Please wait.
+update-initramfs: Generating /boot/initrd.img-4.4.0-31-generic
+Completed.
+</code></pre>
+
+<h3 id="6-드라이버-확인">6. 드라이버 확인</h3>
+
+<p>마지막으로 드라이버가 올바르게 로드되었는지 확인합니다. 어떠한 오류도 없다면 아래와 같이 출력됩니다.</p>
+
+<pre><code>user@linux:~$ lsmod | grep r8168
+r8168                 491520  0
+</code></pre>
+
+<p>이더넷 디바이스에서도 확인해봅니다.</p>
+
+<pre><code>user@linux:~$ sudo ethtool -i enp1s0
+driver: r8168
+version: 8.042.00-NAPI
+firmware-version:
+expansion-rom-version:
+bus-info: 0000:07:00.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: no
+</code></pre>
+
+<p>로드되지 않았으면 시스템을 재부팅하고 다시 확인합니다.</p>
+
+<h1 id="that-s-it">That&rsquo;s it</h1>
+
+<p>이제 Realtek 공식 드라이버를 이용할 준비가 되었습니다. 만약 궁금한 점이나 제안하고 싶은 것이 있다면 댓글로 알려주세요.</p>
+
+<hr />
+
+<p>원문 &ndash; <a href="https://unixblogger.com/2016/08/11/how-to-get-your-realtek-rtl8111rtl8168-working-updated-guide/" target="_blank">How To get your Realtek RTL8111/RTL8168 working</a> by Unixblogger<br />
+번역 &ndash; Yi Soo, (Thomas) An</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">This means slow download rates, homepages taking hours to load and so on.
+ <a class="footnote-return" href="#fnref:1"><sup>^</sup></a></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/"><span
+      aria-hidden="true">&larr;</span> An Easy Explaination Of First And Follow Sets</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'memnoth';
+    var disqus_identifier = 'https:\/\/memnoth.github.io\/2017\/06\/26\/how-to-get-your-realtek-rtl8111\/rtl8168-working\/';
+    var disqus_title = 'How to get your Realtek RTL8111\/RTL8168 working';
+    var disqus_url = 'https:\/\/memnoth.github.io\/2017\/06\/26\/how-to-get-your-realtek-rtl8111\/rtl8168-working\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

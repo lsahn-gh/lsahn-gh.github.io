@@ -2,20 +2,358 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memnoth on Memnoth</title>
-    <link>https://memnoth.github.io/index.xml</link>
+    <link>https://memnoth.github.io/</link>
     <description>Recent content in Memnoth on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to get your Realtek RTL8111/RTL8168 working</title>
+      <link>https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111/rtl8168-working/</link>
+      <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
+      
+      <guid>https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111/rtl8168-working/</guid>
+      <description>
+
+&lt;h1 id=&#34;why-do-i-need-this-driver-anyway&#34;&gt;Why do I need this driver anyway?&lt;/h1&gt;
+
+&lt;p&gt;많은 분들이 제게 &amp;ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&amp;hellip;&amp;rdquo; 라고 물어봅니다. 하지만 &lt;code&gt;RTL8111/RTL8168&lt;/code&gt;은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?&lt;br /&gt;
+그래서 우리가 직접 빌드해야 된답니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-installation-methods&#34;&gt;The installation methods&lt;/h1&gt;
+
+&lt;p&gt;Ubuntu/Debian에서 디바이스 드라이버를 컴파일하는 방법에 대해 글을 쓴 이후로 많은 것이 변했습니다. 그래서 오늘은 드라이버를 설치하기 위한 방법 2개를 소개하고자 합니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-automatic-way&#34;&gt;The automatic way&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;NOTE: 힌트를 준 &lt;code&gt;Liyu&lt;/code&gt;에게 고마움을 전합니다.&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;NOTE2: 인터넷 연결이 필요합니다. WLAN이나 USB 이더넷 카드를 이용해서 인터넷에 연결해주세요.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubuntu와 Debian의 저장소에는 우리가 설치할 드라이버가 포함되어 있습니다. Debian 유저라면 &lt;code&gt;non-free&lt;/code&gt; 패키지 소스를 활성화(Enable) 해야하고 Ubuntu 유저라면 &lt;code&gt;universe&lt;/code&gt; 패키지 소스를 활성화해야 합니다. &lt;em&gt;/etc/apt/sources.list&lt;/em&gt; 를 root 권한과 함께 텍스트 에디터로 열어서 수정해야 합니다.&lt;/p&gt;
+
+&lt;h2 id=&#34;debian-이용자&#34;&gt;Debian 이용자&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;deb http://ftp.de.debian.org/debian/ jessie main contrib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 라인을 다음과 같이 변경하고 저장합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://ftp.de.debian.org/debian/ jessie main contrib non-free
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;저장소를 업데이트합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;ubuntu-이용자&#34;&gt;Ubuntu 이용자&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;deb http://de.archive.ubuntu.com/ubuntu/ xenial main restricted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 라인을 다음과 같이 변경하고 저장합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://de.archive.ubuntu.com/ubuntu/ xenial main restricted universe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;저장소를 업데이트합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이제 준비가 되었으니 아래 명령어를 이용하여 디바이스 드라이버를 설치합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install r8168-dkms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;CPU 종류에 따라 디바이스 드라이버를 빌드하는데 소요되는 시간이 있습니다.&lt;br /&gt;
+자동화 방법의 장점은 Kernel 업데이트가 생기면 &lt;em&gt;dkms&lt;/em&gt; 에 의해 &lt;code&gt;r8168&lt;/code&gt; 드라이버도 업데이트됩니다. 빌드가 끝나고 이더넷 카드를 사용할 수 있어야 하는데 그렇지 않다면 재부팅합니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-manual-way&#34;&gt;The manual way&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;NOTE: Manual 방식은 4.0 이상의 커널에서 테스트되었습니다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-의존성-설치&#34;&gt;1. 의존성 설치&lt;/h3&gt;
+
+&lt;p&gt;우선 인터넷에 연결되어 있어야 합니다. 물론 필요한 패키지를  Debian/Ubuntu DVD에서 찾을 수도 있습니다.&lt;br /&gt;
+의존성 패키지를 설치하기 위해 아래의 명령어를 입력합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install build-essential linux-headers-$(uname -r)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-드라이버-코드-다운로드&#34;&gt;2. 드라이버 코드 다운로드&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&amp;amp;PNid=13&amp;amp;PFid=5&amp;amp;Level=5&amp;amp;Conn=4&amp;amp;DownTypeID=3&amp;amp;GetDown=false#2&#34; target=&#34;_blank&#34;&gt;링크&lt;/a&gt;를 통하여 Realtek 홈페이지에서 공식 드라이버를 받을 수 있습니다. 커널 버전이 4.7 이상이면 &lt;code&gt;LINUX driver for kernel up to 4.7&lt;/code&gt;를 선택하고 아니면 &lt;code&gt;Linux driver for kernel 2.4.x (Support x86 and x64)&lt;/code&gt;를 선택합니다.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-블랙리스트에-r8169-드라이버-추가&#34;&gt;3. 블랙리스트에 r8169 드라이버 추가&lt;/h3&gt;
+
+&lt;p&gt;시스템에 &lt;code&gt;r8168&lt;/code&gt; 드라이버가 없으면 r8169를 사용하게 됩니다. 하지만 RTL8168 이더넷 카드에서 r8169 드라이버는 불안정합니다.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; r8169가 로드되는 것을 막기 위하여 블랙리스트를 이용합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~$ sudo sh -c &#39;echo blacklist r8169 &amp;gt;&amp;gt; /etc/modprobe.d/blacklist.conf&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;4-소스코드-압축해제&#34;&gt;4. 소스코드 압축해제&lt;/h3&gt;
+
+&lt;p&gt;드라이버를 다운로드하고 나서 압축을 풉니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~@ tar xfvj path/to/file.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;NOTE: 소스코드 파일 이름은 다를 수 있으니 주의하세요.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-컴파일-및-설치&#34;&gt;5. 컴파일 및 설치&lt;/h3&gt;
+
+&lt;p&gt;압축해제된 폴더로 이동합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~$ cd path/to/file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이제 스크립트를 이용하여 컴파일 및 설치 과정을 진행합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~/path/to/file$ sudo ./autorun.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;드라이버 빌드가 끝나고 올바르게 설치되었다면 아래와 같이 출력되어야 합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Check old driver and unload it.
+rmmod r8169
+Build the module and install
+At main.c:222:
+- SSL error:02001002:system library:fopen:No such file or directory: bss_file.c:175
+- SSL error:2006D080:BIO routines:BIO_new_file:no such file: bss_file.c:178
+sign-file: certs/signing_key.pem: No such file or directory
+Backup r8169.ko
+rename r8169.ko to r8169.bak
+DEPMOD 4.4.0-31-generic
+load module r8168
+Updating initramfs. Please wait.
+update-initramfs: Generating /boot/initrd.img-4.4.0-31-generic
+Completed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;6-드라이버-확인&#34;&gt;6. 드라이버 확인&lt;/h3&gt;
+
+&lt;p&gt;마지막으로 드라이버가 올바르게 로드되었는지 확인합니다. 어떠한 오류도 없다면 아래와 같이 출력됩니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~$ lsmod | grep r8168
+r8168                 491520  0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이더넷 디바이스에서도 확인해봅니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user@linux:~$ sudo ethtool -i enp1s0
+driver: r8168
+version: 8.042.00-NAPI
+firmware-version:
+expansion-rom-version:
+bus-info: 0000:07:00.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: yes
+supports-register-dump: yes
+supports-priv-flags: no
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;로드되지 않았으면 시스템을 재부팅하고 다시 확인합니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;that-s-it&#34;&gt;That&amp;rsquo;s it&lt;/h1&gt;
+
+&lt;p&gt;이제 Realtek 공식 드라이버를 이용할 준비가 되었습니다. 만약 궁금한 점이나 제안하고 싶은 것이 있다면 댓글로 알려주세요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://unixblogger.com/2016/08/11/how-to-get-your-realtek-rtl8111rtl8168-working-updated-guide/&#34; target=&#34;_blank&#34;&gt;How To get your Realtek RTL8111/RTL8168 working&lt;/a&gt; by Unixblogger&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;This means slow download rates, homepages taking hours to load and so on.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Easy Explaination Of First And Follow Sets</title>
+      <link>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</link>
+      <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
+      
+      <guid>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</guid>
+      <description>
+
+&lt;p&gt;이 글은 James Brunskill씨가 작성한 First and Follow Sets에 대한 글입니다.&lt;br /&gt;
+이 자릴 빌어 그에게 감사를 전합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;first-and-follw-sets&#34;&gt;First and Follw Sets&lt;/h1&gt;
+
+&lt;p&gt;대학교에서 First and Follow sets을 처음 배울때 follow는 이해하기가 어려웠습니다. 따라서 제가 배운 규칙들을 다시 작성하였으며 도움이 되길 바랍니다. 이 규칙들이 올바른지 궁금할 것 입니다. 그래서 저는 한 강사님에게 수업에서 이 방법을 시도해 볼 것을 요청하였고 효과가 있다고 생각합니다. 궁금한 점이 있거나 무엇인가 제안하고 싶다면 자유롭게 메일&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;로 연락주시기 바랍니다.&lt;/p&gt;
+
+&lt;h1 id=&#34;rules-for-first-sets&#34;&gt;Rules for First Sets&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;X가 terminal 이라면 First(X)는 X입니다.&lt;/li&gt;
+&lt;li&gt;Production X → ε이 존재하면 ε을 first(X)에 추가하세요.&lt;/li&gt;
+&lt;li&gt;Production X → Y1Y2..Yk가 존재하면 first(Y1Y2..Yk)를 first(X)에 추가하세요.&lt;/li&gt;
+&lt;li&gt;First(Y1Y2..Yk)가 다음과 같다면..
+
+&lt;ol&gt;
+&lt;li&gt;First(Y1) (First(Y1)에 ε이 포함되지 않은 경우)&lt;/li&gt;
+&lt;li&gt;또는 (First(Y1)에 ε이 포함)이 된다면 ε을 제외한 모든 First(Y1Y2..Yk)는 First(Y1)에 포함됩니다. 이는 First(Y2..Yk)에도 적용됩니다.&lt;/li&gt;
+&lt;li&gt;ε이 First(Y1) First(Y2) .. First(Yk)에 포함이 되면 ε을 First(Y1Y2..Yk)에 추가하세요.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;rules-for-follow-sets&#34;&gt;Rules for Follow Sets&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Follow(S)에 $을 추가하세요. (S는 시작 심볼입니다.)&lt;/li&gt;
+&lt;li&gt;Production A → aBb가 존재하면 ε을 제외한 모든 FIRST(b)를 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;li&gt;Production A → aB가 존재하면 FOLLOW(A)에 존재하는 모든 것을 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;li&gt;production A → aBb가 존재하고 FIRST(b)에 ε이 포함되면 FOLLOW(A)의 모든 것을 FOLLOW(B)에 추가합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;here-an-example-for-you-to-follow-through&#34;&gt;Here an example for you to follow through&lt;/h1&gt;
+
+&lt;p&gt;Grammar는 다음과 같습니다.&lt;br /&gt;
+이때 left-recursion을 없애는 것에 주의해야 합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;E → E + T | T  
+T → T + F | F  
+F → (E) | id  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;에서 left-recursion을 없애면 아래와 같습니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;E → TE&#39;  
+E&#39; → +TE&#39;  
+E&#39; → ε  
+T → FT&#39;  
+T&#39; → *FT&#39;  
+T&#39; → ε  
+F → (E)  
+F → id  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table style=&#34;font-size:15px&#34;&gt;
+&lt;tr&gt;
+&lt;td width=25%&gt;First Sets&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td width=25%&gt;Follow Sets&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;First sets을 만들어야 하니 Set을 초기화합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;Follow sets을 만들어야 하니 Set을 초기화합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T&#39; → ε와 E&#39; → ε에 규칙 2번을 적용합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;시작 심볼 E에 $를 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;이는 First(+TE&#39;)에 속한 모든 것을 First(E&#39;)에 추가함을 의미합니다.&lt;br&gt;규칙 1번에 의해 +을 First(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 2번을 적용합니다.&lt;br&gt;이는 First(E&#39;)의 원소 중 ε을 제외한 모든 것이 Follow(T)에 있어야 함을 뜻합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T&#39; → *FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;이는 First(*FT&#39;)에 속한 모든 것을 First(T&#39;)에 추가함을 의미합니다.&lt;br&gt;규칙 1번에 의해 *을 First(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {}&lt;/td&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(E)의 모든 원소를 Follow(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Terminal로 시작하는 Production F → (E)와 F → id에 규칙 3번을 적용합니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(T)의 모든 원소를 Follow(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;First(FT&#39;)를 First(T)에 추가합니다.&lt;br&gt;First(F)는 ε을 포함하지 않으므로 First(FT&#39;)는 First(F)와 같습니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {&#39;(&#39;,id}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;T&#39; →*FT&#39;에 규칙 2번을 적용합니다.&lt;br&gt;ε을 제외한 First(T&#39;)를 Follow(F)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;First(TE&#39;)를 First(E)에 추가합니다.&lt;br&gt;First(T)는 ε을 포함하지 않으므로 First(TE&#39;)는 First(T)와 같습니다.&lt;/td&gt;
+&lt;td&gt;FIRST(E) = {&#39;(&#39;,id}&lt;br&gt;FIRST(E&#39;) = {+,ε}&lt;br&gt;FIRST(T) = {&#39;(&#39;,id}&lt;br&gt;FIRST(T&#39;) = {*,ε}&lt;br&gt;FIRST(F) = {&#39;(&#39;,id}&lt;/td&gt;
+&lt;td&gt;F → (E)에 규칙 2번을 적용합니다.&lt;br&gt;First(&#39;)&#39;)의 모든 것을 Follow(E)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;E → TE&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(E)의 모든 원소를 Follow(E&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;E&#39; → +TE&#39;에 규칙 4번을 적용합니다.&lt;br&gt;Follow(E&#39;)의 모든 원소를 Follow(T)에 추가합니다. (First(E&#39;)는 ε포함)&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;T → FT&#39;에 규칙 3번을 적용합니다.&lt;br&gt;Follow(T)의 모든 원소를 Follow(T&#39;)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*}&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;T&#39; → *FT&#39;에 규칙 4번을 적용합니다.&lt;br&gt;Follow(T&#39;)의 모든 원소를 Follow(F)에 추가합니다.&lt;/td&gt;
+&lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*,+,$,)}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;보안상 James Brunskill씨의 사이트로 대체합니다; &lt;a href=&#34;https://jmb.nz/&#34; target=&#34;_blank&#34;&gt;https://jmb.nz/&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</link>
+      <link>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/read_system_call_overhead_and_file_hole/</guid>
+      <guid>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-advanced-programming-in-the-unix-environment의-4-6-연습문제에-관한-내용입니다&#34;&gt;&lt;em&gt;이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다.&lt;/em&gt;&lt;/h4&gt;
@@ -188,10 +526,10 @@ main(int argc, char *argv[])
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</guid>
       <description>&lt;p&gt;Laptop에 Fedora 24를 설치하고 YouCompleteMe&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;를 인스톨했으나 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류를 출력하며 정상적으로 실행되지 않았다.&lt;br /&gt;
 &lt;strong&gt;:YcmToggleLogs stderr&lt;/strong&gt;를 통하여 디버깅을 해보니 시스템에서 &lt;code&gt;libtinfo.so.5&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 찾지 못해 발생한 예외였다.&lt;/p&gt;
 
@@ -237,10 +575,10 @@ lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.s
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</guid>
+      <guid>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
@@ -342,10 +680,10 @@ __interrupt void TIMER0_A0_ISR(void)
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-      <link>https://memnoth.github.io/post/dynamic-linking-error-on-bbb/</link>
+      <link>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/dynamic-linking-error-on-bbb/</guid>
+      <guid>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</guid>
       <description>&lt;p&gt;임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.&lt;/p&gt;
 
 &lt;p&gt;NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 &lt;code&gt;No such file or directory&lt;/code&gt; 오류가 발생하였다.&lt;br /&gt;
@@ -372,10 +710,10 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <guid>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
 &lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
@@ -519,10 +857,10 @@ void init_GPIO_enable(int fd)
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;
@@ -558,10 +896,10 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -585,10 +923,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -617,10 +955,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
+      <link>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
+      <guid>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;
@@ -689,10 +1027,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -746,116 +1084,6 @@ $ pipreqs /path/to/project
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
 번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
-      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
-      <description>
-
-&lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
-&lt;p&gt;&lt;/p&gt;
-&lt;img src=&#34;http://i.imgur.com/Zns27G1.jpg&#34; alt=&#34;Image&#34; /&gt;&lt;br /&gt;
-물론, 그들은 다르게 생각할 겁니다.&lt;/p&gt;
-
-&lt;p&gt;만약 당신이 jQuery를 안다면 &lt;em&gt;Front-End Web Developer&lt;/em&gt; 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 &lt;em&gt;Software Engineer&lt;/em&gt; 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
-(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 &lt;code&gt;int&lt;/code&gt;와 &lt;code&gt;float&lt;/code&gt;의 차이를 설명하지 못 해요.)&lt;/p&gt;
-
-&lt;h2 id=&#34;can-you-actually-code-anything&#34;&gt;&lt;em&gt;Can you actually code anything?&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.&lt;br /&gt;
-당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?&lt;br /&gt;
-제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 &lt;em&gt;Software Engineer&lt;/em&gt;, &lt;em&gt;Programmer&lt;/em&gt;, &lt;em&gt;Computer Science specialist&lt;/em&gt;, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-5-problems&#34;&gt;&lt;em&gt;The 5 problems&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;problem-1&#34;&gt;Problem 1&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;problem-2&#34;&gt;Problem 2&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
-(list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;problem-3&#34;&gt;Problem 3&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
-(처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;problem-4&#34;&gt;Problem 4&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
-([50, 2, 1, 9] list를 받으면 형식화된 95021&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 출력해야 합니다.)
-&lt;strong&gt;Update:&lt;/strong&gt; Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) &lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-4&#34; target=&#34;_blank&#34;&gt;You can click here to read my solution.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;problem-5&#34;&gt;Problem 5&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1, 2, &amp;hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
-(예를 들어: 1 + 2 + 34 - 5 + 67 - 8 + 9 = 100.)
-&lt;strong&gt;Update:&lt;/strong&gt; (&lt;a href=&#34;https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions&#34; target=&#34;_blank&#34;&gt;Here is one solution to this problem&lt;/a&gt; in case you are curious.)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;unfortunately-you-aren-t-the-one-that-needs-this&#34;&gt;&lt;em&gt;Unfortunately, you aren&amp;rsquo;t the one that needs this&lt;/em&gt;&lt;/h2&gt;
-
-&lt;p&gt;만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.svpino.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour&#34; target=&#34;_blank&#34;&gt;Five programming problems every Software Engineer should be able to solve in less than 1 hour&lt;/a&gt; - Santiago L. Valdarrama&lt;br /&gt;
-번역 - Hyun Jun (Cryptos) An&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;단어의 개념이 아닌 &lt;strong&gt;단어만&lt;/strong&gt; 많이 아는 사람을 의미하는 것 같습니다.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</link>
-      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://memnoth.github.io/post/convert-encoding-of-documents-in-linux/</guid>
-      <description>
-
-&lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
-
-&lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
-그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=80450rEJ&#34;&gt;&lt;/script&gt;
-&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;스크립트를 vi/vim으로 작성하고 &lt;code&gt;conv2utf8&lt;/code&gt;로 ~/Documents에 저장한다.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.bash_aliases&lt;/code&gt;파일을 열고 &lt;code&gt;alias c8=&#39;$HOME/Documents/conv2utf8&#39;&lt;/code&gt;로 저장한다.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;source ~/.bashrc&lt;/code&gt;로 쉘을 다시 로드한 뒤 &lt;code&gt;c8 /path/to/directory/&lt;/code&gt;로 사용한다.&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;
 </description>
     </item>
     

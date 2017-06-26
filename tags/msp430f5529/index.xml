@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Msp430f5529 on Memnoth</title>
-    <link>https://memnoth.github.io/tags/msp430f5529/index.xml</link>
+    <link>https://memnoth.github.io/tags/msp430f5529/</link>
     <description>Recent content in Msp430f5529 on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
-    <atom:link href="/tags/msp430f5529/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/msp430f5529/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</guid>
+      <guid>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;

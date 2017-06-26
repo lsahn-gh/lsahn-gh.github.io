@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Memnoth</title>
-    <link>https://memnoth.github.io/tags/python/index.xml</link>
+    <link>https://memnoth.github.io/tags/python/</link>
     <description>Recent content in Python on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 </copyright>
-    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
+    <atom:link href="/tags/python/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>
@@ -29,10 +30,10 @@
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
@@ -91,10 +92,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/flask-vs-django/</link>
+      <link>https://memnoth.github.io/2015/05/03/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
@@ -219,10 +220,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
 import sqlite3
  
