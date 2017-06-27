@@ -18,6 +18,11 @@
       <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
       <description>
 
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; by Alan Hamlett&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
@@ -130,11 +135,6 @@
 &lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
 
 &lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
-번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
     

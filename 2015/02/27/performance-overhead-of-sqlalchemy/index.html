@@ -235,7 +235,12 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <pre><code class="language-python">import time
+      <p>원문 &ndash; <a href="http://www.pythoncentral.io/sqlalchemy-faqs/" target="_blank">Performance Overhead of SQLAlchemy</a> by Xiaonuo Gantan<br />
+번역 &ndash; Yi Soo, (Thomas) An</p>
+
+<hr />
+
+<pre><code class="language-python">import time
 import sqlite3
  
 from sqlalchemy.ext.declarative import declarative_base
@@ -328,11 +333,6 @@ SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
 ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야합니다.</p>
 
 <p>웹이 하나의 요청에 하나의 응답으로 처리되는 CRUD의 구조상, 편리함과 유지보수를 위해 1번, 2번 대신 3번을 고려해 볼 수 있습니다.</p>
-
-<hr />
-
-<p>원문 &ndash; <a href="http://www.pythoncentral.io/sqlalchemy-faqs/" target="_blank">Performance Overhead of SQLAlchemy</a> (Xiaonuo Gantan)<br />
-번역 &ndash; Yi Soo, (Thomas) An</p>
 
     </div>
   </div>

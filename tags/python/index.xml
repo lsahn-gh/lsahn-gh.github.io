@@ -36,6 +36,11 @@
       <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; by Suresh Kumar&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
@@ -82,11 +87,6 @@ Flask==0.10.1
 &lt;pre&gt;&lt;code&gt;$ pip install pipreqs
 $ pipreqs /path/to/project
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
-번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
     
@@ -97,6 +97,11 @@ $ pipreqs /path/to/project
       
       <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
       <description>
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; by Alan Hamlett&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
@@ -210,11 +215,6 @@ $ pipreqs /path/to/project
 &lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
 
 &lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
-번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
     
@@ -224,7 +224,12 @@ $ pipreqs /path/to/project
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+      <description>&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; by Xiaonuo Gantan&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
 import sqlite3
  
 from sqlalchemy.ext.declarative import declarative_base
@@ -317,11 +322,6 @@ SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
 ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야합니다.&lt;/p&gt;
 
 &lt;p&gt;웹이 하나의 요청에 하나의 응답으로 처리되는 CRUD의 구조상, 편리함과 유지보수를 위해 1번, 2번 대신 3번을 고려해 볼 수 있습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 </description>
     </item>
     

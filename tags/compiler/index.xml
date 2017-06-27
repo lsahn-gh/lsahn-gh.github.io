@@ -18,8 +18,10 @@
       <guid>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</guid>
       <description>
 
-&lt;p&gt;이 글은 James Brunskill씨가 작성한 First and Follow Sets에 대한 글입니다.&lt;br /&gt;
-이 자릴 빌어 그에게 감사를 전합니다.&lt;/p&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;p&gt;유용한 팁을 작성해준 James Brunskill씨에게 고마움을 전합니다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -158,11 +160,6 @@ F → id
 &lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*,+,$,)}&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;

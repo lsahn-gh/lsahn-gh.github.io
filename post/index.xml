@@ -18,6 +18,11 @@
       <guid>https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111/rtl8168-working/</guid>
       <description>
 
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://unixblogger.com/2016/08/11/how-to-get-your-realtek-rtl8111rtl8168-working-updated-guide/&#34; target=&#34;_blank&#34;&gt;How To get your Realtek RTL8111/RTL8168 working&lt;/a&gt; by Unixblogger&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&#34;why-do-i-need-this-driver-anyway&#34;&gt;Why do I need this driver anyway?&lt;/h1&gt;
 
 &lt;p&gt;많은 분들이 제게 &amp;ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&amp;hellip;&amp;rdquo; 라고 물어봅니다. 하지만 &lt;code&gt;RTL8111/RTL8168&lt;/code&gt;은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?&lt;br /&gt;
@@ -166,11 +171,6 @@ supports-priv-flags: no
 &lt;h1 id=&#34;that-s-it&#34;&gt;That&amp;rsquo;s it&lt;/h1&gt;
 
 &lt;p&gt;이제 Realtek 공식 드라이버를 이용할 준비가 되었습니다. 만약 궁금한 점이나 제안하고 싶은 것이 있다면 댓글로 알려주세요.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://unixblogger.com/2016/08/11/how-to-get-your-realtek-rtl8111rtl8168-working-updated-guide/&#34; target=&#34;_blank&#34;&gt;How To get your Realtek RTL8111/RTL8168 working&lt;/a&gt; by Unixblogger&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -191,8 +191,10 @@ supports-priv-flags: no
       <guid>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</guid>
       <description>
 
-&lt;p&gt;이 글은 James Brunskill씨가 작성한 First and Follow Sets에 대한 글입니다.&lt;br /&gt;
-이 자릴 빌어 그에게 감사를 전합니다.&lt;/p&gt;
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;p&gt;유용한 팁을 작성해준 James Brunskill씨에게 고마움을 전합니다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -331,11 +333,6 @@ F → id
 &lt;td&gt;FOLLOW(E) = {$,)}&lt;br&gt;FOLLOW(E&#39;) = {$,)}&lt;br&gt;FOLLOW(T) = {+,$,)}&lt;br&gt;FOLLOW(T&#39;) = {+,$,)}&lt;br&gt;FOLLOW(F) = {*,+,$,)}&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -1005,6 +1002,11 @@ C90 mode as well.&lt;/p&gt;
       <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
       <description>
 
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; by Suresh Kumar&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
@@ -1051,11 +1053,6 @@ Flask==0.10.1
 &lt;pre&gt;&lt;code&gt;$ pip install pipreqs
 $ pipreqs /path/to/project
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; (Suresh Kumar)&lt;br /&gt;
-번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
     
@@ -1177,6 +1174,11 @@ $ pipreqs /path/to/project
       <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
       <description>
 
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; by Alan Hamlett&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
@@ -1289,11 +1291,6 @@ $ pipreqs /path/to/project
 &lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
 
 &lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; (Alan Hamlett)&lt;br /&gt;
-번역 &amp;ndash; Hyun Jun, An&lt;/p&gt;
 </description>
     </item>
     

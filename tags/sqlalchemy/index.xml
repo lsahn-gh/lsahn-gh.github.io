@@ -16,7 +16,12 @@
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+      <description>&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; by Xiaonuo Gantan&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
 import sqlite3
  
 from sqlalchemy.ext.declarative import declarative_base
@@ -109,11 +114,6 @@ SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
 ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야합니다.&lt;/p&gt;
 
 &lt;p&gt;웹이 하나의 요청에 하나의 응답으로 처리되는 CRUD의 구조상, 편리함과 유지보수를 위해 1번, 2번 대신 3번을 고려해 볼 수 있습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; (Xiaonuo Gantan)&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 </description>
     </item>
     
