@@ -12,10 +12,10 @@
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/2016/05/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/2016/05/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;

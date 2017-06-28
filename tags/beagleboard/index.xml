@@ -12,10 +12,10 @@
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-      <link>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</link>
+      <link>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</guid>
+      <guid>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</guid>
       <description>&lt;p&gt;임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.&lt;/p&gt;
 
 &lt;p&gt;NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 &lt;code&gt;No such file or directory&lt;/code&gt; 오류가 발생하였다.&lt;br /&gt;
@@ -42,10 +42,10 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <guid>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
 &lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;

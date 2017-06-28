@@ -12,10 +12,10 @@
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/02/27/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</guid>
       <description>&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; by Xiaonuo Gantan&lt;br /&gt;
 번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
 

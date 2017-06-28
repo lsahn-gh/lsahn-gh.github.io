@@ -12,10 +12,10 @@
     
     <item>
       <title>How to get your Realtek RTL8111/RTL8168 working</title>
-      <link>https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
+      <link>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
       <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/2017/06/26/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
+      <guid>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
       <description>
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://unixblogger.com/2016/08/11/how-to-get-your-realtek-rtl8111rtl8168-working-updated-guide/&#34; target=&#34;_blank&#34;&gt;How To get your Realtek RTL8111/RTL8168 working&lt;/a&gt; by Unixblogger&lt;br /&gt;
@@ -185,10 +185,10 @@ supports-priv-flags: no
     
     <item>
       <title>An Easy Explaination Of First And Follow Sets</title>
-      <link>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</link>
+      <link>https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/</link>
       <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/2017/06/20/an-easy-explaination-of-first-and-follow-sets/</guid>
+      <guid>https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/</guid>
       <description>
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://www.jambe.co.nz/UNI/FirstAndFollowSets.html&#34; target=&#34;_blank&#34;&gt;An Easy Explaination Of First And Follow Sets&lt;/a&gt; by James Brunskill&lt;br /&gt;
@@ -347,10 +347,10 @@ F → id
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</link>
+      <link>https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/2017/01/30/read-system-call-overhead-and-file-hole/</guid>
+      <guid>https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-advanced-programming-in-the-unix-environment의-4-6-연습문제에-관한-내용입니다&#34;&gt;&lt;em&gt;이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다.&lt;/em&gt;&lt;/h4&gt;
@@ -504,10 +504,10 @@ main(int argc, char *argv[])
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/07/24/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/</guid>
       <description>&lt;p&gt;Laptop에 Fedora 24를 설치하고 YouCompleteMe&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;를 인스톨했으나 &lt;em&gt;SHUTTING DOWN&lt;/em&gt; 오류를 출력하며 정상적으로 실행되지 않았다.&lt;br /&gt;
 &lt;strong&gt;:YcmToggleLogs stderr&lt;/strong&gt;를 통하여 디버깅을 해보니 시스템에서 &lt;code&gt;libtinfo.so.5&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 찾지 못해 발생한 예외였다.&lt;/p&gt;
 
@@ -553,10 +553,10 @@ lrwxrwxrwx. 1 root root     15  4월  8 19:33 libtinfo.so.6 -&amp;gt; libtinfo.s
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/07/10/learning-msp430f5529-interrupt/</guid>
+      <guid>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</guid>
       <description>
 
 &lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
@@ -658,10 +658,10 @@ __interrupt void TIMER0_A0_ISR(void)
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-      <link>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</link>
+      <link>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/06/24/dynamic-linking-error-on-bbb/</guid>
+      <guid>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</guid>
       <description>&lt;p&gt;임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.&lt;/p&gt;
 
 &lt;p&gt;NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 &lt;code&gt;No such file or directory&lt;/code&gt; 오류가 발생하였다.&lt;br /&gt;
@@ -688,10 +688,10 @@ Host PC에서 프로그램 링킹은 &lt;strong&gt;ld-linux.so.3&lt;/strong&gt;�
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/05/19/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <guid>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>
 
 &lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
@@ -835,10 +835,10 @@ void init_GPIO_enable(int fd)
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/2016/05/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/05/17/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/2016/05/what-is-copy-on-write/</guid>
       <description>&lt;p&gt;&lt;em&gt;Copy-On-Write&lt;/em&gt; 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.&lt;/p&gt;
 
 &lt;p&gt;아래의 코드가 있다.&lt;/p&gt;
@@ -874,10 +874,10 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/2015/10/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/10/11/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/designated-initializer-in-c/</guid>
       <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -901,10 +901,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/10/09/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Trust the programmer.&lt;br /&gt;
 프로그래머를 믿을 것.&lt;/li&gt;
@@ -924,10 +924,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</link>
+      <link>https://memnoth.github.io/2015/05/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/24/how-to-get-your-questions-answered/</guid>
+      <guid>https://memnoth.github.io/2015/05/how-to-get-your-questions-answered/</guid>
       <description>
 
 &lt;h2 id=&#34;introduce&#34;&gt;Introduce&lt;/h2&gt;
@@ -996,10 +996,10 @@ C90 mode as well.&lt;/p&gt;
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/18/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</guid>
       <description>
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; by Suresh Kumar&lt;br /&gt;
@@ -1058,10 +1058,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>https://memnoth.github.io/2015/05/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/09/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>https://memnoth.github.io/2015/05/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>
 
 &lt;p&gt;제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 &lt;em&gt;Programming&lt;/em&gt; 이 무슨 의미인지 모른다는 것이죠.
@@ -1142,10 +1142,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/2015/05/05/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/2015/05/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/05/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/2015/05/convert-encoding-of-documents-in-linux/</guid>
       <description>
 
 &lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
@@ -1168,10 +1168,10 @@ $ pipreqs /path/to/project
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/2015/05/03/flask-vs-django/</link>
+      <link>https://memnoth.github.io/2015/05/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/03/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/2015/05/flask-vs-django/</guid>
       <description>
 
 &lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; by Alan Hamlett&lt;br /&gt;
