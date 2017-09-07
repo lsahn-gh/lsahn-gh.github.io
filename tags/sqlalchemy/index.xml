@@ -1,120 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sqlalchemy on Memnoth</title>
+    <title>Sqlalchemy on Thomas An</title>
     <link>https://memnoth.github.io/tags/sqlalchemy/</link>
-    <description>Recent content in Sqlalchemy on Memnoth</description>
+    <description>Recent content in Sqlalchemy on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Fri, 27 Feb 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/sqlalchemy/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://memnoth.github.io/tags/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/post/python/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</guid>
-      <description>&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; by Xiaonuo Gantan&lt;br /&gt;
-번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
-import sqlite3
- 
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
- 
-Base = declarative_base()
-session = scoped_session(sessionmaker())
- 
-class User(Base):
-    __tablename__ = &amp;quot;user&amp;quot;
-    id = Column(Integer, primary_key=True)
-    name = Column(String(255))
- 
-def init_db(dbname=&#39;sqlite:///example.db&#39;):
-    engine = create_engine(dbname, echo=False)
-    session.remove()
-    session.configure(bind=engine, autoflush=False, expire_on_commit=False)
-    Base.metadata.drop_all(engine)
-    Base.metadata.create_all(engine)
-    return engine
- 
-def test_sqlalchemy_orm(number_of_records=100000):
-    init_db()
-    start = time.time()
-    for i in range(number_of_records):
-        user = User()
-        user.name = &#39;NAME &#39; + str(i)
-        session.add(user)
-    session.commit()
-    end = time.time()
-    print &amp;quot;SQLAlchemy ORM: Insert {0} records in {1} seconds&amp;quot;.format(
-        str(number_of_records), str(end - start)
-    )
- 
-def test_sqlalchemy_core(number_of_records=100000):
-    engine = init_db()
-    start = time.time()
-    engine.execute(
-        User.__table__.insert(),
-        [{&amp;quot;name&amp;quot;: &amp;quot;NAME &amp;quot; + str(i)} for i in range(number_of_records)]
-    )
-    end = time.time()
-    print &amp;quot;SQLAlchemy Core: Insert {0} records in {1} seconds&amp;quot;.format(
-        str(number_of_records), str(end - start)
-    )
- 
-def init_sqlite3(dbname=&amp;quot;sqlite3.db&amp;quot;):
-    conn = sqlite3.connect(dbname)
-    cursor = conn.cursor()
-    cursor.execute(&amp;quot;DROP TABLE IF EXISTS user&amp;quot;)
-    cursor.execute(&amp;quot;CREATE TABLE user (id INTEGER NOT NULL, name VARCHAR(255), PRIMARY KEY(id))&amp;quot;)
-    conn.commit()
-    return conn
- 
-def test_sqlite3(number_of_records=100000):
-    conn = init_sqlite3()
-    cursor = conn.cursor()
-    start = time.time()
-    for i in range(number_of_records):
-        cursor.execute(&amp;quot;INSERT INTO user (name) VALUES (?)&amp;quot;, (&amp;quot;NAME &amp;quot; + str(i),))
-    conn.commit()
-    end = time.time()
-    print &amp;quot;sqlite3: Insert {0} records in {1} seconds&amp;quot;.format(
-        str(number_of_records), str(end - start)
-    )
- 
-if __name__ == ”__main__”:
-    test_sqlite3()
-    test_sqlalchemy_core()
-    test_sqlalchemy_orm()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Raw SQL&lt;/li&gt;
-&lt;li&gt;Core of SQLAlchemy&lt;/li&gt;
-&lt;li&gt;ORM of SQLAlchemy&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;10만개의 dummy 자료를 삽입하여 위 3가지 방식의 성능을 비교하려고 합니다.&lt;br /&gt;
-여러분이 테스트해도 비슷한 결과가 나올 것입니다.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ python orm_performance_overhead.py
-sqlite3: Insert 100000 records in 0.226176977158 seconds
-SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
-SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;주목할 점은 1번과 2번은 고민해 볼만한 성능을 내지만 그에 비해 ORM은 너무 느린 것입니다.&lt;br /&gt;
-ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야합니다.&lt;/p&gt;
-
-&lt;p&gt;웹이 하나의 요청에 하나의 응답으로 처리되는 CRUD의 구조상, 편리함과 유지보수를 위해 1번, 2번 대신 3번을 고려해 볼 수 있습니다.&lt;/p&gt;
-</description>
+      <guid>https://memnoth.github.io/post/python/performance-overhead-of-sqlalchemy/</guid>
+      <description>원문 &amp;ndash; Performance Overhead of SQLAlchemy by Xiaonuo Gantan
+번역 &amp;ndash; Yi Soo, (Thomas) An
+import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): __tablename__ = &amp;quot;user&amp;quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&#39;sqlite:///example.db&#39;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.</description>
     </item>
     
   </channel>

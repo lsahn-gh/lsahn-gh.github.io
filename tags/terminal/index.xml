@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terminal on Memnoth</title>
+    <title>Terminal on Thomas An</title>
     <link>https://memnoth.github.io/tags/terminal/</link>
-    <description>Recent content in Terminal on Memnoth</description>
+    <description>Recent content in Terminal on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Sat, 11 Jul 2015 00:08:45 +0900</lastBuildDate>
-    <atom:link href="/tags/terminal/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://memnoth.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Babelian</title>

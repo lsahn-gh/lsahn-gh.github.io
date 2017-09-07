@@ -1,160 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mmap on Memnoth</title>
+    <title>Mmap on Thomas An</title>
     <link>https://memnoth.github.io/tags/mmap/</link>
-    <description>Recent content in Mmap on Memnoth</description>
+    <description>Recent content in Mmap on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Thu, 19 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/mmap/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://memnoth.github.io/tags/mmap/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/post/linux/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</guid>
-      <description>
-
-&lt;h4 id=&#34;아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다&#34;&gt;&lt;em&gt;아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!&lt;/em&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;왜-mmap을-이용하여-direct로-접근하나요&#34;&gt;왜 mmap을 이용하여 direct로 접근하나요?&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The memory-mapping method allows you to directly access the registors that control the&lt;br /&gt;
-GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only&lt;br /&gt;
-processes with root permissions can use it.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;책&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 &lt;code&gt;file I/O&lt;/code&gt; 방식보다 1000배는 빠르다고 합니다.&lt;/p&gt;
-
-&lt;p&gt;BeagleBone Black의 GPIO는 기본적으로 disable 되어 있는데, 이를 활성화는 방법에는 2가지가 있습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;SYSFS를 이용한 GPIO export.&lt;/li&gt;
-&lt;li&gt;Register를 이용하여 직접 clock을 enable 하는 것.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;여기서는 C 코드를 이용하여 register를 직접 제어하는 것에 포커스를 맞추겠습니다.&lt;br /&gt;
-(SYSFS를 이용한 GPIO는 Beagleboard 홈페이지에 가면 친절하게 설명해줍니다)&lt;/p&gt;
-
-&lt;p&gt;들어가기에 앞서 아래의 준비물이 필요합니다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0ahUKEwiZjbzk3ObMAhXC3KYKHeorDmYQFggcMAA&amp;amp;url=http%3A%2F%2Fwww.ti.com%2Flit%2Fug%2Fspruh73m%2Fspruh73m.pdf&amp;amp;usg=AFQjCNGGBH3-5NJnlA7Plnk3BhbVi_u77g&amp;amp;sig2=IK-nMfK0scQli5VemGRPPA&amp;amp;bvm=bv.122448493,d.dGY&#34; target=&#34;_blank&#34;&gt;AM335x Sitara Processors, Technical Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/CircuitCo/BeagleBone-Black/blob/master/BBB_SRM.pdf&#34; target=&#34;_blank&#34;&gt;BeagleBone Black System Reference Manual&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/derekmolloy/boneDeviceTree/tree/master/docs&#34; target=&#34;_blank&#34;&gt;Derek Molloy&amp;rsquo;s Header Table Reference&lt;/a&gt; - both P8, and P9&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;주로 Technical Reference Manual(이하 TRM)과 Header Table 문서를 참조하니 GPIO PIN 개념을 이해하고 TRM에서 register 정보를 찾을 수 있어야 합니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;register를-이용하여-clock을-enable-하기&#34;&gt;Register를 이용하여 clock을 enable 하기&lt;/h3&gt;
-
-&lt;p&gt;리눅스는 대부분의 device를 파일로 추상화하여 제공합니다, 모듈화가 아주 잘 되어 있죠.&lt;br /&gt;
-Device를 파일로 접근한다면 모든 처리 루틴을 아래와 같이 쉽게 생각할 수 있습니다.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;파일을 연다.&lt;/li&gt;
-&lt;li&gt;파일에 데이터를 쓴다.&lt;/li&gt;
-&lt;li&gt;파일을 닫는다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;우리는 메모리에 직접 접근하여 register에 데이터를 쓰기(&lt;strong&gt;write&lt;/strong&gt;)할 것이므로 메모리를 추상화한 &lt;code&gt;/dev/mem&lt;/code&gt;을 이용할 것입니다.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;...
-fd = open(&amp;quot;/dev/mem&amp;quot;, O_RDWR|O_SYNC);
-
-/* 기타 처리 루틴 ~ */
-
-gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADDR);
-
-*(gpio_addr + led_addr) = 0x01;     // LED를 On하는 로직이라 가정.
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;/dev/mem&lt;/code&gt;을 오픈하고 &lt;code&gt;mmap()&lt;/code&gt;을 호출하는 것 까진 좋으나 mapped memory를 통하여 값에 접근하려면 아마도 실패할 것입니다.&lt;br /&gt;
-이는 GPIO의 clock이 기본적으로 disable 되어 있기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;Patricia 씨가 구글 그룹스에 남긴 글입니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;일단 그건 clock 문제야, 우리가 BeagleBone Black을 부팅할 때 GPIO 1, 2, 그리고 3의 clocking system은 비활성화 되버려 (GPIO 0은 항상 활성 상태).&lt;/p&gt;
-
-&lt;p&gt;따라서 다음과 같은 방법이 있는데:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Pin export 하기 (and then the system enables the clock automatically)&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;CM_PER_GPIO#_CLKCTRL 레지스터의 일부 bits 수정하기 (TRM의 CM_PER 페이지 참조)&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&amp;mdash; Patricia N.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;의 &lt;code&gt;MODULEMODE&lt;/code&gt;을 확인해야 합니다.&lt;br /&gt;
-해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;아래 소스코드를 분석하여 확실하게 이해하세요.&lt;br /&gt;
-(간단하게 작성하였으므로 완벽하게 동작하지 않습니다.!)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#define CM_PER_BASE 0x44E00000
-
-#define CM_PER_GPIO1 0xAC
-#define CM_PER_GPIO2 0xB0
-#define CM_PER_GPIO3 0xB4
-
-#define MODE_ENABLE 0x2
-
-void init_GPIO_enable(int fd);
-
-int main(void)
-{
-    ...
-
-    init_GPIO_enable(mem_fd);
-
-    ...
-}
-
-void init_GPIO_enable(int fd)
-{
-    ...
-
-    // CM_PER_BASE 주소를 기반으로 memory mapped 합니다.
-    cm_per_addr = (char *)mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, CM_PER_BASE);
-
-    ...
-
-    // CM_PER_GPIO2의 오프셋 주소의 값을 수정하여 Enable 합니다. 
-    *(cm_per_addr + CM_PER_GPIO2) = MODE_ENABLE;
-
-    ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;이제 &lt;code&gt;GPIO_OE&lt;/code&gt;, &lt;code&gt;GPIO_DATAIN&lt;/code&gt;, &lt;code&gt;GPIO_DATAOUT&lt;/code&gt;을 이용하여 값을 읽고 쓸수 있습니다.&lt;br /&gt;
-한번 enable 하면 Process를 종료하더라도 해당 register의 값은 변하지 않습니다.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook&#34; target=&#34;_blank&#34;&gt;Android for the BeagleBone Black&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;&lt;a href=&#34;http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ&#34; target=&#34;_blank&#34;&gt;구글 그룹스&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;1196 page
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <guid>https://memnoth.github.io/post/linux/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <description>아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.! 왜 mmap을 이용하여 direct로 접근하나요?  The memory-mapping method allows you to directly access the registors that control the
+GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only
+processes with root permissions can use it.
+ 책1에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 file I/O 방식보다 1000배는 빠르다고 합니다.</description>
     </item>
     
   </channel>

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Memnoth</title>
+    <title>Projects on Thomas An</title>
     <link>https://memnoth.github.io/project/</link>
-    <description>Recent content in Projects on Memnoth</description>
+    <description>Recent content in Projects on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2016 </copyright>
     <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
-    <atom:link href="/project/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://memnoth.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Flask-Register</title>
