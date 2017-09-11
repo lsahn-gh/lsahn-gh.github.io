@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
+        <style>
+
+    html body {
+        font-family: Raleway, sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/googlecode.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.26" />
+        
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Five programming problems every Software Engineer should be able to solve in less than 1 hour</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me_at_example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/memnoth/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/itsmethomasan/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/8512710/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/2015/05/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/">Five programming problems every Software Engineer should be able to solve in less than 1 hour</a></h4>
+    <h5>May 9, 2015</h5>
+     <kbd class="item-tag">software</kbd>  <kbd class="item-tag">algorithm</kbd>  <kbd class="item-tag">five programming problems</kbd> 
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 <em>Programming</em> 이 무슨 의미인지 모른다는 것이죠.
+<p></p>
+<img src="http://i.imgur.com/Zns27G1.jpg" alt="Image" /><br />
+물론, 그들은 다르게 생각할 겁니다.</p>
+
+<p>만약 당신이 jQuery를 안다면 <em>Front-End Web Developer</em> 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 <em>Software Engineer</em> 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요?
+(저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 <code>int</code>와 <code>float</code>의 차이를 설명하지 못 해요.)</p>
+
+<h2 id="can-you-actually-code-anything"><em>Can you actually code anything?</em></h2>
+
+<p>제 Software Engineer 포지션에서, 저는 당신이 뭔가 코딩하기를 기대해요. 제가 말하는 진짜 코딩이란; 제가 당신에게 하나의 문제를 넘겨주고, 당신은 하나의 언어를 사용하여 안정적이게 문제를 해결하는 것입니다.<br />
+당신 스스로에게 질문해보세요, 당신은 정말 할 수 있습니까?<br />
+제가 딜을 하나 하죠: 만약 당신이 이 5개의 문제를 1시간 내에 해결할 수 없다면, 당신의 이력서에 대해 다시 생각해보고 싶겠죠. 당신이 하는 일에 있어 당신이 최고일지도 모르지만, 당신은 당신 스스로 <em>Software Engineer</em>, <em>Programmer</em>, <em>Computer Science specialist</em>, *Developer*라고 부르는 것을 멈추어야 합니다. 스스로를 포장하는 짓을 그만두세요, 그리고 우선순위에 다시 집중하는 시간을 가지세요.</p>
+
+<h2 id="the-5-problems"><em>The 5 problems</em></h2>
+
+<p><em>아래 문제들은 꽤나 쉬워요, 하지만 많은 사람들이 이 문제와 씨름한다는 것을 알면 당신은 놀랄 거예요. To the point of not getting anything done at all. 진심으로요.</em></p>
+
+<h4 id="problem-1">Problem 1</h4>
+
+<ul>
+<li>하나의 list를 받아서 총합을 구하는 함수 3개를 for, while, recursion(재귀)로 설계하세요.</li>
+</ul>
+
+<h4 id="problem-2">Problem 2</h4>
+
+<ul>
+<li>두개의 list를 받아, 각각의 원소들이 순서대로 층을 이루도록 합치는 함수를 설계하세요.
+(list [a, b, c]와 [1, 2, 3]이 있다면, 함수는 [a, 1, b, 2, c, 3]을 반환해야 합니다.)</li>
+</ul>
+
+<h4 id="problem-3">Problem 3</h4>
+
+<ul>
+<li>Fibonacci 수열 100개를 연산하는 함수를 설계하세요.
+(처음 두개의 수는 0과 1이고, 다음 숫자는 이전의 두개의 수를 합친 값입니다, 여기 10개의 Fibonacci 수열 예가 있습니다; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.)</li>
+</ul>
+
+<h4 id="problem-4">Problem 4</h4>
+
+<ul>
+<li>양의 정수로 구성된 list를 받아 정렬하고 형식화할 때, 가능한 가장 큰 수가 되도록 함수를 설계하세요.
+([50, 2, 1, 9] list를 받으면 형식화된 95021<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 출력해야 합니다.)
+<strong>Update:</strong> Apparently this problem got a lot of people talking (although not as much as Problem 5 below.) <a href="https://blog.svpino.com/2015/05/08/solution-to-problem-4">You can click here to read my solution.</a></li>
+</ul>
+
+<h4 id="problem-5">Problem 5</h4>
+
+<ul>
+<li>1, 2, &hellip;, 9(이 순서로) 사이에서 +/-를 포함시키거나, 포함시키지 않고 결과가 항상 100인 모든 가능성을 출력하는 프로그램을 작성하세요.
+(예를 들어: 1 + 2 + 34 - 5 + 67 - 8 + 9 = 100.)
+<strong>Update:</strong> (<a href="https://blog.svpino.com/2015/05/08/solution-to-problem-5-and-some-other-thoughts-about-this-type-of-questions">Here is one solution to this problem</a> in case you are curious.)</li>
+</ul>
+
+<h2 id="unfortunately-you-aren-t-the-one-that-needs-this"><em>Unfortunately, you aren&rsquo;t the one that needs this</em></h2>
+
+<p>만약 이 블로그의 모든 것이나 Software Development에 대한 다른 블로그의 글을 읽는 것이 짜증 나면, 아마 당신은 충분히 1시간 내에 저 5가지의 문제를 해결하겠죠. 위 문제들이 멍청하다고 생각하는 사람들은 대부분 해결하지 못하는 멍청이에요. (쓴소리해서 미안해요.)</p>
+
+<hr />
+
+<p><a href="https://blog.svpino.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour">Five programming problems every Software Engineer should be able to solve in less than 1 hour</a> - Santiago L. Valdarrama<br />
+번역 - Hyun Jun (Cryptos) An</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">단어의 개념이 아닌 <strong>단어만</strong> 많이 아는 사람을 의미하는 것 같습니다.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">list [50, 2, 1, 9]의 형식화된 수중 가장 큰 수가 95021.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/2017/09/sentinel-linear-search/">Sentinel Linear Search</a></h4>
+    <h5>September 6, 2017</h5>
+     <kbd class="item-tag">algorithm</kbd>  <kbd class="item-tag">search</kbd> 
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "memnoth" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+
+    </body>
+
+</html>
+

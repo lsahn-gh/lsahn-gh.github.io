@@ -13,10 +13,10 @@
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/2015/10/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/designated-initializer-in-c/</guid>
       <description>Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.
  int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };
  그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!
@@ -26,10 +26,10 @@
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</guid>
       <description>Trust the programmer.
 프로그래머를 믿을 것. Don&amp;rsquo;t prevent the programmer from doing what needs to be done.
 프로그래머가 사용하는 방법을 제지하지 말 것. Keep the language small and simple.

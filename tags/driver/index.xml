@@ -13,10 +13,10 @@
     
     <item>
       <title>How to get your Realtek RTL8111/RTL8168 working</title>
-      <link>https://memnoth.github.io/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
+      <link>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111/rtl8168-working/</link>
       <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
+      <guid>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111/rtl8168-working/</guid>
       <description>원문 &amp;ndash; How To get your Realtek RTL8111/RTL8168 working by Unixblogger
 번역 &amp;ndash; Yi Soo, (Thomas) An
 Why do I need this driver anyway? 많은 분들이 제게 &amp;ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&amp;hellip;&amp;rdquo; 라고 물어봅니다. 하지만 RTL8111/RTL8168은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?

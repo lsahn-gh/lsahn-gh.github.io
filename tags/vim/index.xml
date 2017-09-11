@@ -13,10 +13,10 @@
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/2016/07/youcompleteme---libtinfo.so.5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/2016/07/youcompleteme---libtinfo.so.5-not-found/</guid>
       <description>Laptop에 Fedora 24를 설치하고 YouCompleteMe1를 인스톨했으나 SHUTTING DOWN 오류를 출력하며 정상적으로 실행되지 않았다.
 :YcmToggleLogs stderr를 통하여 디버깅을 해보니 시스템에서 libtinfo.so.52를 찾지 못해 발생한 예외였다.
 설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.
