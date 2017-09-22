@@ -6,10 +6,9 @@
     <description>Recent content in Python on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
     <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
-    
-	<atom:link href="https://memnoth.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/python/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>
@@ -31,29 +30,192 @@
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/2015/05/python---auto-generate-requirements.txt/</link>
+      <link>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/python---auto-generate-requirements.txt/</guid>
-      <description>원문 &amp;ndash; Python - Auto generate requirements.txt by Suresh Kumar
-번역 &amp;ndash; Yi Soo, (Thomas) An
-Why requirements.txt? 모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.
-requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.
-requirements 파일 형식: 
-requests==1.2.0 Flask==0.10.1  방법 1: 
-$ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:
-위의 포맷 형식으로 requirements.txt을 생성했다면, pip install -r requirements.</description>
+      <guid>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</guid>
+      <description>
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/&#34; target=&#34;_blank&#34;&gt;Python - Auto generate requirements.txt&lt;/a&gt; by Suresh Kumar&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;why-requirements-txt&#34;&gt;&lt;em&gt;Why requirements.txt?&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.&lt;br /&gt;
+requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.&lt;/p&gt;
+
+&lt;h3 id=&#34;requirements-파일-형식&#34;&gt;requirements 파일 형식:&lt;/h3&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;requests==1.2.0
+Flask==0.10.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;방법-1&#34;&gt;방법 1:&lt;/h3&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip freeze &amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:&lt;br /&gt;
+위의 포맷 형식으로 requirements.txt을 생성했다면, &lt;code&gt;pip install -r requirements.txt&lt;/code&gt;로 사용할 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;방법-2&#34;&gt;방법 2:&lt;/h3&gt;
+
+&lt;p&gt;pipreqs 사용하기 - pipreqs란 프로젝트에 사용된 패키지만 이용하여 requirements.txt 파일을 생성하는 방법입니다.&lt;/p&gt;
+
+&lt;h4 id=&#34;왜-pip-freeze가-아닌가요&#34;&gt;왜 pip freeze가 아닌가요?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;virtualenv를 사용하지 않는 한 pip freeze는 프로젝트에서 사용하지 않는 패키지도 모두 포함합니다.&lt;/li&gt;
+&lt;li&gt;pip freeze는 오로지 당신의 개발 환경에 설치된 패키지들만 사용하여 구성합니다.&lt;/li&gt;
+&lt;li&gt;때로는 패키지를 설치하지 않고 requirements.txt를 생성할 필요가 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;어떻게-사용하나요&#34;&gt;어떻게 사용하나요?&lt;/h4&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pip install pipreqs
+$ pipreqs /path/to/project
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/2015/05/pirates-use-flask-the-navy-uses-django/</link>
+      <link>https://memnoth.github.io/2015/05/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2015/05/pirates-use-flask-the-navy-uses-django/</guid>
-      <description>원문 &amp;ndash; Pirates use Flask, the Navy uses Django by Alan Hamlett
-번역 &amp;ndash; Yi Soo, (Thomas) An
-Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 Flask와 Django가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, WakaTime는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.</description>
+      <guid>https://memnoth.github.io/2015/05/flask-vs-django/</guid>
+      <description>
+
+&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;Pirates use Flask, the Navy uses Django&lt;/a&gt; by Alan Hamlett&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;introduce&#34;&gt;&lt;strong&gt;Introduce&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 &lt;a href=&#34;http://flask.pocoo.org&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;와 &lt;a href=&#34;https://www.djangoproject.com&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.&lt;/p&gt;
+
+&lt;p&gt;경험이 있다는 것은 올바른 프레임워크를 선택하도록 도와줍니다. 개발자가 결정하는데 도울 수 있도록 워크시트를 제작하였습니다. &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Django vs Flask worksheet&lt;/em&gt;&lt;/a&gt;에서 최적의 프레임워크를 선택할 수 있도록 확인해보세요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;differences-between-django-and-flask&#34;&gt;&lt;strong&gt;Differences between Django and Flask&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/django/django&#34; target=&#34;_blank&#34;&gt;Django&lt;/a&gt;의 커뮤니티는 크고 오래되었으며 &lt;a href=&#34;https://github.com/mitsuhiko/flask&#34; target=&#34;_blank&#34;&gt;Flask&lt;/a&gt;의 커뮤니티는 활발해요.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Django&lt;/th&gt;
+&lt;th&gt;Flask&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;탄생년도&lt;/td&gt;
+&lt;td&gt;2005&lt;/td&gt;
+&lt;td&gt;2010&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;포럼&lt;/td&gt;
+&lt;td&gt;큼&lt;/td&gt;
+&lt;td&gt;새롭고 활발함&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;추천수&lt;/td&gt;
+&lt;td&gt;13,820&lt;/td&gt;
+&lt;td&gt;13,489&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;구독수&lt;/td&gt;
+&lt;td&gt;607&lt;/td&gt;
+&lt;td&gt;1,036&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;landscape&#34;&gt;&lt;strong&gt;Landscape&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;많은 기업들이 빠른 제품개발과 사이트 트래픽을 쉽게 해결하고, 크기를 키우기 위해서 Django와 Flask를 사용합니다.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Django를 사용하는 사이트&lt;/th&gt;
+&lt;th&gt;Flask를 사용하는 사이트&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.eventbrite.com&#34; target=&#34;_blank&#34;&gt;Eventbrite&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakaTime&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://prezi.com&#34; target=&#34;_blank&#34;&gt;Prezi&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.twilio.com&#34; target=&#34;_blank&#34;&gt;Twilio&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://bitbucket.org&#34; target=&#34;_blank&#34;&gt;Bitbucket&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://arstechnica.com/information-technology/2012/11/how-team-obamas-tech-efficiency-left-romney-it-in-dust/&#34; target=&#34;_blank&#34;&gt;President Obama&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://instagram.com&#34; target=&#34;_blank&#34;&gt;Instagram&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://close.io&#34; target=&#34;_blank&#34;&gt;Close.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.pinterest.com&#34; target=&#34;_blank&#34;&gt;Pinterest&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://keen.io&#34; target=&#34;_blank&#34;&gt;Keen.io&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://zerocater.com&#34; target=&#34;_blank&#34;&gt;Zerocater&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;performance&#34;&gt;&lt;strong&gt;Performance&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Flask는 Django보다 좀 더 빠르게 JSON을 반환합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/8gpRqmI.png&#34; alt=&#34;Django vs Flask Performance&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만, 타 언어 프레임워크와 비교하자면 둘의 차이는 신경쓸 필요가 없습니다. &lt;em&gt;Django와 Flask를 사용하는 이유는 개발 속도 향상, 빠른 빌드, 충분히 빠른 프레임워크이기 때문이죠.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/nxayjgx.png&#34; alt=&#34;Django vs Flask Performance Insignificant&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로, Django와 Flask를 사용하는 이유는 개발시간 단축과 빠른 빌드입니다. 제품개발에 있어 어느 프레임워크가 최적인지 결정할 때, 이 &lt;a href=&#34;https://wakatime.com/django-vs-flask-worksheet&#34; target=&#34;_blank&#34;&gt;워크시트&lt;/a&gt;와 당신의 결정을 고려하여 선택하세요.&lt;/p&gt;
+
+&lt;p&gt;또한, 저는 당신의 결정을 돕고 의견 나누길 희망합니다. &lt;a href=&#34;https://wakatime.com/blog/25-pirates-use-flask-the-navy-uses-django?&#34; target=&#34;_blank&#34;&gt;여기&lt;/a&gt;에 질문을 남기거나, irc.freenode.net의 #wakatime에 방문하세요.&lt;/p&gt;
+
+&lt;p&gt;P.S. Pirates use Flask, the Navy uses Django. &lt;a href=&#34;https://wakatime.com&#34; target=&#34;_blank&#34;&gt;WakeTime&lt;/a&gt;는 해적선입니다 ;)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -62,9 +224,105 @@ Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고�
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</guid>
-      <description>원문 &amp;ndash; Performance Overhead of SQLAlchemy by Xiaonuo Gantan
-번역 &amp;ndash; Yi Soo, (Thomas) An
-import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): __tablename__ = &amp;quot;user&amp;quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&#39;sqlite:///example.db&#39;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.</description>
+      <description>&lt;p&gt;원문 &amp;ndash; &lt;a href=&#34;http://www.pythoncentral.io/sqlalchemy-faqs/&#34; target=&#34;_blank&#34;&gt;Performance Overhead of SQLAlchemy&lt;/a&gt; by Xiaonuo Gantan&lt;br /&gt;
+번역 &amp;ndash; Yi Soo, (Thomas) An&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+import sqlite3
+ 
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+ 
+Base = declarative_base()
+session = scoped_session(sessionmaker())
+ 
+class User(Base):
+    __tablename__ = &amp;quot;user&amp;quot;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255))
+ 
+def init_db(dbname=&#39;sqlite:///example.db&#39;):
+    engine = create_engine(dbname, echo=False)
+    session.remove()
+    session.configure(bind=engine, autoflush=False, expire_on_commit=False)
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+    return engine
+ 
+def test_sqlalchemy_orm(number_of_records=100000):
+    init_db()
+    start = time.time()
+    for i in range(number_of_records):
+        user = User()
+        user.name = &#39;NAME &#39; + str(i)
+        session.add(user)
+    session.commit()
+    end = time.time()
+    print &amp;quot;SQLAlchemy ORM: Insert {0} records in {1} seconds&amp;quot;.format(
+        str(number_of_records), str(end - start)
+    )
+ 
+def test_sqlalchemy_core(number_of_records=100000):
+    engine = init_db()
+    start = time.time()
+    engine.execute(
+        User.__table__.insert(),
+        [{&amp;quot;name&amp;quot;: &amp;quot;NAME &amp;quot; + str(i)} for i in range(number_of_records)]
+    )
+    end = time.time()
+    print &amp;quot;SQLAlchemy Core: Insert {0} records in {1} seconds&amp;quot;.format(
+        str(number_of_records), str(end - start)
+    )
+ 
+def init_sqlite3(dbname=&amp;quot;sqlite3.db&amp;quot;):
+    conn = sqlite3.connect(dbname)
+    cursor = conn.cursor()
+    cursor.execute(&amp;quot;DROP TABLE IF EXISTS user&amp;quot;)
+    cursor.execute(&amp;quot;CREATE TABLE user (id INTEGER NOT NULL, name VARCHAR(255), PRIMARY KEY(id))&amp;quot;)
+    conn.commit()
+    return conn
+ 
+def test_sqlite3(number_of_records=100000):
+    conn = init_sqlite3()
+    cursor = conn.cursor()
+    start = time.time()
+    for i in range(number_of_records):
+        cursor.execute(&amp;quot;INSERT INTO user (name) VALUES (?)&amp;quot;, (&amp;quot;NAME &amp;quot; + str(i),))
+    conn.commit()
+    end = time.time()
+    print &amp;quot;sqlite3: Insert {0} records in {1} seconds&amp;quot;.format(
+        str(number_of_records), str(end - start)
+    )
+ 
+if __name__ == ”__main__”:
+    test_sqlite3()
+    test_sqlalchemy_core()
+    test_sqlalchemy_orm()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Raw SQL&lt;/li&gt;
+&lt;li&gt;Core of SQLAlchemy&lt;/li&gt;
+&lt;li&gt;ORM of SQLAlchemy&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;10만개의 dummy 자료를 삽입하여 위 3가지 방식의 성능을 비교하려고 합니다.&lt;br /&gt;
+여러분이 테스트해도 비슷한 결과가 나올 것입니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python orm_performance_overhead.py
+sqlite3: Insert 100000 records in 0.226176977158 seconds
+SQLAlchemy core: Insert 100000 records in 0.371157169342 seconds
+SQLAlchemy ORM: Insert 100000 records in 10.1760079861 seconds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;주목할 점은 1번과 2번은 고민해 볼만한 성능을 내지만 그에 비해 ORM은 너무 느린 것입니다.&lt;br /&gt;
+ORM이 성능 저하를 가져오긴 하지만 이 성능 저하는 오직 많은 양의 데이터를 삽입하고자 할 때만 중요해 진다는 것을 명심해야합니다.&lt;/p&gt;
+
+&lt;p&gt;웹이 하나의 요청에 하나의 응답으로 처리되는 CRUD의 구조상, 편리함과 유지보수를 위해 1번, 2번 대신 3번을 고려해 볼 수 있습니다.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

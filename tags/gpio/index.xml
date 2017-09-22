@@ -6,19 +6,113 @@
     <description>Recent content in Gpio on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
     <lastBuildDate>Sun, 10 Jul 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://memnoth.github.io/tags/gpio/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/gpio/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/2016/07/learning-msp430f5529---#-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2016/07/learning-msp430f5529---#-interrupt/</guid>
-      <description>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip; 아래 코드는 ti.com에서 제공하는 인터럽트 예제코드1이다.
-... #define RED_LED P1OUT // On-board RED led. int main(void) { P1DIR |= 0x01; // Set direction OUT the led. TA0CCTL0 = CCIE; TA0CCR0 = 50000; TA0CTL = TASSEL_2 + MC_1 + TACLR; __bis_SR_register(LPM0_bits + GIE); } ... #pragma vector=TIMER0_A0_VECTOR __interrupt void TIMER0_A0_ISR(void) { RED_LED ^= 0x01; }  GIE - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.</description>
+      <guid>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</guid>
+      <description>
+
+&lt;h4 id=&#34;이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길&#34;&gt;&lt;em&gt;이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip;&lt;/em&gt;&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;아래 코드는 &lt;a href=&#34;https://ti.com&#34; target=&#34;_blank&#34;&gt;ti.com&lt;/a&gt;에서 제공하는 인터럽트 예제코드&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;...
+
+#define RED_LED P1OUT   // On-board RED led.
+
+int main(void)
+{
+    P1DIR |= 0x01;      // Set direction OUT the led.
+    TA0CCTL0 = CCIE;
+    TA0CCR0 = 50000;
+    TA0CTL = TASSEL_2 + MC_1 + TACLR;
+
+    __bis_SR_register(LPM0_bits + GIE);
+}
+
+...
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TIMER0_A0_ISR(void)
+{
+    RED_LED ^= 0x01;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;GIE&lt;/code&gt; - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;LPM0_bits&lt;/code&gt; - CPUOFF 값에 매핑되어 있다, 해당 비트가 1로 설정되면 CPU는 off 상태로 변경된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;__bis_SR_register()&lt;/code&gt; - CPU의 SR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+컴파일하고 MSP430F5529의 메모리를 디버깅해보면 &lt;code&gt;__bis_SR_register&lt;/code&gt; 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; 레지스터가 TA0CCR0&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; 레지스터의 값과 비교하며 50000까지 증가한다.&lt;br /&gt;
+상태 레지스터를 디버깅해보면 &lt;strong&gt;CPUOFF&lt;/strong&gt; bit가 1로 세팅되어 있으므로 ISR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;만 계속 처리하고 있음을 알게된다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;코드를 아래와 같이 변경하고 다시 실행하면 while 루틴과 번갈아가며 처리함을 알 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;...
+
+#define RED_LED P1OUT       // on-board RED led.
+#define GREEN_LED P4OUT     // on-board GREEN led.
+
+int main(void)
+{
+    P1DIR |= (1 &amp;lt;&amp;lt; 0);      // set direction OUT the RED led.
+    P4DIR |= (1 &amp;lt;&amp;lt; 7);      // set direction OUT the GREEN led.
+    TA0CCTL0 = CCIE;
+    TA0CCR0 = 50000;
+    TA0CTL = TASSEL_2 + MC_1 + TACLR;
+
+    __bis_SR_register(GIE);
+
+    while (1)
+    {
+        int i;
+
+        GREEN_LED ^= (1 &amp;lt;&amp;lt; 7);
+        for (i = 0; i &amp;lt; 30000; i++);
+    }
+}
+
+...
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TIMER0_A0_ISR(void)
+{
+    RED_LED ^= 0x01;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;재미있는건 TA0R 레지스터 값이 증가할 때 전혀 CPU core 레지스터를 사용하지 않는다..!&lt;br /&gt;
+또한 SR 전체인지, GIE bit인지는 모르겠지만 GIE가 0으로 설정되고 다른 ISR 호출을 허용하지 않는다.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;MSP430F55xx_ta0_02.c
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Status Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Timer_A0 Counter Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;Timer_A0 Capture/Compare Control 0 Register
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Interrupt Service Routine
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

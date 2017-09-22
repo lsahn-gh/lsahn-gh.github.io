@@ -6,10 +6,9 @@
     <description>Recent content in Projects on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
     <lastBuildDate>Thu, 29 Dec 2016 00:13:07 +0900</lastBuildDate>
-    
-	<atom:link href="https://memnoth.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/project/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Flask-Register</title>

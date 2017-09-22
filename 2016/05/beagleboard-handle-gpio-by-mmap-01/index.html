@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.27.1" />
+  <meta name="author" content="Yi Soo (Thomas) An">
+  <meta name="description" content="Undergraduate student in Computer Engineering">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-78144803-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="https://memnoth.github.io/index.xml" type="application/rss+xml" title="Thomas An">
+  <link rel="feed" href="https://memnoth.github.io/index.xml" type="application/rss+xml" title="Thomas An">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/">
+
+  
+
+  <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling | Thomas An</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Thomas An</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/post/">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2016-05-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Thu, May 19, 2016
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/beagleboard">beagleboard</a
+    >, 
+    
+    <a href="/tags/mmap">mmap</a
+    >, 
+    
+    <a href="/tags/linux">linux</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmemnoth.github.io%2f2016%2f05%2fbeagleboard-handle-gpio-by-mmap-01%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=mmap%ec%9d%84%20%ec%9d%b4%ec%9a%a9%ed%95%98%ec%97%ac%20GPIO%20%ec%a0%9c%ec%96%b4%ed%95%98%ea%b8%b0%20-%20%231.%20Clock%20Enabling&amp;url=https%3a%2f%2fmemnoth.github.io%2f2016%2f05%2fbeagleboard-handle-gpio-by-mmap-01%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmemnoth.github.io%2f2016%2f05%2fbeagleboard-handle-gpio-by-mmap-01%2f&amp;title=mmap%ec%9d%84%20%ec%9d%b4%ec%9a%a9%ed%95%98%ec%97%ac%20GPIO%20%ec%a0%9c%ec%96%b4%ed%95%98%ea%b8%b0%20-%20%231.%20Clock%20Enabling"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fmemnoth.github.io%2f2016%2f05%2fbeagleboard-handle-gpio-by-mmap-01%2f&amp;title=mmap%ec%9d%84%20%ec%9d%b4%ec%9a%a9%ed%95%98%ec%97%ac%20GPIO%20%ec%a0%9c%ec%96%b4%ed%95%98%ea%b8%b0%20-%20%231.%20Clock%20Enabling"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=mmap%ec%9d%84%20%ec%9d%b4%ec%9a%a9%ed%95%98%ec%97%ac%20GPIO%20%ec%a0%9c%ec%96%b4%ed%95%98%ea%b8%b0%20-%20%231.%20Clock%20Enabling&amp;body=https%3a%2f%2fmemnoth.github.io%2f2016%2f05%2fbeagleboard-handle-gpio-by-mmap-01%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h4 id="아래-가이드는-c-언어와-linux에-능숙하고-computer-organization-microprocessor를-수강한-적-있는-학부생에게-추천합니다"><em>아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.!</em></h4>
+
+<hr />
+
+<h3 id="왜-mmap을-이용하여-direct로-접근하나요">왜 mmap을 이용하여 direct로 접근하나요?</h3>
+
+<blockquote>
+<p>The memory-mapping method allows you to directly access the registors that control the<br />
+GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only<br />
+processes with root permissions can use it.</p>
+</blockquote>
+
+<p>책<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 <code>file I/O</code> 방식보다 1000배는 빠르다고 합니다.</p>
+
+<p>BeagleBone Black의 GPIO는 기본적으로 disable 되어 있는데, 이를 활성화는 방법에는 2가지가 있습니다.</p>
+
+<ol>
+<li>SYSFS를 이용한 GPIO export.</li>
+<li>Register를 이용하여 직접 clock을 enable 하는 것.</li>
+</ol>
+
+<p>여기서는 C 코드를 이용하여 register를 직접 제어하는 것에 포커스를 맞추겠습니다.<br />
+(SYSFS를 이용한 GPIO는 Beagleboard 홈페이지에 가면 친절하게 설명해줍니다)</p>
+
+<p>들어가기에 앞서 아래의 준비물이 필요합니다.</p>
+
+<ul>
+<li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiZjbzk3ObMAhXC3KYKHeorDmYQFggcMAA&amp;url=http%3A%2F%2Fwww.ti.com%2Flit%2Fug%2Fspruh73m%2Fspruh73m.pdf&amp;usg=AFQjCNGGBH3-5NJnlA7Plnk3BhbVi_u77g&amp;sig2=IK-nMfK0scQli5VemGRPPA&amp;bvm=bv.122448493,d.dGY" target="_blank">AM335x Sitara Processors, Technical Reference Manual</a></li>
+<li><a href="https://github.com/CircuitCo/BeagleBone-Black/blob/master/BBB_SRM.pdf" target="_blank">BeagleBone Black System Reference Manual</a></li>
+<li><a href="https://github.com/derekmolloy/boneDeviceTree/tree/master/docs" target="_blank">Derek Molloy&rsquo;s Header Table Reference</a> - both P8, and P9</li>
+</ul>
+
+<p>주로 Technical Reference Manual(이하 TRM)과 Header Table 문서를 참조하니 GPIO PIN 개념을 이해하고 TRM에서 register 정보를 찾을 수 있어야 합니다.</p>
+
+<hr />
+
+<h3 id="register를-이용하여-clock을-enable-하기">Register를 이용하여 clock을 enable 하기</h3>
+
+<p>리눅스는 대부분의 device를 파일로 추상화하여 제공합니다, 모듈화가 아주 잘 되어 있죠.<br />
+Device를 파일로 접근한다면 모든 처리 루틴을 아래와 같이 쉽게 생각할 수 있습니다.</p>
+
+<ol>
+<li>파일을 연다.</li>
+<li>파일에 데이터를 쓴다.</li>
+<li>파일을 닫는다.</li>
+</ol>
+
+<p>우리는 메모리에 직접 접근하여 register에 데이터를 쓰기(<strong>write</strong>)할 것이므로 메모리를 추상화한 <code>/dev/mem</code>을 이용할 것입니다.</p>
+
+<pre><code class="language-c">...
+fd = open(&quot;/dev/mem&quot;, O_RDWR|O_SYNC);
+
+/* 기타 처리 루틴 ~ */
+
+gpio_addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, GPIO_BASE_ADDR);
+
+*(gpio_addr + led_addr) = 0x01;     // LED를 On하는 로직이라 가정.
+...
+</code></pre>
+
+<p><code>/dev/mem</code>을 오픈하고 <code>mmap()</code>을 호출하는 것 까진 좋으나 mapped memory를 통하여 값에 접근하려면 아마도 실패할 것입니다.<br />
+이는 GPIO의 clock이 기본적으로 disable 되어 있기 때문입니다.</p>
+
+<p>Patricia 씨가 구글 그룹스에 남긴 글입니다.</p>
+
+<blockquote>
+<p>일단 그건 clock 문제야, 우리가 BeagleBone Black을 부팅할 때 GPIO 1, 2, 그리고 3의 clocking system은 비활성화 되버려 (GPIO 0은 항상 활성 상태).</p>
+
+<p>따라서 다음과 같은 방법이 있는데:</p>
+
+<ul>
+<li>Pin export 하기 (and then the system enables the clock automatically)<br /></li>
+<li>CM_PER_GPIO#_CLKCTRL 레지스터의 일부 bits 수정하기 (TRM의 CM_PER 페이지 참조)<br /></li>
+</ul>
+
+<p>&hellip;</p>
+
+<p>&mdash; Patricia N.<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup></p>
+</blockquote>
+
+<p>따라서 CM_PER_GPIO2_CLKCTRL을 활성화하기 위해 TRM 문서의 CM_PER_GPIO2_CLKCTRL<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>의 <code>MODULEMODE</code>을 확인해야 합니다.<br />
+해당 register의 값을 2로 수정하므로써 clock이 enable 되는 것입니다.</p>
+
+<p>아래 소스코드를 분석하여 확실하게 이해하세요.<br />
+(간단하게 작성하였으므로 완벽하게 동작하지 않습니다.!)</p>
+
+<pre><code class="language-c">#define CM_PER_BASE 0x44E00000
+
+#define CM_PER_GPIO1 0xAC
+#define CM_PER_GPIO2 0xB0
+#define CM_PER_GPIO3 0xB4
+
+#define MODE_ENABLE 0x2
+
+void init_GPIO_enable(int fd);
+
+int main(void)
+{
+    ...
+
+    init_GPIO_enable(mem_fd);
+
+    ...
+}
+
+void init_GPIO_enable(int fd)
+{
+    ...
+
+    // CM_PER_BASE 주소를 기반으로 memory mapped 합니다.
+    cm_per_addr = (char *)mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, fd, CM_PER_BASE);
+
+    ...
+
+    // CM_PER_GPIO2의 오프셋 주소의 값을 수정하여 Enable 합니다. 
+    *(cm_per_addr + CM_PER_GPIO2) = MODE_ENABLE;
+
+    ...
+}
+</code></pre>
+
+<p>이제 <code>GPIO_OE</code>, <code>GPIO_DATAIN</code>, <code>GPIO_DATAOUT</code>을 이용하여 값을 읽고 쓸수 있습니다.<br />
+한번 enable 하면 Process를 종료하더라도 해당 register의 값은 변하지 않습니다.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"><a href="https://www.amazon.com/Android-beaglebone-black-andrew-henderson-ebook" target="_blank">Android for the BeagleBone Black</a>
+ <a class="footnote-return" href="#fnref:1"><sup>^</sup></a></li>
+<li id="fn:2"><a href="http://beagleboard.org/Community/Forums?place=msg%2Fbeagleboard%2FOYFp4EXawiI%2F4T1CsRpjAQAJ" target="_blank">구글 그룹스</a>
+ <a class="footnote-return" href="#fnref:2"><sup>^</sup></a></li>
+<li id="fn:3">1196 page
+ <a class="footnote-return" href="#fnref:3"><sup>^</sup></a></li>
+</ol>
+</div>
+
+    </div>
+  </div>
+
+</article>
+
+
+
+<div class="article-container">
+  <h3>Related</h3>
+  <ul>
+    
+    <li><a href="/2015/05/convert-encoding-of-documents-in-linux/">Convert encoding of Documents in Linux</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="https://memnoth.github.io/2016/05/what-is-copy-on-write/"><span
+      aria-hidden="true">&larr;</span> What is Copy-On-Write?</a></li>
+    
+
+    
+    <li class="next"><a href="https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/">비글본 블랙에서의 Dynamic Linking 오류 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "memnoth" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Thomas An &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/cpp.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/kotlin.min.js"></script>
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

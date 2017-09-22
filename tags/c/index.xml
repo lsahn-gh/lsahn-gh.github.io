@@ -6,10 +6,9 @@
     <description>Recent content in C on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
     <lastBuildDate>Sun, 11 Oct 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://memnoth.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/c/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Designated Initializer in C</title>
@@ -17,11 +16,25 @@
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/10/designated-initializer-in-c/</guid>
-      <description>Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.
- int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };
- 그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!
-왜 가능한지 궁금하여 검색하던 중에 GCC 문서에서 그 내용을 찾을 수 있었다.
- In ISO C99 you can give the elements in any order, specifying the array indices or structure field names they apply to, and GNU C allows this an extension in C90 mode as well.</description>
+      <description>&lt;p&gt;Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!&lt;br /&gt;
+왜 가능한지 궁금하여 검색하던 중에 GCC 문서에서 그 내용을 찾을 수 있었다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In ISO C99 you can give the elements in any order, specifying the array indices
+or structure field names they apply to, and GNU C allows this an extension in
+C90 mode as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;GCC 컴파일러에선 C90 표준까지도 지원하도록 확장되었다고 한다.&lt;/p&gt;
+
+&lt;p&gt;모든 컴파일러가 이러한 문법을 지원하는 것은 아니니 혼란스러워 하지 말아야 한다.!&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -30,12 +43,21 @@
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</guid>
-      <description>Trust the programmer.
-프로그래머를 믿을 것. Don&amp;rsquo;t prevent the programmer from doing what needs to be done.
-프로그래머가 사용하는 방법을 제지하지 말 것. Keep the language small and simple.
-작고 간단한 언어로 유지할 것. Provide only one way to do an operation.
-하나의 명령에 하나의 방법만 제시할 것. Make it fast, even if it is not guaranteed to be portable.
-이식성을 포기하더라도 빠르게 만들 것.  C가 가진 자율성과 목적에 대한 이해가 있어야 올바르게 사용할 수 있다.</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;Trust the programmer.&lt;br /&gt;
+프로그래머를 믿을 것.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t prevent the programmer from doing what needs to be done.&lt;br /&gt;
+프로그래머가 사용하는 방법을 제지하지 말 것.&lt;/li&gt;
+&lt;li&gt;Keep the language small and simple.&lt;br /&gt;
+작고 간단한 언어로 유지할 것.&lt;/li&gt;
+&lt;li&gt;Provide only one way to do an operation.&lt;br /&gt;
+하나의 명령에 하나의 방법만 제시할 것.&lt;/li&gt;
+&lt;li&gt;Make it fast, even if it is not guaranteed to be portable.&lt;br /&gt;
+이식성을 포기하더라도 빠르게 만들 것.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;C가 가진 자율성과 목적에 대한 이해가 있어야 올바르게 사용할 수 있다.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

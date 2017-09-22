@@ -6,10 +6,9 @@
     <description>Recent content in Utf 8 on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
     <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://memnoth.github.io/tags/utf-8/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/utf-8/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
@@ -17,12 +16,24 @@
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://memnoth.github.io/2015/05/convert-encoding-of-documents-in-linux/</guid>
-      <description>Introduce 리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 따분하고 귀찮다. 특히 미드/영드/일드를 볼때 ..
-그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.
- 
- 스크립트를 vi/vim으로 작성하고 conv2utf8로 ~/Documents에 저장한다.
- .bash_aliases파일을 열고 alias c8=&#39;$HOME/Documents/conv2utf8&#39;로 저장한다.
- source ~/.bashrc로 쉘을 다시 로드한 뒤 c8 /path/to/directory/로 사용한다.</description>
+      <description>
+
+&lt;h1 id=&#34;introduce&#34;&gt;Introduce&lt;/h1&gt;
+
+&lt;p&gt;리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 &lt;em&gt;따분하고&lt;/em&gt; 귀찮다. 특히 미드/영드/일드를 볼때 ..&lt;br /&gt;
+그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;//pastebin.com/embed_js.php?i=80450rEJ&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;스크립트를 vi/vim으로 작성하고 &lt;code&gt;conv2utf8&lt;/code&gt;로 ~/Documents에 저장한다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.bash_aliases&lt;/code&gt;파일을 열고 &lt;code&gt;alias c8=&#39;$HOME/Documents/conv2utf8&#39;&lt;/code&gt;로 저장한다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bashrc&lt;/code&gt;로 쉘을 다시 로드한 뒤 &lt;code&gt;c8 /path/to/directory/&lt;/code&gt;로 사용한다.&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -6,9 +6,8 @@
     <description>Recent content in Categories on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-	<atom:link href="https://memnoth.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
+    <atom:link href="/categories/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
