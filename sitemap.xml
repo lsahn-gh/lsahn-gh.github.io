@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</loc>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/</loc>
       <lastmod>2017-06-26T11:53:39+09:00</lastmod>
     </url>
@@ -176,6 +185,16 @@
     
     <url>
     
+      <loc>https://memnoth.github.io/tags/access-point/</loc>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://memnoth.github.io/tags/algorithm/</loc>
       <lastmod>2015-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -335,8 +354,18 @@
     
     <url>
     
+      <loc>https://memnoth.github.io/tags/kea-dhcp/</loc>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://memnoth.github.io/tags/linux/</loc>
-      <lastmod>2017-06-26T11:53:39+09:00</lastmod>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -386,7 +415,7 @@
     <url>
     
       <loc>https://memnoth.github.io/post/</loc>
-      <lastmod>2017-06-26T11:53:39+09:00</lastmod>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -444,6 +473,16 @@
     
     <url>
     
+      <loc>https://memnoth.github.io/tags/rpi3/</loc>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://memnoth.github.io/tags/software/</loc>
       <lastmod>2015-05-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -475,7 +514,7 @@
     <url>
     
       <loc>https://memnoth.github.io/tags/</loc>
-      <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-22T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

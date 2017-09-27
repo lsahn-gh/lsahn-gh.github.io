@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Access Point on Thomas An</title>
+    <link>https://memnoth.github.io/tags/access-point/</link>
+    <description>Recent content in Access Point on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Thomas An</copyright>
+    <lastBuildDate>Fri, 22 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/access-point/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</title>
+      <link>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
+      <description>
+
+&lt;p&gt;In this post, we are taking a look at how to make an access point with raspberry pi3 and Kea-dhcp.&lt;br /&gt;
+But I am not going to talk about Kea-dhcp in further detail.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note that &lt;code&gt;$&lt;/code&gt; is the meaning of shell/prompt/user input.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#tested-hardware&#34;&gt;Tested hardware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-kea&#34;&gt;Why Kea?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#install-softwares&#34;&gt;Install softwares&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hostapd-configuration&#34;&gt;hostapd configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kea-dhcp-configuration&#34;&gt;Kea-dhcp configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#interface-configuration&#34;&gt;Interface configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#go-for-testing&#34;&gt;Go for testing&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;tested-hardware&#34;&gt;Tested hardware&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi 3&lt;/li&gt;
+&lt;li&gt;Panda Wireless Adapter a.k.a PAU05 based on Ralink 5372 chipset and rt2800 device driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;why-kea&#34;&gt;Why Kea?&lt;/h1&gt;
+
+&lt;p&gt;By Eddy Winstead&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ISC DHCP is now 21 years old&lt;/p&gt;
+
+&lt;p&gt;Stable, effective, but&amp;hellip;&lt;br /&gt;
+- Slow by modern standards&lt;br /&gt;
+- Flat file lease storage&lt;br /&gt;
+- Restarts likely required for config mods&lt;br /&gt;
+- Failover only in peer arrangements&lt;br /&gt;
+- Oh, those man pages!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One of the reasons I am into Kea-Dhcp is that, it provides hook functions for customizing.&lt;br /&gt;
+It is awesome, isn&amp;rsquo;t it?&lt;/p&gt;
+
+&lt;h1 id=&#34;install-softwares&#34;&gt;Install softwares&lt;/h1&gt;
+
+&lt;p&gt;We just need to install two softwares, &lt;code&gt;hostapd&lt;/code&gt; to turn rPI3 to Access Point and &lt;code&gt;Kea-dhcp&lt;/code&gt; for giving an IP to clients.&lt;br /&gt;
+Run the line to install them.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt update &amp;amp;&amp;amp; sudo apt install -y hostapd kea-dhcp4-server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Latest version of Kea-dhcp is 1.1.0 in latest Raspberry Pi3.&lt;/p&gt;
+
+&lt;h1 id=&#34;hostapd-configuration&#34;&gt;hostapd configuration&lt;/h1&gt;
+
+&lt;p&gt;Create a new file with the command &lt;code&gt;sudo nano(or vi) /etc/hostapd/hostapd.conf&lt;/code&gt;&lt;br /&gt;
+Paste the following codes,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;interface=wlan0         # interface name for running hostapd.
+#driver=rtl871xdrv      # Comment this for ralink chipset.
+ssid=AP-TEST            
+hw_mode=g
+channel=6
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=raspberry    # at least 8 alphabets.
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=CCMP
+wpa_group_rekey=86400
+ieee80211n=1
+wme_enabled=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that you can change any options as you want.&lt;br /&gt;
+Save it.&lt;/p&gt;
+
+&lt;p&gt;Move on to bind the config file to hostapd daemon.&lt;br /&gt;
+Open &lt;code&gt;/etc/default/hostapd&lt;/code&gt; file with your favorite editor, find the line &lt;code&gt;#DAEMON_CONF=&amp;quot;&amp;quot;&lt;/code&gt; and edit it as following,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+# file and hostapd will be started during system boot. An example configuration
+# file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz
+#
+DAEMON_CONF=&amp;quot;/etc/hostapd/hostapd.conf&amp;quot;
+
+# Additional daemon options to be appended to hostapd command:-
+# 	-d   show more debug messages (-dd for even more)
+# 	-K   include key data in debug messages
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save it.&lt;/p&gt;
+
+&lt;p&gt;Likewise, edit &lt;code&gt;/etc/init.d/hostapd&lt;/code&gt;.&lt;br /&gt;
+Find the line &lt;code&gt;DAEMON_CONF=&lt;/code&gt; and edit it as follwing,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+DAEMON_DEFS=/etc/default/hostapd
+DAEMON_CONF=/etc/hostapd/hostapd.conf
+NAME=hostapd
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Save it.&lt;/p&gt;
+
+&lt;h3 id=&#34;now-you-need-ip-forwarding-and-open-firewall-to-talk-to-your-crush&#34;&gt;Now you need IP forwarding and open firewall to talk to your crush ;-).&lt;/h3&gt;
+
+&lt;p&gt;Open the file &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; and find the lines as following,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+# Uncomment the next line to enable packet forwarding for IPv4
+#net.ipv4.ip_forward=1
+
+# Uncomment the next line to enable packet forwarding for IPv6
+#  Enabling this option disables Stateless Address Autoconfiguration
+#  based on Router Advertisements for this host
+#net.ipv6.conf.all.forwarding=1
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Uncomment the both lines &lt;code&gt;net.ipv4.ip_forward=1&lt;/code&gt; and &lt;code&gt;net.ipv6.conf.all.forwarding=1&lt;/code&gt;.&lt;br /&gt;
+Run the lines as following,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+$ sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+$ sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that if you use another interface, like wlan1, you should change the name of interface as you want.&lt;/p&gt;
+
+&lt;h1 id=&#34;kea-dhcp-configuration&#34;&gt;Kea-dhcp configuration&lt;/h1&gt;
+
+&lt;p&gt;Since you have installed kea-dhcp4-server, the configuration file of kea-dhcp is from &lt;code&gt;/etc/kea/kea-dhcp4.conf&lt;/code&gt;.&lt;br /&gt;
+Open it, find the lines and edit it as following,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+# Add names of interfaces to listen on.
+  &amp;quot;interfaces-config&amp;quot;: {
+    &amp;quot;interfaces&amp;quot;: [ &amp;quot;wlan1&amp;quot; ]  # As you want, wlan1 is for me.
+  },
+
+...
+
+# Use Memfile lease database backend to store leases in a CSV file.
+  &amp;quot;lease-database&amp;quot;: {
+    &amp;quot;type&amp;quot;: &amp;quot;memfile&amp;quot;,      # Type of lease, it can be a host of database as MySQL, MariaDB.
+    &amp;quot;persist&amp;quot;: true,
+    &amp;quot;name&amp;quot;: &amp;quot;/var/lib/kea/dhcp4.leases&amp;quot;, 
+    &amp;quot;lfc-interval&amp;quot;: 1800
+  }
+
+...
+
+# also a list of structures.
+  &amp;quot;subnet4&amp;quot;: [
+  # Edit subnet information as you want.
+  {     &amp;quot;subnet&amp;quot;: &amp;quot;192.168.100.0/24&amp;quot;,
+        &amp;quot;pools&amp;quot;: [ { &amp;quot;pool&amp;quot;: &amp;quot;192.168.100.10 - 192.168.100.200&amp;quot; } ] }
+  ]
+},
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is not enough yet, we have to set the address of the router up for clients that communicate between them.&lt;br /&gt;
+Now time to append router setting as following to the config file in &lt;code&gt;Dhcp4&amp;quot;: { ... }&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+
+# Global (inherited by all subnets) lease lifetime is mandatory parameter.
+  &amp;quot;valid-lifetime&amp;quot;: 4000,
+
+# Domain name
+  &amp;quot;option-data&amp;quot;: [
+      {
+          &amp;quot;name&amp;quot;: &amp;quot;domain-name-servers&amp;quot;,
+          &amp;quot;data&amp;quot;: &amp;quot;8.8.8.8, 8.8.4.4&amp;quot;
+      },
+      {
+          # Add router information.
+          &amp;quot;name&amp;quot;: &amp;quot;routers&amp;quot;,
+          &amp;quot;data&amp;quot;: &amp;quot;192.168.100.1&amp;quot;
+      }
+  ],
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now restart the dhcp server with the command as below,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo service kea-dhcp4-server restart
+$ sudo service kea-dhcp4-server status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you should see as following,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;● kea-dhcp4-server.service - ISC KEA IPv4 DHCP daemon
+   Loaded: loaded (/lib/systemd/system/kea-dhcp4-server.service; disabled; vendor preset: enabled)
+   Active: active (running) since Tue 2017-09-26 03:19:27 UTC; 7h ago
+     Docs: man:kea-dhcp4(8)
+ Main PID: 1522 (kea-dhcp4)
+   CGroup: /system.slice/kea-dhcp4-server.service
+           └─1522 /usr/sbin/kea-dhcp4 -c /etc/kea/kea-dhcp4.conf
+
+Sep 26 09:49:28 dhcp-test LOCAL0[2337]: INFO  [DhcpLFC] LFC_ROTATING LFC rotating files
+Sep 26 09:49:28 dhcp-test LOCAL0[2337]: INFO  [DhcpLFC] LFC_TERMINATE LFC finished processing
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_START Starting lease file cleanup
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_PROCESSING Previous file: /var/lib/kea/dhcp4.leases.2, copy file: 
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC.dhcpsrv] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /var/
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC.dhcpsrv] DHCPSRV_MEMFILE_LEASE_FILE_LOAD loading leases from file /var/
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_READ_STATS Leases: 0, attempts: 2, errors: 0.
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_WRITE_STATS Leases: 0, attempts: 0, errors: 0.
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_ROTATING LFC rotating files
+Sep 26 10:19:28 dhcp-test LOCAL0[2406]: INFO  [DhcpLFC] LFC_TERMINATE LFC finished processing
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That means fully alright.&lt;/p&gt;
+
+&lt;h1 id=&#34;interface-configuration&#34;&gt;Interface configuration&lt;/h1&gt;
+
+&lt;p&gt;As following lines are for my setting of the interface, hope it helps you.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and &#39;man dhcpcd.conf&#39;
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+auto lo
+
+auto eth0
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+allow-hotplug wlan1
+iface wlan1 inet static
+  address 192.168.100.1   # router setting
+  netmask 255.255.255.0
+  network 192.168.100.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;go-for-testing&#34;&gt;Go for testing&lt;/h1&gt;
+
+&lt;p&gt;Now connect to the access point you built up, turn on the browser, then go to Youtube.&lt;br /&gt;
+Go watch some interesting!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;&lt;a href=&#34;https://www.isc.org/wp-content/uploads/2016/06/getting-started-with-Kea-withQA.ppt.pdf&#34; target=&#34;_blank&#34;&gt;Getting started with Kea withQA.ppt&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
