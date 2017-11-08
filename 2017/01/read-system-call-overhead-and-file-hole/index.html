@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.27.1" />
+  <meta name="generator" content="Hugo 0.30.2" />
   <meta name="author" content="Thomas An">
   <meta name="description" content="Undergraduate student in Computer Engineering">
 
@@ -28,11 +28,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
   
   
+  
 
 
   
 
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat%3a400%2c700%7cRoboto%3a400%2c400italic%2c700%7cRoboto%2bMono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
   
   <link rel="stylesheet" href="/styles.css">
   
@@ -54,13 +55,28 @@
     
   
 
-  <link rel="alternate" href="" type="application/rss+xml" title="Thomas An">
-  <link rel="feed" href="" type="application/rss+xml" title="Thomas An">
+  
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
   <link rel="canonical" href="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@itsmethomasan">
+  <meta property="twitter:creator" content="@itsmethomasan">
+  
+  <meta property="og:site_name" content="Thomas An">
+  <meta property="og:url" content="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/">
+  <meta property="og:title" content="read system call overhead and file hole | Thomas An">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-01-30T20:44:40&#43;09:00">
+  
+  <meta property="article:modified_time" content="2017-01-30T20:44:40&#43;09:00">
+  
 
   
 
@@ -74,6 +90,7 @@
 
     
     <div class="navbar-header">
+      
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target=".navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -81,6 +98,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      
       <a class="navbar-brand" href="/">Thomas An</a>
     </div>
 
@@ -141,8 +159,10 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">read system call overhead and file hole</h1>
-    
+    <div class="article-inner">
+      <h1 itemprop="name">read system call overhead and file hole</h1>
+
+      
 
 <div class="article-metadata">
 
@@ -154,30 +174,18 @@
   </span>
 
   
+  <span class="middot-divider"></span>
   <span class="article-reading-time">
     3 min read
   </span>
   
 
   
+  
+  <span class="middot-divider"></span>
+  <a href="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/#disqus_thread"></a>
+  
 
-  
-  
-  
-  <span class="article-tags">
-    <i class="fa fa-tags"></i>
-    
-    <a href="/tags/unix">unix</a
-    >, 
-    
-    <a href="/tags/system-call">system call</a
-    >, 
-    
-    <a href="/tags/apue">apue</a
-    >
-    
-  </span>
-  
   
 
   
@@ -187,28 +195,28 @@
     <li>
       <a class="twitter"
          href="https://twitter.com/intent/tweet?text=read%20system%20call%20overhead%20and%20file%20hole&amp;url=https%3a%2f%2fmemnoth.github.io%2f2017%2f01%2fread-system-call-overhead-and-file-hole%2f"
-         target="_blank">
+         target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
          href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fmemnoth.github.io%2f2017%2f01%2fread-system-call-overhead-and-file-hole%2f"
-         target="_blank">
+         target="_blank" rel="noopener">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmemnoth.github.io%2f2017%2f01%2fread-system-call-overhead-and-file-hole%2f&amp;title=read%20system%20call%20overhead%20and%20file%20hole"
-         target="_blank">
+         target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
          href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fmemnoth.github.io%2f2017%2f01%2fread-system-call-overhead-and-file-hole%2f&amp;title=read%20system%20call%20overhead%20and%20file%20hole"
-         target="_blank">
+         target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
@@ -226,8 +234,9 @@
 
 </div>
 
-    <div class="article-style" itemprop="articleBody">
-      
+
+      <div class="article-style" itemprop="articleBody">
+        
 
 <h4 id="이-글은-advanced-programming-in-the-unix-environment의-4-6-연습문제에-관한-내용입니다"><em>이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다.</em></h4>
 
@@ -376,6 +385,23 @@ main(int argc, char *argv[])
 </ol>
 </div>
 
+      </div>
+
+      
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/unix">unix</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/system-call">system call</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/apue">apue</a>
+  
+</div>
+
+
+
     </div>
   </div>
 
@@ -384,22 +410,7 @@ main(int argc, char *argv[])
 
 
 
-<div class="container">
-  <nav>
-  <ul class="pager">
-    
-    <li class="previous"><a href="https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/"><span
-      aria-hidden="true">&larr;</span> YouCompleteMe - libtinfo.so.5 not found</a></li>
-    
 
-    
-    <li class="next"><a href="https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/">An Easy Explaination Of First And Follow Sets <span
-      aria-hidden="true">&rarr;</span></a></li>
-    
-  </ul>
-</nav>
-
-</div>
 
 <div class="article-container">
   
@@ -435,8 +446,9 @@ main(int argc, char *argv[])
 
       &copy; 2017 Thomas An &middot; 
 
-      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
-      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
       <span class="pull-right" aria-hidden="true">
         <a href="#" id="back_to_top">
@@ -450,12 +462,45 @@ main(int argc, char *argv[])
   </div>
 </footer>
 
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
     
+
+    
+    
+    <script id="dsq-count-scr" src="//memnoth.disqus.com/count.js" async></script>
+    
+
+    
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
     
     <script src="/js/hugo-academic.js"></script>
     
