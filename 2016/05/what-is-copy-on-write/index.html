@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.30.2" />
-  <meta name="author" content="Thomas An">
+  <meta name="author" content="Yi-Soo Thomas An">
   <meta name="description" content="Undergraduate student in Computer Engineering">
 
   
@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  
   
   
 
@@ -61,22 +60,6 @@
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
   <link rel="canonical" href="https://memnoth.github.io/2016/05/what-is-copy-on-write/">
-
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="twitter:site" content="@itsmethomasan">
-  <meta property="twitter:creator" content="@itsmethomasan">
-  
-  <meta property="og:site_name" content="Thomas An">
-  <meta property="og:url" content="https://memnoth.github.io/2016/05/what-is-copy-on-write/">
-  <meta property="og:title" content="What is Copy-On-Write? | Thomas An">
-  <meta property="og:description" content="">
-  <meta property="og:locale" content="en-us">
-  
-  <meta property="article:published_time" content="2016-05-17T00:00:00&#43;00:00">
-  
-  <meta property="article:modified_time" content="2016-05-17T00:00:00&#43;00:00">
-  
 
   
 
@@ -159,10 +142,8 @@
 
 
   <div class="article-container">
-    <div class="article-inner">
-      <h1 itemprop="name">What is Copy-On-Write?</h1>
-
-      
+    <h1 itemprop="name">What is Copy-On-Write?</h1>
+    
 
 <div class="article-metadata">
 
@@ -234,9 +215,8 @@
 
 </div>
 
-
-      <div class="article-style" itemprop="articleBody">
-        <p><em>Copy-On-Write</em> 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.</p>
+    <div class="article-style" itemprop="articleBody">
+      <p><em>Copy-On-Write</em> 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.</p>
 
 <p>아래의 코드가 있다.</p>
 
@@ -267,20 +247,19 @@ Context가 변경되지 않는다면 PC(Program Counter)/Registers/Stack/Code/Da
 
 <p>디테일한 메커니즘은 더 복잡하다.</p>
 
-      </div>
-
-      
-
-
-<div class="article-tags">
-  
-  <a class="btn btn-primary btn-outline" href="/tags/os">os</a>
-  
-</div>
-
-
-
     </div>
+
+    
+    
+    
+    <div class="article-tags">
+      
+      <a class="btn btn-primary btn-outline" href="/tags/os">os</a>
+      
+    </div>
+    
+    
+
   </div>
 
 </article>
