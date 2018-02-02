@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Thomas An</title>
+    <link>http://example.com/tags/python/</link>
+    <description>Recent content in Python on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jul 2015 00:08:45 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Babelian</title>
+      <link>http://example.com/project/babelian/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
+      
+      <guid>http://example.com/project/babelian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python - Auto generate requirements.txt</title>
+      <link>http://example.com/post/python/python-auto-generate-requirements/</link>
+      <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/python/python-auto-generate-requirements/</guid>
+      <description>원문 &amp;ndash; Python - Auto generate requirements.txt by Suresh Kumar
+번역 &amp;ndash; Yi Soo, (Thomas) An
+Why requirements.txt? 모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.
+requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.
+requirements 파일 형식: 
+requests==1.2.0 Flask==0.10.1  방법 1: 
+$ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:
+위의 포맷 형식으로 requirements.txt을 생성했다면, pip install -r requirements.</description>
+    </item>
+    
+    <item>
+      <title>Pirates use Flask, the Navy uses Django</title>
+      <link>http://example.com/post/python/flask-vs-django/</link>
+      <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/python/flask-vs-django/</guid>
+      <description>원문 &amp;ndash; Pirates use Flask, the Navy uses Django by Alan Hamlett
+번역 &amp;ndash; Yi Soo, (Thomas) An
+Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 Flask와 Django가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, WakaTime는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.</description>
+    </item>
+    
+    <item>
+      <title>Performance overhead of sqlalchemy</title>
+      <link>http://example.com/post/python/performance-overhead-of-sqlalchemy/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/python/performance-overhead-of-sqlalchemy/</guid>
+      <description>원문 &amp;ndash; Performance Overhead of SQLAlchemy by Xiaonuo Gantan
+번역 &amp;ndash; Yi Soo, (Thomas) An
+import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): __tablename__ = &amp;quot;user&amp;quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&#39;sqlite:///example.db&#39;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.</description>
+    </item>
+    
+  </channel>
+</rss>

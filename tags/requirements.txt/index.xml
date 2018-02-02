@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requirements.txt on Thomas An</title>
+    <link>http://example.com/tags/requirements.txt/</link>
+    <description>Recent content in Requirements.txt on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/requirements.txt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python - Auto generate requirements.txt</title>
+      <link>http://example.com/post/python/python-auto-generate-requirements/</link>
+      <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/python/python-auto-generate-requirements/</guid>
+      <description>원문 &amp;ndash; Python - Auto generate requirements.txt by Suresh Kumar
+번역 &amp;ndash; Yi Soo, (Thomas) An
+Why requirements.txt? 모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.
+requirements 파일은 한 번에 어떠한 라이브러리가 종속적인지 확인하고 설치하도록 도와줍니다.
+requirements 파일 형식: 
+requests==1.2.0 Flask==0.10.1  방법 1: 
+$ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 위해 pip의 freeze 명령어를 사용합니다.:
+위의 포맷 형식으로 requirements.txt을 생성했다면, pip install -r requirements.</description>
+    </item>
+    
+  </channel>
+</rss>

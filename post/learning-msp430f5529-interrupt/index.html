@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Learning MSP430F5529 - # Interrupt</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://example.com//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cplusplus.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.30.2" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78144803-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-78144803-1');
+        </script>
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Learning MSP430F5529 - # Interrupt</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/memnoth/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/itsmethomasan/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/learning-msp430f5529-interrupt/">Learning MSP430F5529 - # Interrupt</a></h4>
+    <h5>July 10, 2016</h5>
+    
+    <a href="http://example.com/tags/msp430f5529"><kbd class="item-tag">msp430f5529</kbd></a>
+    
+    <a href="http://example.com/tags/gpio"><kbd class="item-tag">gpio</kbd></a>
+    
+    <a href="http://example.com/tags/timer"><kbd class="item-tag">timer</kbd></a>
+    
+    <a href="http://example.com/tags/interrupt"><kbd class="item-tag">interrupt</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h4 id="이-글은-인터럽트-예제를-분석한-글이다-어느-누군가에게-도움이-되길"><em>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&hellip;</em></h4>
+
+<hr />
+
+<p>아래 코드는 <a href="https://ti.com">ti.com</a>에서 제공하는 인터럽트 예제코드<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>이다.</p>
+
+<pre><code class="language-c">...
+
+#define RED_LED P1OUT   // On-board RED led.
+
+int main(void)
+{
+    P1DIR |= 0x01;      // Set direction OUT the led.
+    TA0CCTL0 = CCIE;
+    TA0CCR0 = 50000;
+    TA0CTL = TASSEL_2 + MC_1 + TACLR;
+
+    __bis_SR_register(LPM0_bits + GIE);
+}
+
+...
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TIMER0_A0_ISR(void)
+{
+    RED_LED ^= 0x01;
+}
+</code></pre>
+
+<p><code>GIE</code> - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.</p>
+
+<p><code>LPM0_bits</code> - CPUOFF 값에 매핑되어 있다, 해당 비트가 1로 설정되면 CPU는 off 상태로 변경된다.</p>
+
+<p><code>__bis_SR_register()</code> - CPU의 SR<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 제어하는 함수이다, 해당 레지스터는 CPU core에 존재하며 CPU 연산 결과에 대한 상태를 저장한다.</p>
+
+<p><br />
+컴파일하고 MSP430F5529의 메모리를 디버깅해보면 <code>__bis_SR_register</code> 함수를 실행하고 GIE bit가 enable되는 순간부터 TA0R<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup> 레지스터가 TA0CCR0<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup> 레지스터의 값과 비교하며 50000까지 증가한다.<br />
+상태 레지스터를 디버깅해보면 <strong>CPUOFF</strong> bit가 1로 세팅되어 있으므로 ISR<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">5</a></sup>만 계속 처리하고 있음을 알게된다.<br />
+<br /></p>
+
+<p>코드를 아래와 같이 변경하고 다시 실행하면 while 루틴과 번갈아가며 처리함을 알 수 있다.</p>
+
+<pre><code class="language-c">...
+
+#define RED_LED P1OUT       // on-board RED led.
+#define GREEN_LED P4OUT     // on-board GREEN led.
+
+int main(void)
+{
+    P1DIR |= (1 &lt;&lt; 0);      // set direction OUT the RED led.
+    P4DIR |= (1 &lt;&lt; 7);      // set direction OUT the GREEN led.
+    TA0CCTL0 = CCIE;
+    TA0CCR0 = 50000;
+    TA0CTL = TASSEL_2 + MC_1 + TACLR;
+
+    __bis_SR_register(GIE);
+
+    while (1)
+    {
+        int i;
+
+        GREEN_LED ^= (1 &lt;&lt; 7);
+        for (i = 0; i &lt; 30000; i++);
+    }
+}
+
+...
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TIMER0_A0_ISR(void)
+{
+    RED_LED ^= 0x01;
+}
+</code></pre>
+
+<p>재미있는건 TA0R 레지스터 값이 증가할 때 전혀 CPU core 레지스터를 사용하지 않는다..!<br />
+또한 SR 전체인지, GIE bit인지는 모르겠지만 GIE가 0으로 설정되고 다른 ISR 호출을 허용하지 않는다.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">MSP430F55xx_ta0_02.c
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Status Register
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Timer_A0 Counter Register
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Timer_A0 Capture/Compare Control 0 Register
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">Interrupt Service Routine
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+</ol>
+</div>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "memnoth" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

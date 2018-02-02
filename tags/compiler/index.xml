@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compiler on Thomas An</title>
+    <link>http://example.com/tags/compiler/</link>
+    <description>Recent content in Compiler on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Jun 2017 13:27:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/compiler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Easy Explaination Of First And Follow Sets</title>
+      <link>http://example.com/post/compiler/an-easy-explaination-of-first-and-follow-sets/</link>
+      <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
+      
+      <guid>http://example.com/post/compiler/an-easy-explaination-of-first-and-follow-sets/</guid>
+      <description>원문 &amp;ndash; An Easy Explaination Of First And Follow Sets by James Brunskill
+번역 &amp;ndash; Yi Soo, (Thomas) An
+유용한 팁을 작성해준 James Brunskill씨에게 고마움을 전합니다.
+First and Follw Sets 대학교에서 First and Follow sets을 처음 배울때 follow는 이해하기가 어려웠습니다. 따라서 제가 배운 규칙들을 다시 작성하였으며 도움이 되길 바랍니다. 이 규칙들이 올바른지 궁금할 것 입니다. 그래서 저는 한 강사님에게 수업에서 이 방법을 시도해 볼 것을 요청하였고 효과가 있다고 생각합니다. 궁금한 점이 있거나 무엇인가 제안하고 싶다면 자유롭게 메일1로 연락주시기 바랍니다.</description>
+    </item>
+    
+  </channel>
+</rss>

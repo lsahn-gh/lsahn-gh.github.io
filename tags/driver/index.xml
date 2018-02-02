@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Driver on Thomas An</title>
+    <link>http://example.com/tags/driver/</link>
+    <description>Recent content in Driver on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Jun 2017 11:53:39 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/driver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to get your Realtek RTL8111/RTL8168 working</title>
+      <link>http://example.com/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
+      <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
+      
+      <guid>http://example.com/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
+      <description>원문 &amp;ndash; How To get your Realtek RTL8111/RTL8168 working by Unixblogger
+번역 &amp;ndash; Yi Soo, (Thomas) An
+Why do I need this driver anyway? 많은 분들이 제게 &amp;ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&amp;hellip;&amp;rdquo; 라고 물어봅니다. 하지만 RTL8111/RTL8168은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?
+그래서 우리가 직접 빌드해야 된답니다.
+The installation methods Ubuntu/Debian에서 디바이스 드라이버를 컴파일하는 방법에 대해 글을 쓴 이후로 많은 것이 변했습니다. 그래서 오늘은 드라이버를 설치하기 위한 방법 2개를 소개하고자 합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

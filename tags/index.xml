@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Thomas An</title>
+    <link>http://example.com/tags/</link>
+    <description>Recent content in Tags on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Access Point</title>
+      <link>http://example.com/tags/access-point/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/access-point/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>http://example.com/tags/algorithm/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apue</title>
+      <link>http://example.com/tags/apue/</link>
+      <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
+      
+      <guid>http://example.com/tags/apue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beagleboard</title>
+      <link>http://example.com/tags/beagleboard/</link>
+      <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/beagleboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>http://example.com/tags/c/</link>
+      <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compiler</title>
+      <link>http://example.com/tags/compiler/</link>
+      <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
+      
+      <guid>http://example.com/tags/compiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://example.com/tags/django/</link>
+      <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Driver</title>
+      <link>http://example.com/tags/driver/</link>
+      <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
+      
+      <guid>http://example.com/tags/driver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Linking</title>
+      <link>http://example.com/tags/dynamic-linking/</link>
+      <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/dynamic-linking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eclipse</title>
+      <link>http://example.com/tags/eclipse/</link>
+      <pubDate>Sun, 19 Nov 2017 21:16:29 +0900</pubDate>
+      
+      <guid>http://example.com/tags/eclipse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encoding</title>
+      <link>http://example.com/tags/encoding/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/encoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Euc Kr</title>
+      <link>http://example.com/tags/euc-kr/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/euc-kr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fedora 24</title>
+      <link>http://example.com/tags/fedora-24/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/fedora-24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Five Programming Problems</title>
+      <link>http://example.com/tags/five-programming-problems/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/five-programming-problems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>http://example.com/tags/flask/</link>
+      <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gpio</title>
+      <link>http://example.com/tags/gpio/</link>
+      <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/gpio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interrupt</title>
+      <link>http://example.com/tags/interrupt/</link>
+      <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/interrupt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kea Dhcp</title>
+      <link>http://example.com/tags/kea-dhcp/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/kea-dhcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://example.com/tags/linux/</link>
+      <pubDate>Sun, 19 Nov 2017 21:16:29 +0900</pubDate>
+      
+      <guid>http://example.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mesh Network</title>
+      <link>http://example.com/tags/mesh-network/</link>
+      <pubDate>Wed, 11 Oct 2017 13:05:30 +0900</pubDate>
+      
+      <guid>http://example.com/tags/mesh-network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mmap</title>
+      <link>http://example.com/tags/mmap/</link>
+      <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/mmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Msp430f5529</title>
+      <link>http://example.com/tags/msp430f5529/</link>
+      <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/msp430f5529/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Os</title>
+      <link>http://example.com/tags/os/</link>
+      <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parser</title>
+      <link>http://example.com/tags/parser/</link>
+      <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
+      
+      <guid>http://example.com/tags/parser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://example.com/tags/python/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
+      
+      <guid>http://example.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Realtek</title>
+      <link>http://example.com/tags/realtek/</link>
+      <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
+      
+      <guid>http://example.com/tags/realtek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Requirements.txt</title>
+      <link>http://example.com/tags/requirements.txt/</link>
+      <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/requirements.txt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rpi3</title>
+      <link>http://example.com/tags/rpi3/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/rpi3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>http://example.com/tags/software/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sqlalchemy</title>
+      <link>http://example.com/tags/sqlalchemy/</link>
+      <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/sqlalchemy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Call</title>
+      <link>http://example.com/tags/system-call/</link>
+      <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
+      
+      <guid>http://example.com/tags/system-call/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>http://example.com/tags/terminal/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
+      
+      <guid>http://example.com/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timer</title>
+      <link>http://example.com/tags/timer/</link>
+      <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/timer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://example.com/tags/tips/</link>
+      <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>http://example.com/tags/unix/</link>
+      <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
+      
+      <guid>http://example.com/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utf 8</title>
+      <link>http://example.com/tags/utf-8/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/utf-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>http://example.com/tags/vim/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Youcompleteme</title>
+      <link>http://example.com/tags/youcompleteme/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/tags/youcompleteme/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

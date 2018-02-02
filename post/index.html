@@ -1,809 +1,265 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Posts</title>
+        <style>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.30.2" />
-  <meta name="author" content="Yi-Soo Thomas An">
-  <meta name="description" content="Undergraduate student in Computer Engineering">
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
 
-  
-  
-  
-  
-    
-  
-  
-    
-    
-    <link rel="stylesheet" href="/css/highlight.min.css">
-    
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  
-  
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
 
 
-  
+<link rel="stylesheet" href="http://example.com//css/main.css">
 
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
-  
-  <link rel="stylesheet" href="/styles.css">
-  
-  <link rel="stylesheet" href="/css/custom.css">
-  
 
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-78144803-1', 'auto');
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
 
-  
 
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://memnoth.github.io/post/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
-  
 
-  <title>Posts | Thomas An</title>
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
 
-</head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 
-<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-  <div class="container">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    
-    <div class="navbar-header">
-      
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target=".navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <a class="navbar-brand" href="/">Thomas An</a>
-    </div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cplusplus.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.30.2" />
+        
+        <link href="http://example.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Thomas An" />
+        <link href="http://example.com/post/index.xml" rel="feed" type="application/rss+xml" title="Thomas An" />
+        
+        
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78144803-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-78144803-1');
+        </script>
+        
+    </head>
 
     
-    <div class="collapse navbar-collapse">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
-      
-      <ul class="nav navbar-nav navbar-right">
-        
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
 
-        
+            <div class="container">
 
-        <li class="nav-item">
-          <a href="/#about">
-            
-            <span>Home</span>
-          </a>
-        </li>
+                <div class="navbar-header">
 
-        
-        
+                    <a class="navbar-brand visible-xs" href="#">Posts</a>
 
-        
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-        <li class="nav-item">
-          <a href="/#posts">
-            
-            <span>Posts</span>
-          </a>
-        </li>
+                </div>
 
-        
-        
+                <div class="collapse navbar-collapse">
 
-        
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
 
-        <li class="nav-item">
-          <a href="/#projects">
-            
-            <span>Projects</span>
-          </a>
-        </li>
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:me@example.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/memnoth/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/itsmethomasan/"><i class="fa fa-twitter"></i></a></li>
+                            
+                        </ul>
+                    
 
-        
-        
+                </div>
 
-        
-      </ul>
+            </div>
 
-    </div>
-  </div>
-</nav>
-
-
-
+        </nav>
 
 
-<div class="universal-wrapper">
+<main>
 
-  <h1>Posts</h1>
+    <h2>Posts</h2>
 
-  
+     <div class="item">
 
-  
-  
+    
     
     
 
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/" itemprop="url">리눅스에서 Eclipse가 멈출 때</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
     
-    <time datetime="2017-11-19 21:16:29 &#43;0900 KST" itemprop="datePublished">
-      Nov 19, 2017
-    </time>
-  </span>
+    
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/#disqus_thread"></a>
-  
-
-  
-  
-  
-  
-
-  
+    <h4><a href="/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/">리눅스에서 Eclipse가 멈출 때</a></h4>
+    <h5>November 19, 2017</h5>
+    
+    <a href="http://example.com/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="http://example.com/tags/eclipse"><kbd class="item-tag">eclipse</kbd></a>
+    
 
 </div>
+  <div class="item">
 
-  <div class="article-style" itemprop="articleBody">
     
-    Java 관련 개발은 IntelliJ나 Visual Studio Code를 이용합니다만 최근에 Spring을 공부하며 Eclipse를 다시 설치해야 했습니다. Luna에서는 프리징(Freezing) 문제가 없었는데 이상하게 Neon부터 실행만 하면 프리징이 생겨 작업도 하지 못하고 강제로 재부팅해야 했습니다. 찾아보니 Gtk 3에서 생기는 이슈로 아직 근본적으로 해결되지는 않았습니다만 eclipse.ini 파일을 수정하여 해결할 수 있습니다.
-다음 두 줄을
---launcher.GTK_version 2  --launcher.appendVmargs 위에 추가합니다.
-... --launcher.defaultAction openFile --launcher.GTK_version 2 --launcher.appendVmargs -vm ...  프리징 문제는 Gtk 기반의 데스크탑 환경을 사용하는 경우에 발생하는 것 같네요.
     
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/" class="btn btn-primary btn-outline">
-      CONTINUE READING
+    
+
+    
+    
+
+    <h4><a href="/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/">How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</a></h4>
+    <h5>September 22, 2017</h5>
+    
+    <a href="http://example.com/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="http://example.com/tags/rpi3"><kbd class="item-tag">rpi3</kbd></a>
+    
+    <a href="http://example.com/tags/access-point"><kbd class="item-tag">access point</kbd></a>
+    
+    <a href="http://example.com/tags/kea-dhcp"><kbd class="item-tag">kea dhcp</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/">How to get your Realtek RTL8111/RTL8168 working</a></h4>
+    <h5>June 26, 2017</h5>
+    
+    <a href="http://example.com/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="http://example.com/tags/realtek"><kbd class="item-tag">realtek</kbd></a>
+    
+    <a href="http://example.com/tags/driver"><kbd class="item-tag">driver</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/compiler/an-easy-explaination-of-first-and-follow-sets/">An Easy Explaination Of First And Follow Sets</a></h4>
+    <h5>June 20, 2017</h5>
+    
+    <a href="http://example.com/tags/compiler"><kbd class="item-tag">compiler</kbd></a>
+    
+    <a href="http://example.com/tags/parser"><kbd class="item-tag">parser</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/linux/read-system-call-overhead-and-file-hole/">read system call overhead and file hole</a></h4>
+    <h5>January 30, 2017</h5>
+    
+    <a href="http://example.com/tags/unix"><kbd class="item-tag">unix</kbd></a>
+    
+    <a href="http://example.com/tags/system-call"><kbd class="item-tag">system call</kbd></a>
+    
+    <a href="http://example.com/tags/apue"><kbd class="item-tag">apue</kbd></a>
+    
+
+</div>
+ 
+
+</main>
+
+
+
+<div class="pages">
+
+     
+    <a class="icon pages-icon" href="/post/page/2/" rel="next">
+        <i class="fa fa-arrow-right"></i>
     </a>
-  </p>
-</div>
-
-  
     
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/" itemprop="url">How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2017-09-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Sep 22, 2017
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/#disqus_thread"></a>
-  
-
-  
-
-  
 
 </div>
 
-  <div class="article-style" itemprop="articleBody">
-    
-    In this post, we are taking a look at how to make an access point with raspberry pi3 and Kea-dhcp.
-But I am not going to talk about Kea-dhcp in further detail.
-Note that $ is the meaning of shell/prompt/user input.
-Contents  Tested hardware Why Kea? Install softwares hostapd configuration Kea-dhcp configuration Interface configuration Go for testing  Tested hardware  Raspberry Pi 3 Panda Wireless Adapter a.k.a PAU05 based on Ralink 5372 chipset and rt2800 device driver.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
 
-  
-    
-    
 
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/" itemprop="url">How to get your Realtek RTL8111/RTL8168 working</a>
-  </h3>
-  
+        <footer>
 
-<div class="article-metadata">
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
-  <span class="article-date">
-    
-    <time datetime="2017-06-26 11:53:39 &#43;0900 KST" itemprop="datePublished">
-      Jun 26, 2017
-    </time>
-  </span>
+        </footer>
+       
+    </body>
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    원문 &ndash; How To get your Realtek RTL8111/RTL8168 working by Unixblogger
-번역 &ndash; Yi Soo, (Thomas) An
-Why do I need this driver anyway? 많은 분들이 제게 &ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&hellip;&rdquo; 라고 물어봅니다. 하지만 RTL8111/RTL8168은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?
-그래서 우리가 직접 빌드해야 된답니다.
-The installation methods Ubuntu/Debian에서 디바이스 드라이버를 컴파일하는 방법에 대해 글을 쓴 이후로 많은 것이 변했습니다. 그래서 오늘은 드라이버를 설치하기 위한 방법 2개를 소개하고자 합니다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/" itemprop="url">An Easy Explaination Of First And Follow Sets</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2017-06-20 13:27:00 &#43;0900 KST" itemprop="datePublished">
-      Jun 20, 2017
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    원문 &ndash; An Easy Explaination Of First And Follow Sets by James Brunskill
-번역 &ndash; Yi Soo, (Thomas) An
-유용한 팁을 작성해준 James Brunskill씨에게 고마움을 전합니다.
-First and Follw Sets 대학교에서 First and Follow sets을 처음 배울때 follow는 이해하기가 어려웠습니다. 따라서 제가 배운 규칙들을 다시 작성하였으며 도움이 되길 바랍니다. 이 규칙들이 올바른지 궁금할 것 입니다. 그래서 저는 한 강사님에게 수업에서 이 방법을 시도해 볼 것을 요청하였고 효과가 있다고 생각합니다. 궁금한 점이 있거나 무엇인가 제안하고 싶다면 자유롭게 메일1로 연락주시기 바랍니다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/" itemprop="url">read system call overhead and file hole</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2017-01-30 20:44:40 &#43;0900 KST" itemprop="datePublished">
-      Jan 30, 2017
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다. 4.6 연습문제의 내용은 다음과 같다.
- cp(1)처럼 파일을 복사하되, 구멍1이 있는 파일을 복사하느 경우 출력 파일에 0 바이트들을 기록하지 않는 유틸리티를 작성하라.
- 위 연습문제의 키 포인트는 파일의 구멍이 \0로 채워져있다는 것이다.
-복사될 파일의 데이터는 다음과 같으며 크기는 16394 byte 이다.
-0000000 a b c d e f g h i j \0 \0 \0 \0 \0 \0 0000020 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 \0 * 0040000 A B C D E F G H I J 0040012  해당 유틸리티를 간단하게 작성하면 아래와 같다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/" itemprop="url">YouCompleteMe - libtinfo.so.5 not found</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-07-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Jul 24, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    Laptop에 Fedora 24를 설치하고 YouCompleteMe1를 인스톨했으나 SHUTTING DOWN 오류를 출력하며 정상적으로 실행되지 않았다.
-:YcmToggleLogs stderr를 통하여 디버깅을 해보니 시스템에서 libtinfo.so.52를 찾지 못해 발생한 예외였다.
-설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.
-$ dnf list installed | grep ncurses ncurses.x86_64 6.0-5.20160116.fc24 @koji-override-0 ncurses-base.noarch 6.0-5.20160116.fc24 @koji-override-0 ncurses-libs.x86_64 6.0-5.20160116.fc24 @koji-override-0  lib64 디렉터리에서도 libtinfo.so.6을 찾을 수 있다, 나는 libtinfo.so.5를 원하는데&hellip;
-$ ls -l /lib64/libtinfo* lrwxrwxrwx. 1 root root 15 4월 8 19:33 /lib64/libtinfo.so.6 -&gt; libtinfo.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/" itemprop="url">Learning MSP430F5529 - # Interrupt</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-07-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Jul 10, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&hellip; 아래 코드는 ti.com에서 제공하는 인터럽트 예제코드1이다.
-... #define RED_LED P1OUT // On-board RED led. int main(void) { P1DIR |= 0x01; // Set direction OUT the led. TA0CCTL0 = CCIE; TA0CCR0 = 50000; TA0CTL = TASSEL_2 + MC_1 + TACLR; __bis_SR_register(LPM0_bits + GIE); } ... #pragma vector=TIMER0_A0_VECTOR __interrupt void TIMER0_A0_ISR(void) { RED_LED ^= 0x01; }  GIE - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/" itemprop="url">비글본 블랙에서의 Dynamic Linking 오류</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-06-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      Jun 24, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.
-NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 No such file or directory 오류가 발생하였다.
-계정 권한, 파일 권한, Host PC의 mount 권한까지 모두 확인하였지만 잘못된 부분이 없었기에 무척 난감했는데 Dynamic Linking이 원인이였다.
-test가 실행파일이라 가정하고 file 명령어를 이용하여 확인해보자.
-test: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/" itemprop="url">mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-05-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      May 19, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.! 왜 mmap을 이용하여 direct로 접근하나요?  The memory-mapping method allows you to directly access the registors that control the
-GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only
-processes with root permissions can use it.
- 책1에 따르면 memory-mapping 함수는 register에 직접 접근하도록 하며, 이는 file I/O 방식보다 1000배는 빠르다고 합니다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://memnoth.github.io/2016/05/what-is-copy-on-write/" itemprop="url">What is Copy-On-Write?</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-05-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      May 17, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="https://memnoth.github.io/2016/05/what-is-copy-on-write/#disqus_thread"></a>
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.
-아래의 코드가 있다.
-int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&quot;I'm a child!\n&quot;); temp = 2; } else if (pid &gt; 0) { printf(&quot;I'm a parent!\n&quot;); }  folk()가 실행되고 나서 메모리는 아래의 그림과 같다.
-프로세스는 각자의 공간을 가지고 있다고 배웠지만 Modern Operating System 들은 메모리 자원을 효율적으로 관리/사용하기 위해 COW 메커니즘을 이용한다.
-    
-  </div>
-  <p class="read-more">
-    <a href="https://memnoth.github.io/2016/05/what-is-copy-on-write/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-
-  
-<nav>
-  <ul class="pager">
-    
-    
-    <li><a href="/post/page/2/">&gt;</a></li>
-    
-  </ul>
-</nav>
-
-
-
-</div>
-<footer class="site-footer">
-  <div class="container">
-    <p class="powered-by">
-
-      &copy; 2017 Thomas An &middot; 
-
-      Powered by the
-      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-      <span class="pull-right" aria-hidden="true">
-        <a href="#" id="back_to_top">
-          <span class="button_icon">
-            <i class="fa fa-chevron-up fa-2x"></i>
-          </span>
-        </a>
-      </span>
-
-    </p>
-  </div>
-</footer>
-
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cite</h4>
-      </div>
-      <div>
-        <pre><code class="modal-body tex"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
-          <i class="fa fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
-          <i class="fa fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-    
-    <script id="dsq-count-scr" src="//memnoth.disqus.com/count.js" async></script>
-    
-
-    
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-    
-    
-    <script src="/js/hugo-academic.js"></script>
-    
-
-    
-    
-      
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-      
-
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-      
-
-      
-
-      <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    
-    
-
-  </body>
 </html>
 

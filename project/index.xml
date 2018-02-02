@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Thomas An</title>
+    <link>http://example.com/project/</link>
+    <description>Recent content in Projects on Thomas An</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Oct 2017 13:05:30 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.com/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Piece of Cake</title>
+      <link>http://example.com/project/piece-of-cake/</link>
+      <pubDate>Wed, 11 Oct 2017 13:05:30 +0900</pubDate>
+      
+      <guid>http://example.com/project/piece-of-cake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Babelian</title>
+      <link>http://example.com/project/babelian/</link>
+      <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
+      
+      <guid>http://example.com/project/babelian/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
