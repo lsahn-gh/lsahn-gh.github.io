@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rpi3 on Thomas An</title>
-    <link>http://example.com/tags/rpi3/</link>
+    <link>https://memnoth.github.io/tags/rpi3/</link>
     <description>Recent content in Rpi3 on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/rpi3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/rpi3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</title>
-      <link>http://example.com/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
+      <link>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
+      <guid>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
       <description>In this post, we are taking a look at how to make an access point with raspberry pi3 and Kea-dhcp.
 But I am not going to talk about Kea-dhcp in further detail.
 Note that $ is the meaning of shell/prompt/user input.

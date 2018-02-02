@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse on Thomas An</title>
-    <link>http://example.com/tags/eclipse/</link>
+    <link>https://memnoth.github.io/tags/eclipse/</link>
     <description>Recent content in Eclipse on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Nov 2017 21:16:29 +0900</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>리눅스에서 Eclipse가 멈출 때</title>
-      <link>http://example.com/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</link>
+      <link>https://memnoth.github.io/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</link>
       <pubDate>Sun, 19 Nov 2017 21:16:29 +0900</pubDate>
       
-      <guid>http://example.com/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</guid>
+      <guid>https://memnoth.github.io/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</guid>
       <description>Java 관련 개발은 IntelliJ나 Visual Studio Code를 이용합니다만 최근에 Spring을 공부하며 Eclipse를 다시 설치해야 했습니다. Luna에서는 프리징(Freezing) 문제가 없었는데 이상하게 Neon부터 실행만 하면 프리징이 생겨 작업도 하지 못하고 강제로 재부팅해야 했습니다. 찾아보니 Gtk 3에서 생기는 이슈로 아직 근본적으로 해결되지는 않았습니다만 eclipse.ini 파일을 수정하여 해결할 수 있습니다.
 다음 두 줄을
 --launcher.GTK_version 2  --launcher.appendVmargs 위에 추가합니다.

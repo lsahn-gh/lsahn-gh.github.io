@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal on Thomas An</title>
-    <link>http://example.com/tags/terminal/</link>
+    <link>https://memnoth.github.io/tags/terminal/</link>
     <description>Recent content in Terminal on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Jul 2015 00:08:45 +0900</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Babelian</title>
-      <link>http://example.com/project/babelian/</link>
+      <link>https://memnoth.github.io/project/babelian/</link>
       <pubDate>Sat, 11 Jul 2015 00:08:45 +0900</pubDate>
       
-      <guid>http://example.com/project/babelian/</guid>
+      <guid>https://memnoth.github.io/project/babelian/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on Thomas An</title>
-    <link>http://example.com/tags/vim/</link>
+    <link>https://memnoth.github.io/tags/vim/</link>
     <description>Recent content in Vim on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Jul 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>http://example.com/post/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
       <description>Laptop에 Fedora 24를 설치하고 YouCompleteMe1를 인스톨했으나 SHUTTING DOWN 오류를 출력하며 정상적으로 실행되지 않았다.
 :YcmToggleLogs stderr를 통하여 디버깅을 해보니 시스템에서 libtinfo.so.52를 찾지 못해 발생한 예외였다.
 설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.

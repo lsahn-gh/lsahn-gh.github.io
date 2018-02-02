@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Euc Kr on Thomas An</title>
-    <link>http://example.com/tags/euc-kr/</link>
+    <link>https://memnoth.github.io/tags/euc-kr/</link>
     <description>Recent content in Euc Kr on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/euc-kr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/euc-kr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>http://example.com/post/linux/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/post/linux/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/linux/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/post/linux/convert-encoding-of-documents-in-linux/</guid>
       <description>Introduce 리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 따분하고 귀찮다. 특히 미드/영드/일드를 볼때 ..
 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.
  

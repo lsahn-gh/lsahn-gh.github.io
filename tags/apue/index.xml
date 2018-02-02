@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apue on Thomas An</title>
-    <link>http://example.com/tags/apue/</link>
+    <link>https://memnoth.github.io/tags/apue/</link>
     <description>Recent content in Apue on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Jan 2017 20:44:40 +0900</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/apue/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/apue/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>http://example.com/post/linux/read-system-call-overhead-and-file-hole/</link>
+      <link>https://memnoth.github.io/post/linux/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>http://example.com/post/linux/read-system-call-overhead-and-file-hole/</guid>
+      <guid>https://memnoth.github.io/post/linux/read-system-call-overhead-and-file-hole/</guid>
       <description>이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다. 4.6 연습문제의 내용은 다음과 같다.
  cp(1)처럼 파일을 복사하되, 구멍1이 있는 파일을 복사하느 경우 출력 파일에 0 바이트들을 기록하지 않는 유틸리티를 작성하라.
  위 연습문제의 키 포인트는 파일의 구멍이 \0로 채워져있다는 것이다.

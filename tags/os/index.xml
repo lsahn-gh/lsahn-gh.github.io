@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Os on Thomas An</title>
-    <link>http://example.com/tags/os/</link>
+    <link>https://memnoth.github.io/tags/os/</link>
     <description>Recent content in Os on Thomas An</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 May 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/os/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://memnoth.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>http://example.com/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
       <description>Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.
 아래의 코드가 있다.
 int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a child!\n&amp;quot;); temp = 2; } else if (pid &amp;gt; 0) { printf(&amp;quot;I&#39;m a parent!\n&amp;quot;); }  folk()가 실행되고 나서 메모리는 아래의 그림과 같다.
