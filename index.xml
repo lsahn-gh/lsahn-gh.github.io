@@ -13,10 +13,10 @@
     
     <item>
       <title>리눅스에서 Eclipse가 멈출 때</title>
-      <link>https://memnoth.github.io/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</link>
+      <link>https://memnoth.github.io/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</link>
       <pubDate>Sun, 19 Nov 2017 21:16:29 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</guid>
+      <guid>https://memnoth.github.io/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/</guid>
       <description>Java 관련 개발은 IntelliJ나 Visual Studio Code를 이용합니다만 최근에 Spring을 공부하며 Eclipse를 다시 설치해야 했습니다. Luna에서는 프리징(Freezing) 문제가 없었는데 이상하게 Neon부터 실행만 하면 프리징이 생겨 작업도 하지 못하고 강제로 재부팅해야 했습니다. 찾아보니 Gtk 3에서 생기는 이슈로 아직 근본적으로 해결되지는 않았습니다만 eclipse.ini 파일을 수정하여 해결할 수 있습니다.
 다음 두 줄을
 --launcher.GTK_version 2  --launcher.appendVmargs 위에 추가합니다.
@@ -44,10 +44,10 @@ Note: The paper was written in Korean.</description>
     
     <item>
       <title>How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</title>
-      <link>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
+      <link>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
+      <guid>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
       <description>In this post, we are taking a look at how to make an access point with raspberry pi3 and Kea-dhcp.
 But I am not going to talk about Kea-dhcp in further detail.
 Note that $ is the meaning of shell/prompt/user input.
@@ -56,10 +56,10 @@ Contents  Tested hardware Why Kea? Install softwares hostapd configuration Kea-d
     
     <item>
       <title>How to get your Realtek RTL8111/RTL8168 working</title>
-      <link>https://memnoth.github.io/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
+      <link>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/</link>
       <pubDate>Mon, 26 Jun 2017 11:53:39 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
+      <guid>https://memnoth.github.io/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/</guid>
       <description>원문 &amp;ndash; How To get your Realtek RTL8111/RTL8168 working by Unixblogger
 번역 &amp;ndash; Yi Soo, (Thomas) An
 Why do I need this driver anyway? 많은 분들이 제게 &amp;ldquo;이게 왜 필요하죠? 리눅스에서 지원하지 않나요?&amp;hellip;&amp;rdquo; 라고 물어봅니다. 하지만 RTL8111/RTL8168은 오픈 소스가 아니에요. 이제 왜 리눅스 커널에 포함되지 않는지 아시겠죠?
@@ -69,10 +69,10 @@ The installation methods Ubuntu/Debian에서 디바이스 드라이버를 컴파
     
     <item>
       <title>An Easy Explaination Of First And Follow Sets</title>
-      <link>https://memnoth.github.io/post/compiler/an-easy-explaination-of-first-and-follow-sets/</link>
+      <link>https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/</link>
       <pubDate>Tue, 20 Jun 2017 13:27:00 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/compiler/an-easy-explaination-of-first-and-follow-sets/</guid>
+      <guid>https://memnoth.github.io/2017/06/an-easy-explaination-of-first-and-follow-sets/</guid>
       <description>원문 &amp;ndash; An Easy Explaination Of First And Follow Sets by James Brunskill
 번역 &amp;ndash; Yi Soo, (Thomas) An
 유용한 팁을 작성해준 James Brunskill씨에게 고마움을 전합니다.
@@ -81,10 +81,10 @@ First and Follw Sets 대학교에서 First and Follow sets을 처음 배울때 f
     
     <item>
       <title>read system call overhead and file hole</title>
-      <link>https://memnoth.github.io/post/linux/read-system-call-overhead-and-file-hole/</link>
+      <link>https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/</link>
       <pubDate>Mon, 30 Jan 2017 20:44:40 +0900</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/read-system-call-overhead-and-file-hole/</guid>
+      <guid>https://memnoth.github.io/2017/01/read-system-call-overhead-and-file-hole/</guid>
       <description>이 글은 Advanced Programming in the Unix Environment의 4.6 연습문제에 관한 내용입니다. 4.6 연습문제의 내용은 다음과 같다.
  cp(1)처럼 파일을 복사하되, 구멍1이 있는 파일을 복사하느 경우 출력 파일에 0 바이트들을 기록하지 않는 유틸리티를 작성하라.
  위 연습문제의 키 포인트는 파일의 구멍이 \0로 채워져있다는 것이다.
@@ -94,10 +94,10 @@ First and Follw Sets 대학교에서 First and Follow sets을 처음 배울때 f
     
     <item>
       <title>YouCompleteMe - libtinfo.so.5 not found</title>
-      <link>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</link>
+      <link>https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/</link>
       <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/ycm-libtinfo-so-5-not-found/</guid>
+      <guid>https://memnoth.github.io/2016/07/ycm-libtinfo-so-5-not-found/</guid>
       <description>Laptop에 Fedora 24를 설치하고 YouCompleteMe1를 인스톨했으나 SHUTTING DOWN 오류를 출력하며 정상적으로 실행되지 않았다.
 :YcmToggleLogs stderr를 통하여 디버깅을 해보니 시스템에서 libtinfo.so.52를 찾지 못해 발생한 예외였다.
 설치된 패키지가 있나 확인해보니 6.0.5 버전으로 존재했다.
@@ -107,20 +107,20 @@ $ ls -l /lib64/libtinfo* lrwxrwxrwx. 1 root root 15 4월 8 19:33 /lib64/libtinfo
     
     <item>
       <title>Learning MSP430F5529 - # Interrupt</title>
-      <link>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</link>
+      <link>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</link>
       <pubDate>Sun, 10 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/learning-msp430f5529-interrupt/</guid>
+      <guid>https://memnoth.github.io/2016/07/learning-msp430f5529-interrupt/</guid>
       <description>이 글은 인터럽트 예제를 분석한 글이다, 어느 누군가에게 도움이 되길&amp;hellip; 아래 코드는 ti.com에서 제공하는 인터럽트 예제코드1이다.
 ... #define RED_LED P1OUT // On-board RED led. int main(void) { P1DIR |= 0x01; // Set direction OUT the led. TA0CCTL0 = CCIE; TA0CCR0 = 50000; TA0CTL = TASSEL_2 + MC_1 + TACLR; __bis_SR_register(LPM0_bits + GIE); } ... #pragma vector=TIMER0_A0_VECTOR __interrupt void TIMER0_A0_ISR(void) { RED_LED ^= 0x01; }  GIE - General interrupt enable의 약자로 MCU의 인터럽트 허용여부를 결정한다.</description>
     </item>
     
     <item>
       <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-      <link>https://memnoth.github.io/post/linux/dynamic-linking-error-on-bbb/</link>
+      <link>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</link>
       <pubDate>Fri, 24 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/dynamic-linking-error-on-bbb/</guid>
+      <guid>https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/</guid>
       <description>임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.
 NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 No such file or directory 오류가 발생하였다.
 계정 권한, 파일 권한, Host PC의 mount 권한까지 모두 확인하였지만 잘못된 부분이 없었기에 무척 난감했는데 Dynamic Linking이 원인이였다.
@@ -130,10 +130,10 @@ test: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked
     
     <item>
       <title>mmap을 이용하여 GPIO 제어하기 - #1. Clock Enabling</title>
-      <link>https://memnoth.github.io/post/linux/beagleboard-handle-gpio-by-mmap-01/</link>
+      <link>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</link>
       <pubDate>Thu, 19 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/beagleboard-handle-gpio-by-mmap-01/</guid>
+      <guid>https://memnoth.github.io/2016/05/beagleboard-handle-gpio-by-mmap-01/</guid>
       <description>아래 가이드는 C 언어와 Linux에 능숙하고 Computer Organization, Microprocessor를 수강한 적 있는 학부생에게 추천합니다.! 왜 mmap을 이용하여 direct로 접근하나요?  The memory-mapping method allows you to directly access the registors that control the
 GPIOs. Memory-mapping is very fast (about 1000 times faster than file I/O!), but only
 processes with root permissions can use it.
@@ -142,10 +142,10 @@ processes with root permissions can use it.
     
     <item>
       <title>What is Copy-On-Write?</title>
-      <link>https://memnoth.github.io/post/what-is-copy-on-write/</link>
+      <link>https://memnoth.github.io/2016/05/what-is-copy-on-write/</link>
       <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/what-is-copy-on-write/</guid>
+      <guid>https://memnoth.github.io/2016/05/what-is-copy-on-write/</guid>
       <description>Copy-On-Write 란 folk()를 이용하여 Child Process를 생성하는 시점에서는 Parent의 메모리를 참조하다가 Child Process의 Context가 변경될 때 메모리를 복사하는 메커니즘이다.
 아래의 코드가 있다.
 int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a child!\n&amp;quot;); temp = 2; } else if (pid &amp;gt; 0) { printf(&amp;quot;I&#39;m a parent!\n&amp;quot;); }  folk()가 실행되고 나서 메모리는 아래의 그림과 같다.
@@ -154,10 +154,10 @@ int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a chil
     
     <item>
       <title>Designated Initializer in C</title>
-      <link>https://memnoth.github.io/post/designated-initializer-in-c/</link>
+      <link>https://memnoth.github.io/2015/10/designated-initializer-in-c/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/designated-initializer-in-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/designated-initializer-in-c/</guid>
       <description>Designated Initializer는 C99에서 표준화된 문법으로 아래와 같이 배열의 초기화가 가능하다.
  int arr[10] = { [4] = 31, 32, [1] = 0, 1, 2, 3 };
  그런데 GCC 컴파일러에서 C89(as C90) 표준으로 컴파일해도 오류없이 컴파일이 가능했다..!
@@ -167,10 +167,10 @@ int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a chil
     
     <item>
       <title>Keep the spirit of C</title>
-      <link>https://memnoth.github.io/post/keep-the-spirit-of-c/</link>
+      <link>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/keep-the-spirit-of-c/</guid>
+      <guid>https://memnoth.github.io/2015/10/keep-the-spirit-of-c/</guid>
       <description>Trust the programmer.
 프로그래머를 믿을 것. Don&amp;rsquo;t prevent the programmer from doing what needs to be done.
 프로그래머가 사용하는 방법을 제지하지 말 것. Keep the language small and simple.
@@ -190,10 +190,10 @@ int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a chil
     
     <item>
       <title>How to Get Your Questions Answered</title>
-      <link>https://memnoth.github.io/post/how-to-get-your-questions-answered/</link>
+      <link>https://memnoth.github.io/2015/05/how-to-get-your-questions-answered/</link>
       <pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/how-to-get-your-questions-answered/</guid>
+      <guid>https://memnoth.github.io/2015/05/how-to-get-your-questions-answered/</guid>
       <description>Introduce 사람들은 왜 당신의 질문에 답변하지 않는 걸까?
 이 글은 당신의 시간을 절약하며, 빠른 답변을 얻을 수 있도록 도와줄지도 모른다.
 당신은 왜 답변 받지 못하는 걸까? 상대방의 입장에서 당신의 질문을 객관적으로 살펴볼 필요가 있다.
@@ -203,10 +203,10 @@ int pid, temp = 1; pid = folk(); if (pid == 0) { printf(&amp;quot;I&#39;m a chil
     
     <item>
       <title>Python - Auto generate requirements.txt</title>
-      <link>https://memnoth.github.io/post/python/python-auto-generate-requirements/</link>
+      <link>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python/python-auto-generate-requirements/</guid>
+      <guid>https://memnoth.github.io/2015/05/python-auto-generate-requirements/</guid>
       <description>원문 &amp;ndash; Python - Auto generate requirements.txt by Suresh Kumar
 번역 &amp;ndash; Yi Soo, (Thomas) An
 Why requirements.txt? 모든 애플리케이션은 실행될 때 요구하는 종속된 라이브러리들을 가지고 있습니다.
@@ -219,10 +219,10 @@ $ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 
     
     <item>
       <title>Five programming problems every Software Engineer should be able to solve in less than 1 hour</title>
-      <link>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
+      <link>https://memnoth.github.io/2015/05/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
+      <guid>https://memnoth.github.io/2015/05/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour/</guid>
       <description>제가 Software Engineer 포지션 구인 공고를 냈을 때, 지원자들은 빠르게 움직이기 시작했습니다. 절 귀찮게 만든 몇몇의 지원자들은 항상 Programming 이 무슨 의미인지 모른다는 것이죠. 
 물론, 그들은 다르게 생각할 겁니다.
 만약 당신이 jQuery를 안다면 Front-End Web Developer 포지션에 지원하는 건 괜찮다고 생각해요, 하지만 Software Engineer 포지션에서도 HTML, JavaScript, CSS 만 요청할 것 같나요? (저는 XML, JSON, XSLT, SOAP, HTTP, REST, SSL, 기타 200개가 넘는 여러 용어1들에 대하여 떠드는 사람들을 좋아하기도 하지만, 그들은 int와 float의 차이를 설명하지 못 해요.</description>
@@ -230,10 +230,10 @@ $ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 
     
     <item>
       <title>Convert encoding of Documents in Linux</title>
-      <link>https://memnoth.github.io/post/linux/convert-encoding-of-documents-in-linux/</link>
+      <link>https://memnoth.github.io/2015/05/convert-encoding-of-documents-in-linux/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/convert-encoding-of-documents-in-linux/</guid>
+      <guid>https://memnoth.github.io/2015/05/convert-encoding-of-documents-in-linux/</guid>
       <description>Introduce 리눅스에서 문서를 읽을때 euc-kr로 저장된 파일을 읽으면 깨진다. 리눅스는 기본이 utf-8이기 때문에 euc-kr 파일을 읽으려면 수작업으로 인코딩을 변경하고 읽어야 하는데 이 작업이 여간 따분하고 귀찮다. 특히 미드/영드/일드를 볼때 ..
 그래서 인코딩을 변경하는 쉘 스크립트를 작성하고 alias로 등록하여 빠르게 변경하기로 했다.
  
@@ -244,10 +244,10 @@ $ pip freeze &amp;gt; requirements.txt  requirements.txt 파일을 생성하기 
     
     <item>
       <title>Pirates use Flask, the Navy uses Django</title>
-      <link>https://memnoth.github.io/post/python/flask-vs-django/</link>
+      <link>https://memnoth.github.io/2015/05/flask-vs-django/</link>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python/flask-vs-django/</guid>
+      <guid>https://memnoth.github.io/2015/05/flask-vs-django/</guid>
       <description>원문 &amp;ndash; Pirates use Flask, the Navy uses Django by Alan Hamlett
 번역 &amp;ndash; Yi Soo, (Thomas) An
 Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고자 한다면, 빌드하기 위해 Web stack을 선택해야 합니다. 파이썬 개발자를 위해 두 개의 유명한 웹 프레임워크 Flask와 Django가 있죠. I have experience with both and have chosen one or the other for my myriad of projects and copanies. My current product, WakaTime는 Flask로 개발 되었고, Flask는 우리가 목표에 도달할 수 있도록 도와주었습니다.</description>
@@ -255,10 +255,10 @@ Introduce 새로운 아이디어를 테스트하거나, 제품을 개발하고�
     
     <item>
       <title>Performance overhead of sqlalchemy</title>
-      <link>https://memnoth.github.io/post/python/performance-overhead-of-sqlalchemy/</link>
+      <link>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</link>
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/python/performance-overhead-of-sqlalchemy/</guid>
+      <guid>https://memnoth.github.io/2015/02/performance-overhead-of-sqlalchemy/</guid>
       <description>원문 &amp;ndash; Performance Overhead of SQLAlchemy by Xiaonuo Gantan
 번역 &amp;ndash; Yi Soo, (Thomas) An
 import time import sqlite3 from sqlalchemy.ext.declarative import declarative_base from sqlalchemy import Column, Integer, String, create_engine from sqlalchemy.orm import scoped_session, sessionmaker Base = declarative_base() session = scoped_session(sessionmaker()) class User(Base): __tablename__ = &amp;quot;user&amp;quot; id = Column(Integer, primary_key=True) name = Column(String(255)) def init_db(dbname=&#39;sqlite:///example.db&#39;): engine = create_engine(dbname, echo=False) session.remove() session.configure(bind=engine, autoflush=False, expire_on_commit=False) Base.metadata.drop_all(engine) Base.metadata.create_all(engine) return engine def test_sqlalchemy_orm(number_of_records=100000): init_db() start = time.</description>

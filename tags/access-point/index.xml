@@ -13,10 +13,10 @@
     
     <item>
       <title>How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</title>
-      <link>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
+      <link>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/post/linux/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
+      <guid>https://memnoth.github.io/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/</guid>
       <description>In this post, we are taking a look at how to make an access point with raspberry pi3 and Kea-dhcp.
 But I am not going to talk about Kea-dhcp in further detail.
 Note that $ is the meaning of shell/prompt/user input.
