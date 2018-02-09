@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>비글본 블랙에서의 Dynamic Linking 오류</title>
+        <title>GPU HANG 메시지와 함께 Xorg가 멈출 때.</title>
         <style>
 
     html body {
@@ -87,7 +87,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">비글본 블랙에서의 Dynamic Linking 오류</a>
+                    <a class="navbar-brand visible-xs" href="#">GPU HANG 메시지와 함께 Xorg가 멈출 때.</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -141,12 +141,8 @@
     
     
 
-    <h4><a href="/2016/06/dynamic-linking-error-on-bbb/">비글본 블랙에서의 Dynamic Linking 오류</a></h4>
-    <h5>June 24, 2016</h5>
-    
-    <a href="https://memnoth.github.io/tags/beagleboard"><kbd class="item-tag">beagleboard</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/dynamic-linking"><kbd class="item-tag">dynamic linking</kbd></a>
+    <h4><a href="/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C./">GPU HANG 메시지와 함께 Xorg가 멈출 때.</a></h4>
+    <h5>February 9, 2018</h5>
     
     <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
     
@@ -154,27 +150,62 @@
 </div>
 
 
-    <br> <div class="text-justify"><p>임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.</p>
+    <br> <div class="text-justify"><p>최근에 랩탑을 새로사고 듀얼모니터를 구성한 이후로 다음과 같은 증상이 나타나기 시작했다.<br />
+<em>(OS는 eOS(elementary OS)이며 모니터와 랩탑간에는 HDMI로 구성되어있다.)</em></p>
 
-<p>NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 <code>No such file or directory</code> 오류가 발생하였다.<br />
-계정 권한, 파일 권한, Host PC의 mount 권한까지 모두 확인하였지만 잘못된 부분이 없었기에 무척 난감했는데 Dynamic Linking이 원인이였다.</p>
+<ol>
+<li>마우스 포인터를 움직일 수 있으나 포인터 이외에 아무런 아이콘도 나타나지 않는다.</li>
+<li>X 윈도우로 진입하나 잠시뒤 블랙스크린이 뜨고 Terminal 진입도 안된다.</li>
+<li>단, HDMI를 언플러그인하고 eOS로 부팅하면 멀쩡하다.</li>
+<li>eOS로 부팅후 HDMI를 연결하면 정상 동작하나 커널 로그에 오류가 찍힌다.</li>
+</ol>
 
-<p>test가 실행파일이라 가정하고 <code>file</code> 명령어를 이용하여 확인해보자.</p>
+<p>1, 2번의 커널 로그<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>는 다음과 같다.</p>
 
-<pre><code class="language-bash">test: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 2.6.16, not stripped
+<pre><code>kernel: [   39.815305] [drm] GPU HANG: ecode 9:0:0x993492ae, in Xorg [1096], reason: Hang on rcs0, action: reset
+kernel: [   39.815368] drm/i915: Resetting chip after gpu hang
+kernel: [   39.815615] [drm] RC6 on
+kernel: [   39.828495] [drm:intel_cpu_fifo_underrun_irq_handler [i915]] *ERROR* CPU pipe A FIFO underrun
+kernel: [   40.924046] asynchronous wait on fence i915:gala[1809]/1:81 timed out
+kernel: [   40.924051] asynchronous wait on fence i915:gala[1809]/1:81 timed out
+kernel: [   47.836308] drm/i915: Resetting chip after gpu hang
+kernel: [   47.836564] [drm:i915_reset [i915]] *ERROR* GPU recovery failed
 </code></pre>
 
-<p>/lib/<strong>ld-linux.so.3</strong>는 프로그램이 메모리에 적재되는 시점에서 실행에 필요한 라이브러리를 링킹해주는 파일이다.<br />
-Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하지만 비글본 블랙에서의 링킹은 /lib/<code>ld-linux-armhf.so.3</code>이 담당한다.<br />
-비글본 블랙에서 <strong>ld-linux.so.3</strong>를 찾을 수 없으니 실행이 되지 않았던 것인데 그렇다고 <code>ld-linux-armhf.so.3</code>를 <strong>ld-linux.so.3</strong>로 바꾸면 안된다.</p>
+<p>GPU가 어떤 이유로 인해 멈춘단다.. 관련 키워드로 검색을 하여 링크<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 찾았다. 우선 코멘트에 나와 있는대로 부팅시 커널 파라미터에 <code>intel_iommu=off</code>을 추가하였으나 증상은 똑같았고 1번에서는 Terminal 진입이 가능하여 커널 로그를 다시 확인해보니 다음과 같았다.</p>
 
-<p><code>ld-linux-armhf.so.3</code>를 링크하는 <strong>ld-linux.so.3</strong> 심볼릭 링크를 생성시키면 올바르게 동작한다.</p>
-
-<pre><code class="language-bash">sudo ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3
+<pre><code>kernel: [   33.831007] [drm] GPU HANG: ecode 9:0:0x3000c801, in Xorg [1056], reason: Hang on rcs0, action: reset
+kernel: [   33.831135] drm/i915: Resetting chip after gpu hang
+kernel: [   33.831564] [drm] RC6 on
+kernel: [   43.804241] drm/i915: Resetting chip after gpu hang
+kernel: [   43.804773] [drm] RC6 on
 </code></pre>
 
-<p>비글본 블랙에서 위의 명령어로 <strong>ld-linux.so.3</strong> 심볼릭 링크를 생성하고 <code>./test</code>로 다시 실행해보자.<br />
-이젠 제대로 실행한다.</p>
+<p><code>RC6</code>와 관련이 있을 것으로 생각되어 intel rc6로 검색하니 Ubuntu Wiki에 어떤 기능인지 설명이 적혀있는데 이건 링크<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>로 대체한다. 이 방법이 먹히지 않는 환경도 존재하지만 현재 workaround로 동작이 되고 있으므로 블로그에 로그를 남긴다. 커널 파라미터에 <code>i915.enable_rc6=0</code>을 추가하고 테스트한다. 올바르게 동작이 되면 부팅시 항상 설정되도록 grub<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup>을 다음과 같이 수정한다.</p>
+
+<pre><code>...
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash i915.enable_rc6=0&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+...
+</code></pre>
+
+<p><code>GRUB_CMDLINE_LINUX_DEFAULT</code> 마지막에 <code>i915.enable_rc6=0</code>을 추가하고 저장한 뒤, <code>sudo update-grub</code>로 grub을 업데이트한다.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">dmesg 명령어 또는 /var/log/kern.log 파일.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2"><a href="https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184">https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3"><a href="https://wiki.ubuntu.com/Kernel/PowerManagementRC6">https://wiki.ubuntu.com/Kernel/PowerManagementRC6</a>
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">/etc/default/grub 파일.
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
 </div>
 
     
@@ -185,22 +216,6 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
         <h4 class="page-header">Related</h4>
 
          <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C./">GPU HANG 메시지와 함께 Xorg가 멈출 때.</a></h4>
-    <h5>February 9, 2018</h5>
-    
-    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-
-</div>
-  <div class="item">
 
     
     
@@ -237,6 +252,26 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
     <a href="https://memnoth.github.io/tags/access-point"><kbd class="item-tag">access point</kbd></a>
     
     <a href="https://memnoth.github.io/tags/kea-dhcp"><kbd class="item-tag">kea dhcp</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/2017/06/how-to-get-your-realtek-rtl8111-rtl8168-working/">How to get your Realtek RTL8111/RTL8168 working</a></h4>
+    <h5>June 26, 2017</h5>
+    
+    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
+    
+    <a href="https://memnoth.github.io/tags/realtek"><kbd class="item-tag">realtek</kbd></a>
+    
+    <a href="https://memnoth.github.io/tags/driver"><kbd class="item-tag">driver</kbd></a>
     
 
 </div>
