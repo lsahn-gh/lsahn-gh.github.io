@@ -12,15 +12,15 @@
     
     
     <item>
-      <title>GPU HANG 메시지와 함께 Xorg가 멈출 때.</title>
-      <link>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C./</link>
+      <title>GPU HANG 메시지와 함께 Xorg가 멈출 때</title>
+      <link>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/</link>
       <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C./</guid>
+      <guid>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/</guid>
       <description>최근에 랩탑을 새로사고 듀얼모니터를 구성한 이후로 다음과 같은 증상이 나타나기 시작했다.
-(OS는 eOS(elementary OS)이며 모니터와 랩탑간에는 HDMI로 구성되어있다.)
- 마우스 포인터를 움직일 수 있으나 포인터 이외에 아무런 아이콘도 나타나지 않는다. X 윈도우로 진입하나 잠시뒤 블랙스크린이 뜨고 Terminal 진입도 안된다. 단, HDMI를 언플러그인하고 eOS로 부팅하면 멀쩡하다. eOS로 부팅후 HDMI를 연결하면 정상 동작하나 커널 로그에 오류가 찍힌다.  1, 2번의 커널 로그1는 다음과 같다.
-kernel: [ 39.815305] [drm] GPU HANG: ecode 9:0:0x993492ae, in Xorg [1096], reason: Hang on rcs0, action: reset kernel: [ 39.</description>
+(모니터와 랩탑간에는 HDMI로 구성되어있다.)
+ 마우스 포인터를 움직일 수 있으나 포인터 이외에 아무런 아이콘도 나타나지 않는다. X 윈도우로 진입하나 잠시뒤 블랙스크린(Black screen)이 뜨고 Terminal 진입도 안된다. 단, HDMI를 언플러그인하고 eOS1로 부팅하면 멀쩡하다. eOS로 부팅후 HDMI를 연결하면 정상 동작하나 커널 로그에 오류가 찍힌다.  사양은 다음과 같다.
+ eOS 0.4.1 Loki based on #35~16.04.1-Ubuntu, Kernel 4.13.0-32-generic. CPU: Intel 8th gen i5-8250U VGA: Intel Device 5917 (i915)  1, 2번의 커널 로그2는 다음과 같다.</description>
     </item>
     
     <item>

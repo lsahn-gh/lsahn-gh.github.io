@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>GPU HANG 메시지와 함께 Xorg가 멈출 때.</title>
+        <title>GPU HANG 메시지와 함께 Xorg가 멈출 때</title>
         <style>
 
     html body {
@@ -87,7 +87,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">GPU HANG 메시지와 함께 Xorg가 멈출 때.</a>
+                    <a class="navbar-brand visible-xs" href="#">GPU HANG 메시지와 함께 Xorg가 멈출 때</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -141,7 +141,7 @@
     
     
 
-    <h4><a href="/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C./">GPU HANG 메시지와 함께 Xorg가 멈출 때.</a></h4>
+    <h4><a href="/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/">GPU HANG 메시지와 함께 Xorg가 멈출 때</a></h4>
     <h5>February 9, 2018</h5>
     
     <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
@@ -151,16 +151,24 @@
 
 
     <br> <div class="text-justify"><p>최근에 랩탑을 새로사고 듀얼모니터를 구성한 이후로 다음과 같은 증상이 나타나기 시작했다.<br />
-<em>(OS는 eOS(elementary OS)이며 모니터와 랩탑간에는 HDMI로 구성되어있다.)</em></p>
+<em>(모니터와 랩탑간에는 HDMI로 구성되어있다.)</em></p>
 
 <ol>
 <li>마우스 포인터를 움직일 수 있으나 포인터 이외에 아무런 아이콘도 나타나지 않는다.</li>
-<li>X 윈도우로 진입하나 잠시뒤 블랙스크린이 뜨고 Terminal 진입도 안된다.</li>
-<li>단, HDMI를 언플러그인하고 eOS로 부팅하면 멀쩡하다.</li>
+<li>X 윈도우로 진입하나 잠시뒤 블랙스크린(Black screen)이 뜨고 Terminal 진입도 안된다.</li>
+<li>단, HDMI를 언플러그인하고 eOS<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>로 부팅하면 멀쩡하다.</li>
 <li>eOS로 부팅후 HDMI를 연결하면 정상 동작하나 커널 로그에 오류가 찍힌다.</li>
 </ol>
 
-<p>1, 2번의 커널 로그<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>는 다음과 같다.</p>
+<p>사양은 다음과 같다.</p>
+
+<ul>
+<li>eOS 0.4.1 Loki based on #35~16.04.1-Ubuntu, Kernel 4.13.0-32-generic.</li>
+<li>CPU: Intel 8th gen i5-8250U</li>
+<li>VGA: Intel Device 5917 (i915)</li>
+</ul>
+
+<p>1, 2번의 커널 로그<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>는 다음과 같다.</p>
 
 <pre><code>kernel: [   39.815305] [drm] GPU HANG: ecode 9:0:0x993492ae, in Xorg [1096], reason: Hang on rcs0, action: reset
 kernel: [   39.815368] drm/i915: Resetting chip after gpu hang
@@ -172,7 +180,7 @@ kernel: [   47.836308] drm/i915: Resetting chip after gpu hang
 kernel: [   47.836564] [drm:i915_reset [i915]] *ERROR* GPU recovery failed
 </code></pre>
 
-<p>GPU가 어떤 이유로 인해 멈춘단다.. 관련 키워드로 검색을 하여 링크<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 찾았다. 우선 코멘트에 나와 있는대로 부팅시 커널 파라미터에 <code>intel_iommu=off</code>을 추가하였으나 증상은 똑같았고 1번에서는 Terminal 진입이 가능하여 커널 로그를 다시 확인해보니 다음과 같았다.</p>
+<p>GPU가 어떤 이유로 인해 멈춘단다.. 관련 키워드로 검색을 하여 링크<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>를 찾았다. 우선 코멘트에 나와 있는대로 부팅시 커널 파라미터에 <code>intel_iommu=off</code>을 추가하였으나 증상은 똑같았고 1번에서는 Terminal 진입이 가능하여 커널 로그를 다시 확인해보니 다음과 같았다.</p>
 
 <pre><code>kernel: [   33.831007] [drm] GPU HANG: ecode 9:0:0x3000c801, in Xorg [1056], reason: Hang on rcs0, action: reset
 kernel: [   33.831135] drm/i915: Resetting chip after gpu hang
@@ -181,7 +189,7 @@ kernel: [   43.804241] drm/i915: Resetting chip after gpu hang
 kernel: [   43.804773] [drm] RC6 on
 </code></pre>
 
-<p><code>RC6</code>와 관련이 있을 것으로 생각되어 intel rc6로 검색하니 Ubuntu Wiki에 어떤 기능인지 설명이 적혀있는데 이건 링크<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>로 대체한다. 이 방법이 먹히지 않는 환경도 존재하지만 현재 workaround로 동작이 되고 있으므로 블로그에 로그를 남긴다. 커널 파라미터에 <code>i915.enable_rc6=0</code>을 추가하고 테스트한다. 올바르게 동작이 되면 부팅시 항상 설정되도록 grub<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup>을 다음과 같이 수정한다.</p>
+<p><code>RC6</code>와 관련이 있을 것으로 생각되어 intel rc6로 검색하니 Ubuntu Wiki에 어떤 기능인지 설명이 적혀있는데 이건 링크<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup>로 대체한다. 이 방법이 먹히지 않는 환경도 존재하지만 현재 workaround로 동작이 되고 있으므로 블로그에 로그를 남긴다. 커널 파라미터에 <code>i915.enable_rc6=0</code>을 추가하고 테스트한다. 올바르게 동작이 되면 부팅시 항상 설정되도록 grub<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">5</a></sup>을 다음과 같이 수정한다.</p>
 
 <pre><code>...
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
@@ -196,14 +204,16 @@ GRUB_CMDLINE_LINUX=&quot;&quot;
 <hr />
 
 <ol>
-<li id="fn:1">dmesg 명령어 또는 /var/log/kern.log 파일.
+<li id="fn:1">elementary OS
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2"><a href="https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184">https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184</a>
+<li id="fn:2">dmesg 명령어 또는 /var/log/kern.log 파일.
  <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3"><a href="https://wiki.ubuntu.com/Kernel/PowerManagementRC6">https://wiki.ubuntu.com/Kernel/PowerManagementRC6</a>
+<li id="fn:3"><a href="https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184">https://bbs.archlinux.org/viewtopic.php?pid=1737184#p1737184</a>
  <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-<li id="fn:4">/etc/default/grub 파일.
+<li id="fn:4"><a href="https://wiki.ubuntu.com/Kernel/PowerManagementRC6">https://wiki.ubuntu.com/Kernel/PowerManagementRC6</a>
  <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">/etc/default/grub 파일.
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
 </ol>
 </div>
 </div>
