@@ -1,160 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-         
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>비글본 블랙에서의 Dynamic Linking 오류</title>
-        <style>
 
-    html body {
-        font-family: 'Raleway', sans-serif;
-        background-color: white;
-    }
-
-    :root {
-        --accent: black;
-        --border-width:  5px ;
-    }
-
-</style>
-
-
-<link rel="stylesheet" href="https://memnoth.github.io//css/main.css">
-
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-
-
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
-
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cplusplus.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script> 
-
-    <script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
- <meta name="generator" content="Hugo 0.36" />
-        
-        
-        
-        
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78144803-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)};
-          gtag('js', new Date());
-
-          gtag('config', 'UA-78144803-1');
-        </script>
-        
-    </head>
-
+  <head>
     
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <body>
-         
-        <nav class="navbar navbar-default navbar-fixed-top">
-
-            <div class="container">
-
-                <div class="navbar-header">
-
-                    <a class="navbar-brand visible-xs" href="#">비글본 블랙에서의 Dynamic Linking 오류</a>
-
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <div class="collapse navbar-collapse">
-
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="/">Home</a></li>
-                            
-                                <li><a href="/post/">Posts</a></li>
-                            
-                                <li><a href="/project/">Projects</a></li>
-                            
-                        </ul>
-                    
-
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="mailto:me@example.com"><i class="fa fa-envelope-o"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/memnoth/"><i class="fa fa-github"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://twitter.com/itsmethomasan/"><i class="fa fa-twitter"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
-            </div>
-
-        </nav>
+ga('create', 'UA-78144803-1', 'auto');
+ga('send', 'pageview');
+</script>
 
 
-<main>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.37.1" />
 
-    <div class="item">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yi-Soo An">
+    <meta property="og:url" content="https://memnoth.github.io/2016/06/dynamic-linking-error-on-bbb/">
 
-    
-    
-    
+    <title>비글본 블랙에서의 Dynamic Linking 오류 - Memnoth</title>
+    <meta property="og:title" content="비글본 블랙에서의 Dynamic Linking 오류 - Memnoth">
+    <meta property="og:type" content="article">
+    <meta name="description" content="">
 
-    
-    
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Memnoth">
 
-    <h4><a href="/2016/06/dynamic-linking-error-on-bbb/">비글본 블랙에서의 Dynamic Linking 오류</a></h4>
-    <h5>June 24, 2016</h5>
-    
-    <a href="https://memnoth.github.io/tags/beagleboard"><kbd class="item-tag">beagleboard</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/dynamic-linking"><kbd class="item-tag">dynamic linking</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Source+Code+Pro|Arvo:400,700">
+<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/journal.css">
 
-</div>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav class="site-nav">
+        <a href="https://memnoth.github.io/">Index</a>
+      </nav>
 
 
-    <br> <div class="text-justify"><p>임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.</p>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">비글본 블랙에서의 Dynamic Linking 오류</h1>
+      <time class="post-date" datetime="2016-06-24 00:00:00 UTC">24 Jun 2016</time>
+    </header>
+
+    <p>임베디드 시스템에선 코드 작성 및 컴파일을 빠르게 하기 위해 Host PC와 Target board를 NFS로 연결하여 Host PC에서 컴파일 작업을 하고, Target board에서는 실행시키는 구조로 개발환경을 빌드한다.</p>
 
 <p>NFS 개발환경을 설정한 다음 arm gcc를 이용하여 컴파일을 했음에도 불구하고 <code>No such file or directory</code> 오류가 발생하였다.<br />
 계정 권한, 파일 권한, Host PC의 mount 권한까지 모두 확인하였지만 잘못된 부분이 없었기에 무척 난감했는데 Dynamic Linking이 원인이였다.</p>
@@ -175,80 +71,13 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
 
 <p>비글본 블랙에서 위의 명령어로 <strong>ld-linux.so.3</strong> 심볼릭 링크를 생성하고 <code>./test</code>로 다시 실행해보자.<br />
 이젠 제대로 실행한다.</p>
-</div>
 
-    
-    
 
-    
+  </article>
 
-        <h4 class="page-header">Related</h4>
-
-         <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/">GPU HANG 메시지와 함께 Xorg가 멈출 때</a></h4>
-    <h5>February 9, 2018</h5>
-    
-    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/2017/11/how-to-solve-the-problem-of-freezing-of-eclipse-in-linux/">리눅스에서 Eclipse가 멈출 때</a></h4>
-    <h5>November 19, 2017</h5>
-    
-    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/eclipse"><kbd class="item-tag">eclipse</kbd></a>
-    
-
-</div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/2017/09/how-to-make-an-access-point-with-raspberry-pi3-and-kea-dhcp/">How to make an Access Point with Raspberry Pi3 and Kea-Dhcp</a></h4>
-    <h5>September 22, 2017</h5>
-    
-    <a href="https://memnoth.github.io/tags/linux"><kbd class="item-tag">linux</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/rpi3"><kbd class="item-tag">rpi3</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/access-point"><kbd class="item-tag">access point</kbd></a>
-    
-    <a href="https://memnoth.github.io/tags/kea-dhcp"><kbd class="item-tag">kea dhcp</kbd></a>
-    
-
-</div>
- 
-
-    
-
-    
-
-        <h4 class="page-header">Comments</h4>
-
-        <div id="disqus_thread"></div>
+  
+    <h4>Comments</h4>
+    <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
     
@@ -268,18 +97,37 @@ Host PC에서 프로그램 링킹은 <strong>ld-linux.so.3</strong>가 담당하
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
 
-    
 
-</main>
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="https://memnoth.github.io/">
+          <span itemprop="name">Yi-Soo An</span>
 
-        <footer>
+          ,
+          <span itemprop="jobTitle"></span> at
+          <span itemprop="memberOf" itemscope itemtype="http://schema.org/Organization"><a itemprop="url" href=""><span itemprop="name"></span></a></span><br>
 
-            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+          <a itemprop="sameAs" href="https://memnoth.github.io/index.xml" title="RSS"><i class="fas fa-rss-square fa-2x"></i></a>
 
-        </footer>
-       
-    </body>
+          <a itemprop="sameAs" href="//github.com/memnoth" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
 
+          <a itemprop="sameAs" href="//gitlab.gnome.org/memnoth" title="Gnome"><i class="fab fa-gitlab fa-2x"></i></a>
+          
+          <a itemprop="sameAs" href="//twitter.com/iamt0mmy" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+
+          <a itemprop="sameAs" href="//plus.google.com/" title="Google+"><i class="fab fa-google-plus fa-2x"></i></a>
+
+        </span>
+
+        
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
 </html>
 

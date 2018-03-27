@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Thomas An</title>
+    <title>Memnoth</title>
     <link>https://memnoth.github.io/</link>
-    <description>Recent content on Thomas An</description>
+    <description>Recent content on Memnoth</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://memnoth.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>GPU HANG 메시지와 함께 Xorg가 멈출 때</title>
-      <link>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/</link>
-      <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+      <title>입력 스트림과 오류처리</title>
+      <link>https://memnoth.github.io/2018/03/watch-out-your-input-file-stream/</link>
+      <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://memnoth.github.io/2018/02/gpu-hang-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-xorg%EA%B0%80-%EB%A9%88%EC%B6%9C-%EB%95%8C/</guid>
-      <description>최근에 랩탑을 새로사고 듀얼모니터를 구성한 이후로 다음과 같은 증상이 나타나기 시작했다.
-(모니터와 랩탑간에는 HDMI로 구성되어있다.)
- 마우스 포인터를 움직일 수 있으나 포인터 이외에 아무런 아이콘도 나타나지 않는다. X 윈도우로 진입하나 잠시뒤 블랙스크린(Black screen)이 뜨고 Terminal 진입도 안된다. 단, HDMI를 언플러그인하고 eOS1로 부팅하면 멀쩡하다. eOS로 부팅후 HDMI를 연결하면 정상 동작하나 커널 로그에 오류가 찍힌다.  사양은 다음과 같다.
- eOS 0.4.1 Loki based on #35~16.04.1-Ubuntu, Kernel 4.13.0-32-generic. CPU: Intel 8th gen i5-8250U VGA: Intel Device 5917 (i915)  1, 2번의 커널 로그2는 다음과 같다.</description>
+      <guid>https://memnoth.github.io/2018/03/watch-out-your-input-file-stream/</guid>
+      <description>우리가 프로그래밍을 하며 자주 사용하는 것이 입출력 스트림입니다. 대부분의 프로그램들이 처리하는 일련의 과정들은 주변장치로 부터 데이터들을 입력 받고, 처리하고, 다시 출력하는 것입니다. 하지만 모든 입력에 대해 올바르다고 가정하여 무결성 검사에 신경쓰지 않는다면 제대로된 프로그램이라 할 수 없으며 입력에 대한 오류처리가 출력보다 까다롭기 때문에 그것에 관해 이야기를 해보려고 합니다.
+오늘 살펴볼 코드는 책1의 챕터 10, 연습문제 1를 기반으로 구현되었으며 해당 문제의 정의는 다음과 같습니다; 파일에 공백으로 구분된 정수들이 담겨 있다. 그 수치들 모두의 합을 계산하는 프로그램을 작성하라 (풀 코드는 이곳으로).</description>
     </item>
     
     <item>
