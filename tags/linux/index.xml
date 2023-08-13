@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on more or less insightful</title>
-    <link>https://www.ooseel.net/me/tags/linux/</link>
+    <link>https://www.ooseel.net/tags/linux/</link>
     <description>Recent content in Linux on more or less insightful</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>esBPF: Stress-Testing compares Software-Offload with iptables</title>
-      <link>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
+      <link>https://www.ooseel.net/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
       <pubDate>Tue, 29 Nov 2022 13:20:35 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
+      <guid>https://www.ooseel.net/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
       <description>
         
           
@@ -26,10 +26,10 @@ Before walking through the article, let me define a few short terms against typi
     
     <item>
       <title>Cache Memory QnA</title>
-      <link>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</link>
+      <link>https://www.ooseel.net/2021/07/hashtag-cache-memory-qna/</link>
       <pubDate>Sun, 25 Jul 2021 13:07:43 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</guid>
+      <guid>https://www.ooseel.net/2021/07/hashtag-cache-memory-qna/</guid>
       <description>
         
           
@@ -43,10 +43,10 @@ List  Startup에서 D-cache=off 임에도 불구하고 cache line invalidation �
     
     <item>
       <title>Why MMU and D-Cache must be off at Startup point</title>
-      <link>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</link>
+      <link>https://www.ooseel.net/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</link>
       <pubDate>Sat, 10 Jul 2021 22:31:36 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</guid>
+      <guid>https://www.ooseel.net/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</guid>
       <description>
         
           
@@ -59,10 +59,10 @@ List  Startup에서 D-cache=off 임에도 불구하고 cache line invalidation �
     
     <item>
       <title>GTK&#43; Workshop in Daejeon</title>
-      <link>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</link>
+      <link>https://www.ooseel.net/2019/01/gtk-workshop-in-daejeon/</link>
       <pubDate>Thu, 24 Jan 2019 13:20:35 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</guid>
+      <guid>https://www.ooseel.net/2019/01/gtk-workshop-in-daejeon/</guid>
       <description>
         
           

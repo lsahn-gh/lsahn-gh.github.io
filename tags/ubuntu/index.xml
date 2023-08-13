@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on more or less insightful</title>
-    <link>https://www.ooseel.net/me/tags/ubuntu/</link>
+    <link>https://www.ooseel.net/tags/ubuntu/</link>
     <description>Recent content in ubuntu on more or less insightful</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>esBPF: Stress-Testing compares Software-Offload with iptables</title>
-      <link>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
+      <link>https://www.ooseel.net/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
       <pubDate>Tue, 29 Nov 2022 13:20:35 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
+      <guid>https://www.ooseel.net/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
       <description>
         
           
@@ -26,10 +26,10 @@ Before walking through the article, let me define a few short terms against typi
     
     <item>
       <title>Build upstream Ubuntu Kernel for Arm64 Raspberry-Pi</title>
-      <link>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</link>
+      <link>https://www.ooseel.net/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</link>
       <pubDate>Fri, 18 Nov 2022 00:41:09 +0900</pubDate>
       
-      <guid>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</guid>
+      <guid>https://www.ooseel.net/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</guid>
       <description>
         
           
