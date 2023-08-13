@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on more or less insightful</title>
+    <link>https://www.ooseel.net/me/tags/linux/</link>
+    <description>Recent content in Linux on more or less insightful</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>esBPF: Stress-Testing compares Software-Offload with iptables</title>
+      <link>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
+      <pubDate>Tue, 29 Nov 2022 13:20:35 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
+      <description>
+        
+          
+            esBPF project has been over one year and it began with the idea that Is it worth filtering ingress packets on Software-Offload layer instead of Network Stack? Software-Offload is similar to Hardware-Offload, but it works in ethernet driver. Now time to do Stress-testing since its prototype was released and the comparison object will be iptables.
+Before walking through the article, let me define a few short terms against typing exhausting long terms,
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Cache Memory QnA</title>
+      <link>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</link>
+      <pubDate>Sun, 25 Jul 2021 13:07:43 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</guid>
+      <description>
+        
+          
+            잘못된 정보는 https://github.com/memnoth/me/issues/1에 남겨주시기 바랍니다.
+List  Startup에서 D-cache=off 임에도 불구하고 cache line invalidation 하는 목적이 뭔가요?  QnA Q. 아래 코드에서 D-cache = off 임에도 불구하고 cache line invalidation 하는 목적이 뭔가요? 1// &amp;#39;head.S&amp;#39; of linux kernel 5.10 2/* 3* Kernel startup entry point. 4* --------------------------- 5* 6* The requirements are: 7* MMU = off, D-cache = off, I-cache = on or off, 8* x0 = physical address to the FDT blob.
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Why MMU and D-Cache must be off at Startup point</title>
+      <link>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</link>
+      <pubDate>Sat, 10 Jul 2021 22:31:36 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</guid>
+      <description>
+        
+          
+            Q. 아래와 같이 startup point에서 MMU 와 D-Cache의 상태가 off 여야 하는데 이유가 뭔가요? 1 // &amp;#39;head.S&amp;#39; of linux kernel 5.10 2 /* 3* Kernel startup entry point. 4* --------------------------- 5* 6* The requirements are: 7* MMU = off, D-cache = off, I-cache = on or off, 8* x0 = physical address to the FDT blob. 9* 10* This code is mostly position independent so you call this at 11* __pa(PAGE_OFFSET).
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>GTK&#43; Workshop in Daejeon</title>
+      <link>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</link>
+      <pubDate>Thu, 24 Jan 2019 13:20:35 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</guid>
+      <description>
+        
+          
+            Hello, everyone!
+There is a meetup named Cron-a-thon held by Ubuntu-KR Daejeon team every 2 weeks. However, I put the workshop on the table at the meetup 3 months ago. The administrators and I talked about the organization of an event for the beginners who were into how to build a GTK+ application in Python. That was the beginning of the workshop.
+Before we talk about the workshop, let&#39;s look at goods a bit.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

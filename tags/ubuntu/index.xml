@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on more or less insightful</title>
+    <link>https://www.ooseel.net/me/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on more or less insightful</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>esBPF: Stress-Testing compares Software-Offload with iptables</title>
+      <link>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
+      <pubDate>Tue, 29 Nov 2022 13:20:35 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
+      <description>
+        
+          
+            esBPF project has been over one year and it began with the idea that Is it worth filtering ingress packets on Software-Offload layer instead of Network Stack? Software-Offload is similar to Hardware-Offload, but it works in ethernet driver. Now time to do Stress-testing since its prototype was released and the comparison object will be iptables.
+Before walking through the article, let me define a few short terms against typing exhausting long terms,
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Build upstream Ubuntu Kernel for Arm64 Raspberry-Pi</title>
+      <link>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</link>
+      <pubDate>Fri, 18 Nov 2022 00:41:09 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</guid>
+      <description>
+        
+          
+            Whole processes, git cloning the right codebase from a repository, installing all the packages, kernel configuration, and finally go building are such a challenge for beginners like me. Fortunately, Ubuntu Kernel Team provides an easy system for building kernel though.
+In this article, we are going to look at some requirements. In more detail, try installing build tools, get ready, and building :-)
+Get ready for upstream kernel and environment Canonical, a company mainly supports Ubuntu distro maintains its Kernel sources at Launchpad, but for Raspberry Pi, it&#39;s maintained at this repository.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

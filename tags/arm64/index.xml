@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arm64 on more or less insightful</title>
+    <link>https://www.ooseel.net/me/tags/arm64/</link>
+    <description>Recent content in arm64 on more or less insightful</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 29 Nov 2022 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/arm64/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>esBPF: Stress-Testing compares Software-Offload with iptables</title>
+      <link>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</link>
+      <pubDate>Tue, 29 Nov 2022 13:20:35 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2022/11/esbpf-stress-testing-compares-software-offload-with-iptables/</guid>
+      <description>
+        
+          
+            esBPF project has been over one year and it began with the idea that Is it worth filtering ingress packets on Software-Offload layer instead of Network Stack? Software-Offload is similar to Hardware-Offload, but it works in ethernet driver. Now time to do Stress-testing since its prototype was released and the comparison object will be iptables.
+Before walking through the article, let me define a few short terms against typing exhausting long terms,
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Build upstream Ubuntu Kernel for Arm64 Raspberry-Pi</title>
+      <link>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</link>
+      <pubDate>Fri, 18 Nov 2022 00:41:09 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2022/11/build-upstream-ubuntu-kernel-for-arm64-raspberry-pi/</guid>
+      <description>
+        
+          
+            Whole processes, git cloning the right codebase from a repository, installing all the packages, kernel configuration, and finally go building are such a challenge for beginners like me. Fortunately, Ubuntu Kernel Team provides an easy system for building kernel though.
+In this article, we are going to look at some requirements. In more detail, try installing build tools, get ready, and building :-)
+Get ready for upstream kernel and environment Canonical, a company mainly supports Ubuntu distro maintains its Kernel sources at Launchpad, but for Raspberry Pi, it&#39;s maintained at this repository.
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Cache Memory QnA</title>
+      <link>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</link>
+      <pubDate>Sun, 25 Jul 2021 13:07:43 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2021/07/hashtag-cache-memory-qna/</guid>
+      <description>
+        
+          
+            잘못된 정보는 https://github.com/memnoth/me/issues/1에 남겨주시기 바랍니다.
+List  Startup에서 D-cache=off 임에도 불구하고 cache line invalidation 하는 목적이 뭔가요?  QnA Q. 아래 코드에서 D-cache = off 임에도 불구하고 cache line invalidation 하는 목적이 뭔가요? 1// &amp;#39;head.S&amp;#39; of linux kernel 5.10 2/* 3* Kernel startup entry point. 4* --------------------------- 5* 6* The requirements are: 7* MMU = off, D-cache = off, I-cache = on or off, 8* x0 = physical address to the FDT blob.
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Why MMU and D-Cache must be off at Startup point</title>
+      <link>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</link>
+      <pubDate>Sat, 10 Jul 2021 22:31:36 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2021/07/why-mmu-and-d-cache-must-be-off-at-startup-point-in-arm64/</guid>
+      <description>
+        
+          
+            Q. 아래와 같이 startup point에서 MMU 와 D-Cache의 상태가 off 여야 하는데 이유가 뭔가요? 1 // &amp;#39;head.S&amp;#39; of linux kernel 5.10 2 /* 3* Kernel startup entry point. 4* --------------------------- 5* 6* The requirements are: 7* MMU = off, D-cache = off, I-cache = on or off, 8* x0 = physical address to the FDT blob. 9* 10* This code is mostly position independent so you call this at 11* __pa(PAGE_OFFSET).
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

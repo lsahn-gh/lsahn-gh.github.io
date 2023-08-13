@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gnome on more or less insightful</title>
+    <link>https://www.ooseel.net/me/tags/gnome/</link>
+    <description>Recent content in Gnome on more or less insightful</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Jan 2019 13:20:35 +0900</lastBuildDate><atom:link href="https://www.ooseel.net/me/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GTK&#43; Workshop in Daejeon</title>
+      <link>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</link>
+      <pubDate>Thu, 24 Jan 2019 13:20:35 +0900</pubDate>
+      
+      <guid>https://www.ooseel.net/me/2019/01/gtk-workshop-in-daejeon/</guid>
+      <description>
+        
+          
+            Hello, everyone!
+There is a meetup named Cron-a-thon held by Ubuntu-KR Daejeon team every 2 weeks. However, I put the workshop on the table at the meetup 3 months ago. The administrators and I talked about the organization of an event for the beginners who were into how to build a GTK+ application in Python. That was the beginning of the workshop.
+Before we talk about the workshop, let&#39;s look at goods a bit.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
